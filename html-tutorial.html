@@ -1,0 +1,2395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="HTML Tutorial - CODE With Brijesh">
+
+    <title>HTML Tutorial - CODE With Brijesh</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================================
+           HTML TUTORIAL LAYOUT
+        ========================================= */
+
+        .html-learning-page {
+            display: flex;
+            min-height: calc(100vh - 66px);
+            background: #fff;
+        }
+
+
+        /* =========================================
+           LEFT SIDEBAR
+        ========================================= */
+
+        .html-sidebar {
+
+            width: 265px;
+            flex-shrink: 0;
+
+            background: #fafafa;
+
+            border-right: 1px solid #e5e7eb;
+
+            position: sticky;
+            top: 66px;
+
+            height: calc(100vh - 66px);
+
+            overflow-y: auto;
+
+            z-index: 20;
+        }
+
+
+        .html-sidebar::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .html-sidebar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+
+        .sidebar-heading {
+
+            padding: 17px 18px;
+
+            font-size: 16px;
+            font-weight: 700;
+
+            color: #111827;
+
+            border-bottom: 1px solid #e5e7eb;
+
+            background: #fafafa;
+        }
+
+
+        /* =========================================
+           SIDEBAR GROUP
+        ========================================= */
+
+        .lesson-group {
+            border-bottom: 0;
+        }
+
+
+        .lesson-group-title {
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 11px 10px;
+
+            border: 0;
+
+            background: transparent;
+
+            color: #111827;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            text-align: left;
+
+            cursor: pointer;
+        }
+
+
+        .lesson-group-title:hover {
+            background: #f1f5f9;
+        }
+
+
+        .lesson-group-title .arrow {
+
+            font-size: 17px;
+
+            transition:
+                transform .2s ease;
+        }
+
+
+        .lesson-group.closed
+        .lesson-group-title
+        .arrow {
+
+            transform: rotate(-90deg);
+        }
+
+
+        .lesson-group.closed
+        .lesson-links {
+
+            display: none;
+        }
+
+
+        /* =========================================
+           SIDEBAR LESSON LINKS
+        ========================================= */
+
+        .lesson-links {
+            padding-bottom: 5px;
+        }
+
+
+        .lesson-link {
+
+            display: block;
+
+            width: 100%;
+
+            padding: 6px 20px;
+
+            border: 0;
+
+            background: transparent;
+
+            color: #6b7280;
+
+            font-size: 11px;
+
+            text-align: left;
+
+            cursor: pointer;
+
+            text-decoration: none;
+        }
+
+
+        .lesson-link:hover {
+
+            color: #2563eb;
+
+            background: #f1f5f9;
+        }
+
+
+        .lesson-link.active {
+
+            color: #2563eb;
+
+            background: #eef4ff;
+
+            font-weight: 600;
+
+            border-left: 3px solid #2563eb;
+
+            padding-left: 17px;
+        }
+
+
+        /* =========================================
+           MAIN CONTENT
+        ========================================= */
+
+        .html-main {
+
+            flex: 1;
+
+            min-width: 0;
+
+            background: #fff;
+        }
+
+
+        /* =========================================
+           BREADCRUMB
+        ========================================= */
+
+        .html-breadcrumb {
+
+            height: 52px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 0 18px;
+
+            border-bottom: 1px solid #e5e7eb;
+
+            color: #9ca3af;
+
+            font-size: 11px;
+        }
+
+
+        .html-breadcrumb strong {
+
+            color: #374151;
+        }
+
+
+        /* =========================================
+           CONTENT WRAPPER
+        ========================================= */
+
+        .html-content {
+
+            width: min(850px, 88%);
+
+            margin: auto;
+
+            padding: 25px 0 70px;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .html-hero {
+
+            min-height: 270px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 35px 30px;
+
+            margin-bottom: 32px;
+
+            border-radius: 3px;
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    rgba(228,77,38,.16),
+                    transparent 65%
+                ),
+
+                #fff8f6;
+        }
+
+
+        .html-hero h1 {
+
+            margin: 0 0 18px;
+
+            color: #111827;
+
+            font-size: 34px;
+
+            font-weight: 800;
+        }
+
+
+        .html-hero p {
+
+            max-width: 650px;
+
+            margin: 0;
+
+            color: #6b7280;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           GET STARTED
+        ========================================= */
+
+        .get-started {
+
+            padding: 26px 28px;
+
+            background: #fff;
+
+            border: 1px solid #f0f0f0;
+
+            border-radius: 9px;
+
+            box-shadow:
+                0 2px 15px
+                rgba(0,0,0,.04);
+        }
+
+
+        .get-started h2 {
+
+            margin: 0 0 12px;
+
+            color: #111827;
+
+            font-size: 18px;
+        }
+
+
+        .get-started p {
+
+            color: #6b7280;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        .get-started ol {
+
+            padding-left: 22px;
+
+            color: #6b7280;
+
+            font-size: 13px;
+
+            line-height: 2;
+        }
+
+
+        /* =========================================
+           DYNAMIC LESSON CONTENT
+        ========================================= */
+
+        #dynamicLesson {
+
+            margin-top: 25px;
+        }
+
+
+        .lesson-content-box {
+
+            padding: 28px;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 9px;
+
+            background: #fff;
+        }
+
+
+        .lesson-content-box h2 {
+
+            margin-top: 0;
+
+            color: #111827;
+
+            font-size: 24px;
+        }
+
+
+        .lesson-content-box h3 {
+
+            margin-top: 25px;
+
+            color: #111827;
+
+            font-size: 18px;
+        }
+
+
+        .lesson-content-box p,
+        .lesson-content-box li {
+
+            color: #6b7280;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        .lesson-code {
+
+            padding: 18px;
+
+            margin-top: 15px;
+
+            background: #111827;
+
+            color: #e5e7eb;
+
+            border-radius: 7px;
+
+            overflow-x: auto;
+
+            font-family: monospace;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           PREVIOUS NEXT
+        ========================================= */
+
+        .lesson-navigation {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-top: 25px;
+
+            gap: 15px;
+        }
+
+
+        .lesson-navigation button {
+
+            border: 0;
+
+            background: #111827;
+
+            color: #fff;
+
+            padding: 10px 17px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+        }
+
+
+        .lesson-navigation button:hover {
+
+            background: #2563eb;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .tutorial-footer {
+
+            background: #f8fafc;
+
+            border-top: 1px solid #e5e7eb;
+
+            padding: 40px 8% 25px;
+        }
+
+
+        .tutorial-footer-grid {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 35px;
+        }
+
+
+        .tutorial-footer h3 {
+
+            margin: 0 0 15px;
+
+            font-size: 13px;
+
+            color: #111827;
+        }
+
+
+        .tutorial-footer a {
+
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: #6b7280;
+
+            text-decoration: none;
+
+            font-size: 12px;
+        }
+
+
+        .tutorial-footer a:hover {
+
+            color: #2563eb;
+        }
+
+
+        .tutorial-footer-bottom {
+
+            margin-top: 45px;
+
+            text-align: center;
+
+            color: #6b7280;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================================
+           MOBILE SIDEBAR BUTTON
+        ========================================= */
+
+        .lesson-menu-button {
+
+            display: none;
+
+            position: fixed;
+
+            right: 18px;
+
+            bottom: 20px;
+
+            width: 50px;
+            height: 50px;
+
+            border: 0;
+
+            border-radius: 50%;
+
+            background: #2563eb;
+
+            color: white;
+
+            font-size: 20px;
+
+            z-index: 100;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,0,0,.2);
+        }
+
+
+        /* =========================================
+           DARK MODE
+        ========================================= */
+
+        body.dark .html-learning-page,
+        body.dark .html-main {
+
+            background: #0b1120;
+        }
+
+
+        body.dark .html-sidebar {
+
+            background: #111827;
+
+            border-color: #263244;
+        }
+
+
+        body.dark .sidebar-heading,
+        body.dark .lesson-group-title {
+
+            background: #111827;
+
+            color: #f8fafc;
+        }
+
+
+        body.dark .lesson-group-title:hover,
+        body.dark .lesson-link:hover {
+
+            background: #1e293b;
+        }
+
+
+        body.dark .lesson-link {
+
+            color: #94a3b8;
+        }
+
+
+        body.dark .lesson-link.active {
+
+            background: #172554;
+
+            color: #60a5fa;
+        }
+
+
+        body.dark .html-breadcrumb {
+
+            border-color: #263244;
+
+            color: #94a3b8;
+        }
+
+
+        body.dark .html-breadcrumb strong {
+
+            color: #f8fafc;
+        }
+
+
+        body.dark .html-hero {
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    rgba(228,77,38,.18),
+                    transparent 65%
+                ),
+
+                #1b1515;
+        }
+
+
+        body.dark .html-hero h1 {
+
+            color: #fff;
+        }
+
+
+        body.dark .html-hero p {
+
+            color: #cbd5e1;
+        }
+
+
+        body.dark .get-started,
+        body.dark .lesson-content-box {
+
+            background: #111827;
+
+            border-color: #263244;
+        }
+
+
+        body.dark .get-started h2,
+        body.dark .lesson-content-box h2,
+        body.dark .lesson-content-box h3 {
+
+            color: #f8fafc;
+        }
+
+
+        body.dark .get-started p,
+        body.dark .get-started li,
+        body.dark .lesson-content-box p,
+        body.dark .lesson-content-box li {
+
+            color: #cbd5e1;
+        }
+
+
+        body.dark .tutorial-footer {
+
+            background: #0f172a;
+
+            border-color: #263244;
+        }
+
+
+        body.dark .tutorial-footer h3 {
+
+            color: #f8fafc;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            .html-sidebar {
+
+                position: fixed;
+
+                top: 66px;
+
+                left: -285px;
+
+                width: 275px;
+
+                transition: left .3s ease;
+
+                box-shadow:
+                    5px 0 20px
+                    rgba(0,0,0,.15);
+            }
+
+
+            .html-sidebar.open {
+
+                left: 0;
+            }
+
+
+            .lesson-menu-button {
+
+                display: flex;
+
+                align-items: center;
+
+                justify-content: center;
+            }
+
+
+            .html-content {
+
+                width: 92%;
+
+                padding-top: 20px;
+            }
+
+
+            .html-hero {
+
+                min-height: 230px;
+
+                padding: 30px 18px;
+            }
+
+
+            .html-hero h1 {
+
+                font-size: 29px;
+            }
+
+
+            .html-hero p {
+
+                font-size: 13px;
+            }
+
+
+            .tutorial-footer-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 25px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .html-breadcrumb {
+
+                padding: 0 12px;
+            }
+
+
+            .get-started,
+            .lesson-content-box {
+
+                padding: 20px;
+            }
+
+
+            .tutorial-footer {
+
+                padding:
+                    35px 25px 20px;
+            }
+
+
+            .tutorial-footer-grid {
+
+                grid-template-columns: 1fr 1fr;
+
+                gap: 25px 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+            <span>&lt;/&gt;</span>
+            CODE With Brijesh
+        </a>
+
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a
+                href="tutorials.html"
+                class="active"
+            >
+                Tutorials
+            </a>
+
+        </nav>
+
+
+        <div class="header-right">
+
+            <div class="search">
+
+                <input
+                    type="text"
+                    placeholder="Search..."
+                    id="searchInput"
+                >
+
+                <button id="searchBtn">
+                    🔍
+                </button>
+
+            </div>
+
+
+            <button
+                class="menu-button"
+                id="menuButton"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     HTML LEARNING PAGE
+========================================= -->
+
+<div class="html-learning-page">
+
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside
+        class="html-sidebar"
+        id="htmlSidebar"
+    >
+
+
+        <div class="sidebar-heading">
+            HTML Tutorial
+        </div>
+
+
+        <!-- =================================
+             INTRODUCTION
+        ================================== -->
+
+        <div class="lesson-group">
+
+            <button class="lesson-group-title">
+
+                <span>
+                    Introduction
+                </span>
+
+                <span class="arrow">
+                   ⌄
+                </span>
+
+            </button>
+
+
+            <div class="lesson-links">
+
+                <button
+                    class="lesson-link active"
+                    data-lesson="introduction"
+                >
+                    Introduction
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="working"
+                >
+                    Working
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="installation"
+                >
+                    Installation
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="execution"
+                >
+                    Execution
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="page-structure"
+                >
+                    Page Structure
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="tags"
+                >
+                    Tags
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="elements"
+                >
+                    Elements
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="attributes"
+                >
+                    Attributes
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="comments"
+                >
+                    Comments
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="id-classes"
+                >
+                    Id & Classes
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             BASIC TAGS
+        ================================== -->
+
+        <div class="lesson-group">
+
+            <button class="lesson-group-title">
+
+                <span>
+                    HTML Basic Tags
+                </span>
+
+                <span class="arrow">
+                   ⌄
+                </span>
+
+            </button>
+
+
+            <div class="lesson-links">
+
+                <button
+                    class="lesson-link"
+                    data-lesson="skeletal"
+                >
+                    Skeletal Tags
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="heading"
+                >
+                    Heading Tags
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="paragraph"
+                >
+                    Paragraph Tag
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="hr"
+                >
+                    Horizontal Line Tag
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="br"
+                >
+                    Line Break Tag
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="anchor"
+                >
+                    Anchor Tag
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="image"
+                >
+                    Image Tag
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="pre"
+                >
+                    Pre Tag
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             INLINE BLOCK
+        ================================== -->
+
+        <div class="lesson-group">
+
+            <button class="lesson-group-title">
+
+                <span>
+                    Inline & Block Elements
+                </span>
+
+                <span class="arrow">
+                   ⌄
+                </span>
+
+            </button>
+
+
+            <div class="lesson-links">
+
+                <button
+                    class="lesson-link"
+                    data-lesson="inline-elements"
+                >
+                    Inline Elements
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="block-elements"
+                >
+                    Block Elements
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             LISTS
+        ================================== -->
+
+        <div class="lesson-group">
+
+            <button class="lesson-group-title">
+
+                <span>
+                    HTML Lists
+                </span>
+
+                <span class="arrow">
+                   ⌄
+                </span>
+
+            </button>
+
+
+            <div class="lesson-links">
+
+                <button
+                    class="lesson-link"
+                    data-lesson="lists"
+                >
+                    Lists
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="unordered"
+                >
+                    Unordered List
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="ordered"
+                >
+                    Ordered List
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="definition"
+                >
+                    Definition Lists
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             TABLES
+        ================================== -->
+
+        <div class="lesson-group">
+
+            <button class="lesson-group-title">
+
+                <span>
+                    HTML Tables
+                </span>
+
+                <span class="arrow">
+                   ⌄
+                </span>
+
+            </button>
+
+
+            <div class="lesson-links">
+
+                <button
+                    class="lesson-link"
+                    data-lesson="tables"
+                >
+                    Tables
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="more-tables"
+                >
+                    More on Tables
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             FORMS
+        ================================== -->
+
+        <div class="lesson-group">
+
+            <button class="lesson-group-title">
+
+                <span>
+                    HTML Forms
+                </span>
+
+                <span class="arrow">
+                   ⌄
+                </span>
+
+            </button>
+
+
+            <div class="lesson-links">
+
+                <button
+                    class="lesson-link"
+                    data-lesson="form-intro"
+                >
+                    Introduction to HTML Forms
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="input-types"
+                >
+                    Input Types
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="textarea"
+                >
+                    Textarea & Select
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="more-forms"
+                >
+                    More on Forms
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             HEAD
+        ================================== -->
+
+        <div class="lesson-group">
+
+            <button class="lesson-group-title">
+
+                <span>
+                    Head Elements
+                </span>
+
+                <span class="arrow">
+                   ⌄
+                </span>
+
+            </button>
+
+
+            <div class="lesson-links">
+
+                <button
+                    class="lesson-link"
+                    data-lesson="meta"
+                >
+                    Meta Tags
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="link-script"
+                >
+                    Link & Script Tags
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             MEDIA
+        ================================== -->
+
+        <div class="lesson-group">
+
+            <button class="lesson-group-title">
+
+                <span>
+                    HTML Media
+                </span>
+
+                <span class="arrow">
+                   ⌄
+                </span>
+
+            </button>
+
+
+            <div class="lesson-links">
+
+                <button
+                    class="lesson-link"
+                    data-lesson="video-audio"
+                >
+                    Video & Audio Tags
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="svg"
+                >
+                    SVG in HTML
+                </button>
+
+                <button
+                    class="lesson-link"
+                    data-lesson="iframe"
+                >
+                    iFrames in HTML
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             MISC
+        ================================== -->
+
+        <div class="lesson-group">
+
+            <button class="lesson-group-title">
+
+                <span>
+                    Miscellaneous Tags
+                </span>
+
+                <span class="arrow">
+                   ⌄
+                </span>
+
+            </button>
+
+
+            <div class="lesson-links">
+
+                <button
+                    class="lesson-link"
+                    data-lesson="code"
+                >
+                    Code Tag
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <main class="html-main">
+
+
+        <!-- BREADCRUMB -->
+
+        <div class="html-breadcrumb">
+
+            <span>
+                ▣
+            </span>
+
+            <span>
+                Tutorials
+            </span>
+
+            <span>
+                ›
+            </span>
+
+            <strong id="breadcrumb">
+                HTML Tutorial
+            </strong>
+
+        </div>
+
+
+        <div class="html-content">
+
+
+            <!-- =================================
+                 HERO
+            ================================== -->
+
+            <section class="html-hero">
+
+                <h1 id="pageTitle">
+                    HTML Tutorial
+                </h1>
+
+                <p id="pageDescription">
+
+                    The word hypertext markup language
+                    is composed of the words “hypertext”
+                    and “markup language”. The term
+                    “hypertext” refers to the linking of
+                    text with other documents and
+                    “markup language” refers to a
+                    language that uses a set of tags.
+
+                </p>
+
+            </section>
+
+
+            <!-- =================================
+                 GET STARTED
+            ================================== -->
+
+            <section
+                class="get-started"
+                id="startBox"
+            >
+
+                <h2>
+                    Get Started
+                </h2>
+
+                <p>
+                    Welcome to the HTML Tutorial
+                    tutorial series! To begin learning:
+                </p>
+
+                <ol>
+
+                    <li>
+                        Select a lesson from the
+                        sidebar on the left
+                    </li>
+
+                    <li>
+                        Work through the lessons in
+                        order for the best learning
+                        experience
+                    </li>
+
+                    <li>
+                        Each lesson contains detailed
+                        explanations and examples
+                    </li>
+
+                </ol>
+
+            </section>
+
+
+            <!-- =================================
+                 DYNAMIC CONTENT
+            ================================== -->
+
+            <section
+                id="dynamicLesson"
+                style="display:none;"
+            >
+
+                <div
+                    class="lesson-content-box"
+                    id="lessonContent"
+                >
+                </div>
+
+            </section>
+
+
+            <!-- NAVIGATION -->
+
+            <div
+                class="lesson-navigation"
+                id="lessonNavigation"
+                style="display:none;"
+            >
+
+                <button id="previousLesson">
+                    ← Previous
+                </button>
+
+                <button id="nextLesson">
+                    Next →
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================
+     MOBILE LESSON BUTTON
+========================================= -->
+
+<button
+    class="lesson-menu-button"
+    id="lessonMenuButton"
+>
+    ☰
+</button>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="tutorial-footer">
+
+    <div class="tutorial-footer-grid">
+
+
+        <div>
+
+            <h3>
+                Main
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="#">
+                Work With Us
+            </a>
+
+            <a href="#">
+                My Gear
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Learn
+            </h3>
+
+            <a href="courses.html">
+                Courses
+            </a>
+
+            <a href="tutorials.html">
+                Tutorials
+            </a>
+
+            <a href="notes.html">
+                Notes
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Legal
+            </h3>
+
+            <a href="#">
+                Terms
+            </a>
+
+            <a href="#">
+                Privacy
+            </a>
+
+            <a href="#">
+                Refund
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Social
+            </h3>
+
+            <a href="#">
+                🔵 LinkedIn
+            </a>
+
+            <a href="#">
+                ▶️ YouTube
+            </a>
+
+            <a href="#">
+                ⚫ GitHub
+            </a>
+
+            <a href="#">
+                𝕏 Twitter
+            </a>
+
+            <a href="#">
+                🔵 Facebook
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="tutorial-footer-bottom">
+
+        Made with ❤️ and ☕ in India
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* =====================================
+           SIDEBAR GROUP OPEN/CLOSE
+        ===================================== */
+
+        const groups =
+            document.querySelectorAll(
+                ".lesson-group"
+            );
+
+
+        groups.forEach(
+            function (group) {
+
+                const button =
+                    group.querySelector(
+                        ".lesson-group-title"
+                    );
+
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        group.classList.toggle(
+                            "closed"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =====================================
+           LESSON DATA
+        ===================================== */
+
+        const lessons = {
+
+            introduction: [
+                "Introduction",
+                "Learn what HTML is and why it is used to create websites.",
+                `<h2>Introduction to HTML</h2>
+                 <p>HTML stands for HyperText Markup Language. It provides the basic structure of webpages.</p>
+                 <h3>What you will learn</h3>
+                 <p>You will learn HTML tags, elements, attributes, links, images, forms, tables and media.</p>`
+            ],
+
+
+            working: [
+                "Working",
+                "Understand how HTML works inside a web browser.",
+                `<h2>How HTML Works</h2>
+                 <p>A browser reads HTML documents and converts the markup into the webpage you see on screen.</p>
+                 <div class="lesson-code">&lt;h1&gt;Hello World&lt;/h1&gt;</div>`
+            ],
+
+
+            installation: [
+                "Installation",
+                "Prepare your device for HTML development.",
+                `<h2>HTML Installation</h2>
+                 <p>You do not need a complicated setup to learn HTML. A browser and a code editor are enough.</p>
+                 <p>You can even practice HTML using a mobile code editor.</p>`
+            ],
+
+
+            execution: [
+                "Execution",
+                "Learn how to run an HTML file in your browser.",
+                `<h2>HTML Execution</h2>
+                 <p>Create an HTML file with the .html extension and open it in a browser.</p>
+                 <div class="lesson-code">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>`
+            ],
+
+
+            "page-structure": [
+                "Page Structure",
+                "Understand the basic structure of an HTML document.",
+                `<h2>HTML Page Structure</h2>
+                 <p>Every normal HTML page contains DOCTYPE, html, head and body sections.</p>
+                 <div class="lesson-code">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;My Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>`
+            ],
+
+
+            tags: [
+                "Tags",
+                "Learn how HTML tags define webpage elements.",
+                `<h2>HTML Tags</h2>
+                 <p>Tags are special markup instructions enclosed inside angle brackets.</p>
+                 <div class="lesson-code">&lt;p&gt;This is a paragraph&lt;/p&gt;</div>`
+            ],
+
+
+            elements: [
+                "Elements",
+                "Understand HTML elements and how they are formed.",
+                `<h2>HTML Elements</h2>
+                 <p>An HTML element generally contains an opening tag, content and a closing tag.</p>
+                 <div class="lesson-code">&lt;h1&gt;My Heading&lt;/h1&gt;</div>`
+            ],
+
+
+            attributes: [
+                "Attributes",
+                "Learn how attributes provide additional information to HTML elements.",
+                `<h2>HTML Attributes</h2>
+                 <p>Attributes are written inside the opening tag.</p>
+                 <div class="lesson-code">&lt;a href="https://example.com"&gt;Visit&lt;/a&gt;</div>`
+            ],
+
+
+            comments: [
+                "Comments",
+                "Learn how to write comments inside HTML.",
+                `<h2>HTML Comments</h2>
+                 <p>Comments help developers leave notes inside their code.</p>
+                 <div class="lesson-code">&lt;!-- This is a comment --&gt;</div>`
+            ],
+
+
+            "id-classes": [
+                "Id & Classes",
+                "Learn how IDs and classes identify HTML elements.",
+                `<h2>HTML Id & Classes</h2>
+                 <div class="lesson-code">&lt;div id="header"&gt;&lt;/div&gt;
+&lt;div class="card"&gt;&lt;/div&gt;</div>`
+            ],
+
+
+            skeletal: [
+                "Skeletal Tags",
+                "Learn the basic tags that form the skeleton of a webpage.",
+                `<h2>Skeletal Tags</h2>
+                 <p>The basic HTML structure uses html, head and body elements.</p>`
+            ],
+
+
+            heading: [
+                "Heading Tags",
+                "Learn HTML heading elements from h1 to h6.",
+                `<h2>Heading Tags</h2>
+                 <div class="lesson-code">&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Sub Heading&lt;/h2&gt;
+&lt;h3&gt;Section Heading&lt;/h3&gt;</div>`
+            ],
+
+
+            paragraph: [
+                "Paragraph Tag",
+                "Learn how to create paragraphs.",
+                `<h2>Paragraph Tag</h2>
+                 <div class="lesson-code">&lt;p&gt;This is my paragraph.&lt;/p&gt;</div>`
+            ],
+
+
+            hr: [
+                "Horizontal Line Tag",
+                "Learn how to add a horizontal line.",
+                `<h2>Horizontal Line</h2>
+                 <div class="lesson-code">&lt;hr&gt;</div>`
+            ],
+
+
+            br: [
+                "Line Break Tag",
+                "Learn how to move text to a new line.",
+                `<h2>Line Break</h2>
+                 <div class="lesson-code">Hello&lt;br&gt;
+World</div>`
+            ],
+
+
+            anchor: [
+                "Anchor Tag",
+                "Learn how to create links.",
+                `<h2>Anchor Tag</h2>
+                 <div class="lesson-code">&lt;a href="https://example.com"&gt;Open Website&lt;/a&gt;</div>`
+            ],
+
+
+            image: [
+                "Image Tag",
+                "Learn how to add images to webpages.",
+                `<h2>Image Tag</h2>
+                 <div class="lesson-code">&lt;img src="image.jpg" alt="My Image"&gt;</div>`
+            ],
+
+
+            pre: [
+                "Pre Tag",
+                "Learn how to display preformatted text.",
+                `<h2>Pre Tag</h2>
+                 <div class="lesson-code">&lt;pre&gt;
+This text
+keeps its
+formatting.
+&lt;/pre&gt;</div>`
+            ],
+
+
+            "inline-elements": [
+                "Inline Elements",
+                "Understand inline HTML elements.",
+                `<h2>Inline Elements</h2>
+                 <p>Inline elements normally occupy only the space required by their content.</p>`
+            ],
+
+
+            "block-elements": [
+                "Block Elements",
+                "Understand block-level HTML elements.",
+                `<h2>Block Elements</h2>
+                 <p>Block elements normally begin on a new line and can take the available width.</p>`
+            ],
+
+
+            lists: [
+                "Lists",
+                "Learn how HTML lists organize information.",
+                `<h2>HTML Lists</h2>
+                 <p>HTML provides ordered, unordered and description lists.</p>`
+            ],
+
+
+            unordered: [
+                "Unordered List",
+                "Create bullet-point lists.",
+                `<h2>Unordered List</h2>
+                 <div class="lesson-code">&lt;ul&gt;
+&lt;li&gt;HTML&lt;/li&gt;
+&lt;li&gt;CSS&lt;/li&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;</div>`
+            ],
+
+
+            ordered: [
+                "Ordered List",
+                "Create numbered lists.",
+                `<h2>Ordered List</h2>
+                 <div class="lesson-code">&lt;ol&gt;
+&lt;li&gt;HTML&lt;/li&gt;
+&lt;li&gt;CSS&lt;/li&gt;
+&lt;/ol&gt;</div>`
+            ],
+
+
+            definition: [
+                "Definition Lists",
+                "Learn description lists.",
+                `<h2>Definition Lists</h2>
+                 <div class="lesson-code">&lt;dl&gt;
+&lt;dt&gt;HTML&lt;/dt&gt;
+&lt;dd&gt;Markup Language&lt;/dd&gt;
+&lt;/dl&gt;</div>`
+            ],
+
+
+            tables: [
+                "Tables",
+                "Learn how to create tables.",
+                `<h2>HTML Tables</h2>
+                 <div class="lesson-code">&lt;table&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Age&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</div>`
+            ],
+
+
+            "more-tables": [
+                "More on Tables",
+                "Learn more table features.",
+                `<h2>More on Tables</h2>
+                 <p>You can use rowspan and colspan to create advanced table layouts.</p>`
+            ],
+
+
+            "form-intro": [
+                "Introduction to HTML Forms",
+                "Understand HTML forms.",
+                `<h2>HTML Forms</h2>
+                 <p>Forms allow users to enter and submit information.</p>
+                 <div class="lesson-code">&lt;form&gt;
+&lt;input type="text"&gt;
+&lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</div>`
+            ],
+
+
+            "input-types": [
+                "Input Types",
+                "Learn different HTML input types.",
+                `<h2>Input Types</h2>
+                 <div class="lesson-code">&lt;input type="text"&gt;
+&lt;input type="email"&gt;
+&lt;input type="password"&gt;
+&lt;input type="number"&gt;</div>`
+            ],
+
+
+            textarea: [
+                "Textarea & Select",
+                "Learn textarea and select controls.",
+                `<h2>Textarea & Select</h2>
+                 <div class="lesson-code">&lt;textarea&gt;&lt;/textarea&gt;
+
+&lt;select&gt;
+&lt;option&gt;India&lt;/option&gt;
+&lt;/select&gt;</div>`
+            ],
+
+
+            "more-forms": [
+                "More on Forms",
+                "Learn additional form concepts.",
+                `<h2>More on Forms</h2>
+                 <p>Forms can contain labels, inputs, buttons, selects and other controls.</p>`
+            ],
+
+
+            meta: [
+                "Meta Tags",
+                "Learn important meta elements.",
+                `<h2>Meta Tags</h2>
+                 <div class="lesson-code">&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport"
+content="width=device-width, initial-scale=1.0"&gt;</div>`
+            ],
+
+
+            "link-script": [
+                "Link & Script Tags",
+                "Learn how CSS and JavaScript are connected.",
+                `<h2>Link & Script Tags</h2>
+                 <div class="lesson-code">&lt;link rel="stylesheet" href="style.css"&gt;
+
+&lt;script src="script.js"&gt;&lt;/script&gt;</div>`
+            ],
+
+
+            "video-audio": [
+                "Video & Audio Tags",
+                "Learn how to add video and audio.",
+                `<h2>Video & Audio</h2>
+                 <div class="lesson-code">&lt;video controls&gt;
+&lt;source src="video.mp4"&gt;
+&lt;/video&gt;
+
+&lt;audio controls&gt;
+&lt;source src="audio.mp3"&gt;
+&lt;/audio&gt;</div>`
+            ],
+
+
+            svg: [
+                "SVG in HTML",
+                "Learn how SVG graphics can be included.",
+                `<h2>SVG in HTML</h2>
+                 <p>SVG allows scalable vector graphics to be displayed directly in HTML.</p>`
+            ],
+
+
+            iframe: [
+                "iFrames in HTML",
+                "Learn how to embed another webpage.",
+                `<h2>iFrames in HTML</h2>
+                 <div class="lesson-code">&lt;iframe
+src="https://example.com"
+&gt;&lt;/iframe&gt;</div>`
+            ],
+
+
+            code: [
+                "Code Tag",
+                "Learn how to represent computer code.",
+                `<h2>Code Tag</h2>
+                 <div class="lesson-code">&lt;code&gt;console.log("Hello");&lt;/code&gt;</div>`
+            ]
+
+        };
+
+
+        /* =====================================
+           ALL LESSON LINKS
+        ===================================== */
+
+        const lessonLinks =
+            document.querySelectorAll(
+                ".lesson-link"
+            );
+
+
+        const pageTitle =
+            document.getElementById(
+                "pageTitle"
+            );
+
+
+        const pageDescription =
+            document.getElementById(
+                "pageDescription"
+            );
+
+
+        const breadcrumb =
+            document.getElementById(
+                "breadcrumb"
+            );
+
+
+        const startBox =
+            document.getElementById(
+                "startBox"
+            );
+
+
+        const dynamicLesson =
+            document.getElementById(
+                "dynamicLesson"
+            );
+
+
+        const lessonContent =
+            document.getElementById(
+                "lessonContent"
+            );
+
+
+        const navigation =
+            document.getElementById(
+                "lessonNavigation"
+            );
+
+
+        /* =====================================
+           LOAD LESSON
+        ===================================== */
+
+        lessonLinks.forEach(
+            function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        const id =
+                            link.dataset.lesson;
+
+
+                        const data =
+                            lessons[id];
+
+
+                        if (!data) return;
+
+
+                        lessonLinks.forEach(
+                            function (item) {
+
+                                item.classList.remove(
+                                    "active"
+                                );
+
+                            }
+                        );
+
+
+                        link.classList.add(
+                            "active"
+                        );
+
+
+                        pageTitle.textContent =
+                            data[0];
+
+
+                        breadcrumb.textContent =
+                            data[0];
+
+
+                        pageDescription.textContent =
+                            data[1];
+
+
+                        lessonContent.innerHTML =
+                            data[2];
+
+
+                        startBox.style.display =
+                            "none";
+
+
+                        dynamicLesson.style.display =
+                            "block";
+
+
+                        navigation.style.display =
+                            "flex";
+
+
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth"
+                        });
+
+
+                        if (
+                            window.innerWidth <= 800
+                        ) {
+
+                            document
+                                .getElementById(
+                                    "htmlSidebar"
+                                )
+                                .classList.remove(
+                                    "open"
+                                );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =====================================
+           MOBILE SIDEBAR
+        ===================================== */
+
+        const mobileButton =
+            document.getElementById(
+                "lessonMenuButton"
+            );
+
+
+        const sidebar =
+            document.getElementById(
+                "htmlSidebar"
+            );
+
+
+        mobileButton.addEventListener(
+            "click",
+            function () {
+
+                sidebar.classList.toggle(
+                    "open"
+                );
+
+            }
+        );
+
+
+    }
+);
+
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const nextBtn = document.getElementById("nextLesson");
+    const prevBtn = document.getElementById("previousLesson");
+
+    const lessonLinks = Array.from(
+        document.querySelectorAll(".lesson-link")
+    );
+
+    function getCurrentIndex() {
+        return lessonLinks.findIndex(link =>
+            link.classList.contains("active")
+        );
+    }
+
+    /* ===============================
+       NEXT BUTTON
+    =============================== */
+
+    nextBtn.addEventListener("click", function () {
+
+        const currentIndex = getCurrentIndex();
+
+        if (
+            currentIndex >= 0 &&
+            currentIndex < lessonLinks.length - 1
+        ) {
+            lessonLinks[currentIndex + 1].click();
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+    });
+
+
+    /* ===============================
+       PREVIOUS BUTTON
+    =============================== */
+
+    prevBtn.addEventListener("click", function () {
+
+        const currentIndex = getCurrentIndex();
+
+        if (currentIndex > 0) {
+            lessonLinks[currentIndex - 1].click();
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+    });
+
+
+    /* ===============================
+       DISABLE BUTTONS AT START / END
+    =============================== */
+
+    function updateButtons() {
+
+        const currentIndex = getCurrentIndex();
+
+        if (currentIndex <= 0) {
+            prevBtn.disabled = true;
+            prevBtn.style.opacity = "0.45";
+            prevBtn.style.cursor = "not-allowed";
+        } else {
+            prevBtn.disabled = false;
+            prevBtn.style.opacity = "1";
+            prevBtn.style.cursor = "pointer";
+        }
+
+
+        if (
+            currentIndex === -1 ||
+            currentIndex >= lessonLinks.length - 1
+        ) {
+            nextBtn.disabled = true;
+            nextBtn.style.opacity = "0.45";
+            nextBtn.style.cursor = "not-allowed";
+        } else {
+            nextBtn.disabled = false;
+            nextBtn.style.opacity = "1";
+            nextBtn.style.cursor = "pointer";
+        }
+
+    }
+
+
+    /* Active lesson change detect */
+
+    lessonLinks.forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            function () {
+
+                setTimeout(
+                    updateButtons,
+                    50
+                );
+
+            }
+        );
+
+    });
+
+
+    updateButtons();
+
+});
+</script>
+
+</body>
+
+</html>

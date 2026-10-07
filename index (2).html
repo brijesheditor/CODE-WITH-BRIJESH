@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="CODE With Brijesh - Learn coding, tutorials and practical development skills.">
+
+    <title>CODE With Brijesh</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <a href="index.html" class="brand">
+            <span>&lt;/&gt;</span>
+            CODE With Brijesh
+        </a>
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="tutorials.html">
+                Tutorials
+            </a>
+
+        </nav>
+
+        <div class="header-right">
+
+            <div class="search">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search">
+
+                <button id="searchBtn">
+                    🔍
+                </button>
+
+            </div>
+
+            <button
+                class="menu-button"
+                id="menuButton">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<aside class="side-menu" id="sideMenu">
+
+    <div class="side-menu-top">
+
+        <strong>
+            CODE With Brijesh
+        </strong>
+
+        <button id="closeMenu">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="side-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="tutorials.html">
+            Tutorials
+        </a>
+
+        <a href="courses.html">
+            Courses
+        </a>
+
+        <a href="notes.html">
+            Notes
+        </a>
+
+        <a href="projects.html">
+            Projects
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+
+    <div class="side-theme">
+
+        <span>
+            Dark Mode
+        </span>
+
+        <label class="toggle">
+
+            <input
+                type="checkbox"
+                id="darkMode">
+
+            <span class="toggle-slider"></span>
+
+        </label>
+
+    </div>
+
+</aside>
+
+
+<div
+    class="menu-overlay"
+    id="menuOverlay">
+</div>
+
+
+<!-- =====================================================
+     SALE / ANNOUNCEMENT BAR
+===================================================== -->
+
+<div class="announcement">
+
+    Learn coding the right way with
+    <strong>CODE With Brijesh</strong>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <p class="hero-small">
+            LEARN CODING THE RIGHT WAY
+        </p>
+
+        <h1>
+            Welcome to
+            <span>CODE With Brijesh</span>
+        </h1>
+
+        <p class="hero-text">
+
+            Confused about where to start coding?
+            We've got you covered. Learn programming
+            step-by-step through tutorials, courses
+            and practical projects.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="courses.html"
+                class="primary-button">
+
+                Explore Courses
+
+            </a>
+
+
+            <a
+                href="tutorials.html"
+                class="secondary-button">
+
+                Start Learning
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
+    <div class="stat">
+
+        <strong>
+            50+
+        </strong>
+
+        <span>
+            Tutorials
+        </span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>
+            20K+
+        </strong>
+
+        <span>
+            Learners
+        </span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>
+            4.9
+        </strong>
+
+        <span>
+            Rating
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     REAL WORLD PRACTICE
+===================================================== -->
+
+<section class="practice section">
+
+    <div class="section-title">
+
+        <p>
+            LEARNING
+        </p>
+
+        <h2>
+            Code Smarter with
+            Real-World Practice
+        </h2>
+
+        <span>
+
+            Don't just watch tutorials.
+            Build projects, practice your skills
+            and understand how developers actually
+            work.
+
+        </span>
+
+    </div>
+
+
+    <div class="practice-grid">
+
+
+        <article class="practice-card">
+
+            <div class="practice-icon">
+                &lt;/&gt;
+            </div>
+
+            <h3>
+                Web Development
+            </h3>
+
+            <p>
+
+                Learn HTML, CSS, JavaScript and
+                modern frameworks to build responsive
+                websites and web applications.
+
+            </p>
+
+            <a href="tutorials.html">
+                Learn More →
+            </a>
+
+        </article>
+
+
+        <article class="practice-card">
+
+            <div class="practice-icon">
+                AI
+            </div>
+
+            <h3>
+                Data Science & AI
+            </h3>
+
+            <p>
+
+                Learn Python, data analysis,
+                artificial intelligence and
+                practical development concepts.
+
+            </p>
+
+            <a href="tutorials.html">
+                Learn More →
+            </a>
+
+        </article>
+
+
+        <article class="practice-card">
+
+            <div class="practice-icon">
+                DS
+            </div>
+
+            <h3>
+                Data Structures & Algorithms
+            </h3>
+
+            <p>
+
+                Understand DSA concepts and improve
+                your problem-solving skills for
+                technical interviews.
+
+            </p>
+
+            <a href="tutorials.html">
+                Learn More →
+            </a>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FUTURE / CAREER
+===================================================== -->
+
+<section class="career section">
+
+    <div class="career-content">
+
+        <p class="section-label">
+            YOUR FUTURE
+        </p>
+
+        <h2>
+            Learn Skills.
+            Build Projects.
+            Build Your Future.
+        </h2>
+
+        <p>
+
+            Our goal is simple — make coding easier
+            to understand and help you turn knowledge
+            into practical projects.
+
+        </p>
+
+        <a
+            href="tutorials.html"
+            class="primary-button">
+
+            Start Learning
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     COMPANIES
+===================================================== -->
+
+<section class="companies section">
+
+    <div class="section-title">
+
+        <p>
+            CAREER
+        </p>
+
+        <h2>
+            Build Skills For Your Future
+        </h2>
+
+        <span>
+            Learn technologies used across the
+            modern software industry.
+        </span>
+
+    </div>
+
+
+    <div class="company-grid">
+
+        <div>Google</div>
+        <div>Microsoft</div>
+        <div>Amazon</div>
+        <div>Meta</div>
+        <div>IBM</div>
+        <div>Adobe</div>
+        <div>Samsung</div>
+        <div>Netflix</div>
+        <div>Oracle</div>
+        <div>Infosys</div>
+        <div>TCS</div>
+        <div>Wipro</div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CORE OFFERINGS
+===================================================== -->
+
+<section class="offerings section">
+
+    <div class="section-title">
+
+        <p>
+            COURSES
+        </p>
+
+        <h2>
+            Master Coding with Our
+            Core Offerings
+        </h2>
+
+    </div>
+
+
+    <div class="offer-grid">
+
+
+        <article>
+
+            <span>
+                01
+            </span>
+
+            <h3>
+                Beginner-Friendly
+            </h3>
+
+            <p>
+
+                Step-by-step learning designed
+                for absolute beginners.
+
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <span>
+                02
+            </span>
+
+            <h3>
+                Advanced Concepts
+            </h3>
+
+            <p>
+
+                Go deeper into programming,
+                frameworks and development.
+
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <span>
+                03
+            </span>
+
+            <h3>
+                Real-World Projects
+            </h3>
+
+            <p>
+
+                Learn by building practical
+                projects for your portfolio.
+
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <span>
+                04
+            </span>
+
+            <h3>
+                Affordable Learning
+            </h3>
+
+            <p>
+
+                Learn useful development skills
+                without expensive resources.
+
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <span>
+                05
+            </span>
+
+            <h3>
+                Comprehensive Resources
+            </h3>
+
+            <p>
+
+                Tutorials, notes, examples and
+                useful developer resources.
+
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <span>
+                06
+            </span>
+
+            <h3>
+                Industry Insights
+            </h3>
+
+            <p>
+
+                Understand modern technologies
+                and current development practices.
+
+            </p>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TESTIMONIALS
+===================================================== -->
+
+<section class="testimonials section">
+
+    <div class="section-title">
+
+        <p>
+            TESTIMONIALS
+        </p>
+
+        <h2>
+            What Learners Say
+        </h2>
+
+    </div>
+
+
+    <div class="testimonial-grid">
+
+
+        <article class="testimonial">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+
+                The tutorials are easy to understand
+                and especially helpful when starting
+                web development.
+
+            </p>
+
+            <strong>
+                Aman Kumar
+            </strong>
+
+            <span>
+                Web Developer
+            </span>
+
+        </article>
+
+
+        <article class="testimonial">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+
+                Practical examples make it easier
+                to understand concepts and actually
+                build projects.
+
+            </p>
+
+            <strong>
+                Rahul Singh
+            </strong>
+
+            <span>
+                Student
+            </span>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="journey">
+
+    <div>
+
+        <p>
+            START TODAY
+        </p>
+
+        <h2>
+            Start Your Coding Journey
+        </h2>
+
+        <span>
+
+            Learn coding step-by-step.
+            Build projects.
+            Keep improving.
+
+        </span>
+
+
+        <a
+            href="tutorials.html"
+            class="journey-button">
+
+            Start Now →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+
+        <div class="footer-about">
+
+            <a
+                href="index.html"
+                class="footer-logo">
+
+                &lt;/&gt;
+                CODE With Brijesh
+
+            </a>
+
+            <p>
+
+                Learn coding through tutorials,
+                courses, practical projects and
+                developer resources.
+
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Main
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="projects.html">
+                Projects
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Learn
+            </h3>
+
+            <a href="courses.html">
+                Courses
+            </a>
+
+            <a href="tutorials.html">
+                Tutorials
+            </a>
+
+            <a href="notes.html">
+                Notes
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Resources
+            </h3>
+
+            <a href="#">
+                HTML
+            </a>
+
+            <a href="#">
+                CSS
+            </a>
+
+            <a href="#">
+                JavaScript
+            </a>
+
+            <a href="#">
+                Python
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Social
+            </h3>
+
+            <a href="#">
+                YouTube
+            </a>
+
+            <a href="#">
+                GitHub
+            </a>
+
+            <a href="#">
+                Instagram
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 CODE With Brijesh.
+            All rights reserved.
+        </span>
+
+        <span>
+            Made with ❤️ and ☕ in India
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

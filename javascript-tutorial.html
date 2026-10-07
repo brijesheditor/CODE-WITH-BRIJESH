@@ -1,0 +1,3359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="CODE With Brijesh JavaScript Tutorial - Learn JavaScript from beginner to advanced.">
+
+<title>JavaScript Tutorial - CODE With Brijesh</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#fff;
+    color:#202124;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.top-header{
+    height:64px;
+    border-bottom:1px solid #e5e7eb;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 22px;
+    background:#fff;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    text-decoration:none;
+    color:#222;
+    font-size:19px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#16a34a;
+}
+
+.top-nav{
+    display:flex;
+    gap:28px;
+}
+
+.top-nav a{
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+}
+
+.top-right{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.search-box{
+    width:205px;
+    height:36px;
+    border:1px solid #e5e7eb;
+    border-radius:6px;
+    display:flex;
+    align-items:center;
+    padding:0 10px;
+}
+
+.search-box input{
+    width:100%;
+    border:0;
+    outline:0;
+    font-size:13px;
+    background:transparent;
+}
+
+.menu-btn{
+    border:0;
+    background:transparent;
+    font-size:23px;
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page{
+    display:flex;
+    min-height:calc(100vh - 64px);
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar{
+    width:260px;
+    flex-shrink:0;
+    background:#fafafa;
+    border-right:1px solid #e5e7eb;
+    height:calc(100vh - 64px);
+    overflow-y:auto;
+    position:sticky;
+    top:64px;
+}
+
+.sidebar-title{
+    font-size:18px;
+    font-weight:700;
+    padding:25px 20px;
+    position:sticky;
+    top:0;
+    background:#fafafa;
+    z-index:2;
+}
+
+.sidebar-section{
+    width:100%;
+}
+
+.section-toggle{
+    width:100%;
+    border:0;
+    background:transparent;
+    padding:11px 14px 8px 11px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    text-align:left;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:600;
+    color:#222;
+}
+
+.arrow{
+    font-size:17px;
+    transition:.2s;
+}
+
+.sidebar-section.closed .arrow{
+    transform:rotate(-90deg);
+}
+
+.lesson-list{
+    display:block;
+    padding-bottom:8px;
+}
+
+.sidebar-section.closed .lesson-list{
+    display:none;
+}
+
+.lesson-link{
+    display:block;
+    padding:7px 18px 7px 22px;
+    text-decoration:none;
+    color:#555;
+    font-size:12.5px;
+    line-height:1.4;
+    cursor:pointer;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.lesson-link:hover{
+    background:#f1f1f1;
+    color:#111;
+}
+
+.lesson-link.active{
+    background:#fff3c4;
+    color:#8a6500;
+    border-left:3px solid #eab308;
+    font-weight:600;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main{
+    flex:1;
+    min-width:0;
+}
+
+
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
+.breadcrumb{
+    height:52px;
+    border-bottom:1px solid #eee;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:0 25px;
+    color:#777;
+    font-size:13px;
+}
+
+.breadcrumb span{
+    color:#aaa;
+}
+
+#breadcrumbLesson{
+    color:#555;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.content{
+    max-width:1000px;
+    margin:auto;
+    padding:28px 35px 80px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.tutorial-hero{
+    min-height:260px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px;
+    margin-bottom:32px;
+    position:relative;
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(255,255,255,.95),
+        rgba(255,255,255,.25) 50%,
+        transparent 72%
+    ),
+    #fff8cc;
+}
+
+.tutorial-hero::before{
+    content:"JS";
+    position:absolute;
+    font-size:190px;
+    font-weight:900;
+    letter-spacing:-12px;
+    color:rgba(210,170,0,.13);
+}
+
+.hero-inner{
+    position:relative;
+    z-index:1;
+}
+
+.hero-inner h1{
+    font-size:38px;
+    margin-bottom:18px;
+    color:#111;
+}
+
+.hero-inner p{
+    max-width:680px;
+    margin:auto;
+    font-size:17px;
+    line-height:1.7;
+    color:#687078;
+}
+
+
+/* =====================================================
+   GET STARTED
+===================================================== */
+
+.get-started{
+    border:1px solid #eee;
+    border-radius:10px;
+    padding:28px;
+    margin-bottom:35px;
+    box-shadow:0 3px 18px rgba(0,0,0,.04);
+}
+
+.get-started h2{
+    font-size:21px;
+    margin-bottom:14px;
+}
+
+.get-started p{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:12px;
+}
+
+.get-started ol{
+    padding-left:23px;
+    color:#666;
+    line-height:2;
+}
+
+
+/* =====================================================
+   LESSON
+===================================================== */
+
+.lesson-content{
+    display:none;
+}
+
+.lesson-content.active{
+    display:block;
+}
+
+.lesson-title{
+    font-size:34px;
+    margin-bottom:15px;
+    color:#111;
+}
+
+.lesson-intro{
+    color:#666;
+    font-size:16px;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.lesson-content h2{
+    font-size:25px;
+    margin:32px 0 14px;
+    color:#222;
+}
+
+.lesson-content h3{
+    font-size:20px;
+    margin:25px 0 12px;
+}
+
+.lesson-content p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.lesson-content ul,
+.lesson-content ol{
+    margin:12px 0 20px 25px;
+    color:#555;
+    line-height:1.9;
+}
+
+
+/* =====================================================
+   CODE
+===================================================== */
+
+.code-box{
+    background:#111827;
+    border-radius:8px;
+    margin:18px 0 25px;
+    overflow:hidden;
+}
+
+.code-title{
+    background:#1f2937;
+    color:#cbd5e1;
+    padding:9px 14px;
+    font-size:12px;
+}
+
+pre{
+    margin:0;
+    padding:18px;
+    overflow-x:auto;
+    color:#e5e7eb;
+    font-size:14px;
+    line-height:1.7;
+}
+
+code{
+    font-family:Consolas,Monaco,monospace;
+}
+
+.note{
+    background:#f0fdf4;
+    border-left:4px solid #22c55e;
+    padding:15px 18px;
+    margin:20px 0;
+    color:#365314;
+    line-height:1.7;
+    border-radius:4px;
+}
+
+.warning{
+    background:#fff7ed;
+    border-left:4px solid #f97316;
+    padding:15px 18px;
+    margin:20px 0;
+    color:#7c2d12;
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   OUTPUT BOX
+===================================================== */
+
+.output-box{
+    border:1px solid #ddd;
+    border-radius:8px;
+    overflow:hidden;
+    margin:20px 0;
+}
+
+.output-title{
+    background:#f5f5f5;
+    padding:10px 15px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.output-content{
+    padding:22px;
+    min-height:70px;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.lesson-navigation{
+    margin-top:55px;
+    padding-top:25px;
+    border-top:1px solid #eee;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.nav-btn{
+    min-width:130px;
+    border:1px solid #ddd;
+    background:#fff;
+    padding:12px 18px;
+    border-radius:7px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.nav-btn:hover:not(:disabled){
+    background:#f5f5f5;
+}
+
+.nav-btn:disabled{
+    opacity:.35;
+    cursor:not-allowed;
+}
+
+
+/* =====================================================
+   MOBILE SIDEBAR
+===================================================== */
+
+.mobile-sidebar-btn{
+    display:none;
+    position:fixed;
+    left:15px;
+    bottom:20px;
+    width:48px;
+    height:48px;
+    border:0;
+    border-radius:50%;
+    background:#eab308;
+    color:#111;
+    font-size:22px;
+    z-index:2000;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
+
+.sidebar-overlay{
+    display:none;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark{
+    background:#0f1115;
+    color:#eee;
+}
+
+body.dark .top-header{
+    background:#111318;
+    border-color:#292d35;
+}
+
+body.dark .logo,
+body.dark .top-nav a,
+body.dark .menu-btn{
+    color:#eee;
+}
+
+body.dark .search-box{
+    background:#191c22;
+    border-color:#30343d;
+}
+
+body.dark .search-box input{
+    color:#eee;
+}
+
+body.dark .sidebar{
+    background:#12151a;
+    border-color:#292d35;
+}
+
+body.dark .sidebar-title,
+body.dark .section-toggle{
+    color:#eee;
+    background:#12151a;
+}
+
+body.dark .lesson-link{
+    color:#aeb4bf;
+}
+
+body.dark .lesson-link:hover{
+    background:#1d2128;
+}
+
+body.dark .lesson-link.active{
+    background:#403719;
+    color:#facc15;
+}
+
+body.dark .breadcrumb{
+    border-color:#292d35;
+}
+
+body.dark #breadcrumbLesson{
+    color:#ccc;
+}
+
+body.dark .tutorial-hero{
+    background:#332f18;
+}
+
+body.dark .hero-inner h1{
+    color:#fff;
+}
+
+body.dark .hero-inner p{
+    color:#aab3bd;
+}
+
+body.dark .get-started{
+    background:#15181d;
+    border-color:#292d35;
+}
+
+body.dark .get-started h2,
+body.dark .lesson-title,
+body.dark .lesson-content h2,
+body.dark .lesson-content h3{
+    color:#fff;
+}
+
+body.dark .get-started p,
+body.dark .get-started ol,
+body.dark .lesson-content p,
+body.dark .lesson-content ul,
+body.dark .lesson-content ol{
+    color:#b8bec8;
+}
+
+body.dark .lesson-navigation{
+    border-color:#292d35;
+}
+
+body.dark .nav-btn{
+    background:#171a20;
+    color:#eee;
+    border-color:#333842;
+}
+
+body.dark .output-box{
+    border-color:#333842;
+}
+
+body.dark .output-title{
+    background:#1b1e24;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:850px){
+
+    .top-nav{
+        display:none;
+    }
+
+    .search-box{
+        width:150px;
+    }
+
+    .sidebar{
+        position:fixed;
+        left:-280px;
+        top:64px;
+        width:270px;
+        height:calc(100vh - 64px);
+        z-index:1500;
+        transition:left .25s ease;
+        box-shadow:5px 0 20px rgba(0,0,0,.12);
+    }
+
+    .sidebar.open{
+        left:0;
+    }
+
+    .sidebar-overlay{
+        position:fixed;
+        inset:64px 0 0;
+        background:rgba(0,0,0,.4);
+        z-index:1400;
+    }
+
+    .sidebar-overlay.show{
+        display:block;
+    }
+
+    .mobile-sidebar-btn{
+        display:block;
+    }
+
+    .content{
+        padding:22px 18px 80px;
+    }
+
+    .tutorial-hero{
+        min-height:230px;
+        padding:25px 18px;
+    }
+
+    .hero-inner h1{
+        font-size:31px;
+    }
+
+    .hero-inner p{
+        font-size:15px;
+    }
+}
+
+@media(max-width:550px){
+
+    .top-header{
+        padding:0 14px;
+    }
+
+    .logo{
+        font-size:16px;
+    }
+
+    .search-box{
+        width:105px;
+    }
+
+    .top-right{
+        gap:8px;
+    }
+
+    .breadcrumb{
+        padding:0 15px;
+        font-size:11px;
+    }
+
+    .lesson-title{
+        font-size:28px;
+    }
+
+    .get-started{
+        padding:20px;
+    }
+
+    .lesson-navigation{
+        flex-direction:column;
+    }
+
+    .nav-btn{
+        width:100%;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="top-header">
+
+    <a href="index.html" class="logo">
+        &lt;/&gt; <span>CODE</span> With Brijesh
+    </a>
+
+    <nav class="top-nav">
+        <a href="index.html">Start Learning</a>
+        <a href="tutorials.html">Tutorials</a>
+    </nav>
+
+    <div class="top-right">
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search..."
+            >
+        </div>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     PAGE
+===================================================== -->
+
+<div class="page">
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-title">
+        JavaScript Tutorial
+    </div>
+
+
+    <!-- =================================================
+         GETTING STARTED
+    ================================================== -->
+
+    <div class="sidebar-section">
+
+        <button class="section-toggle">
+            <span>Getting Started</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="lesson-list">
+
+            <a class="lesson-link active"
+               data-lesson="introduction">
+                Introduction
+            </a>
+
+            <a class="lesson-link"
+               data-lesson="execution">
+                Execution
+            </a>
+
+            <a class="lesson-link"
+               data-lesson="node-installation">
+                Node.js Installation
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         JAVASCRIPT FUNDAMENTALS
+    ================================================== -->
+
+    <div class="sidebar-section">
+
+        <button class="section-toggle">
+            <span>JavaScript Fundamentals</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="lesson-list">
+
+            <a class="lesson-link" data-lesson="variables">
+                Variables in JavaScript
+            </a>
+
+            <a class="lesson-link" data-lesson="variable-naming">
+                Variable Naming Rules
+            </a>
+
+            <a class="lesson-link" data-lesson="var-let-const">
+                var vs let vs const
+            </a>
+
+            <a class="lesson-link" data-lesson="data-types">
+                Data Types: Primitives and Objects
+            </a>
+
+            <a class="lesson-link" data-lesson="type-conversion">
+                Type Conversion & Coercion
+            </a>
+
+            <a class="lesson-link" data-lesson="operators">
+                Operators and Expressions
+            </a>
+
+            <a class="lesson-link" data-lesson="conditional">
+                Conditional Statements
+            </a>
+
+            <a class="lesson-link" data-lesson="if-else">
+                If else ladder
+            </a>
+
+            <a class="lesson-link" data-lesson="ternary">
+                Ternary Operator
+            </a>
+
+            <a class="lesson-link" data-lesson="switch">
+                Switch case
+            </a>
+
+            <a class="lesson-link" data-lesson="loops">
+                Loops in JS
+            </a>
+
+            <a class="lesson-link" data-lesson="while-loop">
+                While Loop
+            </a>
+
+            <a class="lesson-link" data-lesson="functions">
+                Functions
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         DATA STRUCTURES
+    ================================================== -->
+
+    <div class="sidebar-section">
+
+        <button class="section-toggle">
+            <span>Working with Data Structures</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="lesson-list">
+
+            <a class="lesson-link" data-lesson="strings">
+                Strings and String Methods
+            </a>
+
+            <a class="lesson-link" data-lesson="template">
+                Template Literals
+            </a>
+
+            <a class="lesson-link" data-lesson="arrays">
+                Arrays and Array Methods
+            </a>
+
+            <a class="lesson-link" data-lesson="array-loops">
+                Loops with Arrays
+            </a>
+
+            <a class="lesson-link" data-lesson="map-filter-reduce">
+                Map, Filter and Reduce
+            </a>
+
+            <a class="lesson-link" data-lesson="objects">
+                Objects in JS
+            </a>
+
+            <a class="lesson-link" data-lesson="destructuring">
+                Destructuring: Arrays & Objects
+            </a>
+
+            <a class="lesson-link" data-lesson="json">
+                Working with JSON
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         JAVASCRIPT OBJECTS
+    ================================================== -->
+
+    <div class="sidebar-section">
+
+        <button class="section-toggle">
+            <span>JavaScript Objects</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="lesson-list">
+
+            <a class="lesson-link" data-lesson="date">
+                Date
+            </a>
+
+            <a class="lesson-link" data-lesson="math">
+                Math
+            </a>
+
+            <a class="lesson-link" data-lesson="number">
+                Number
+            </a>
+
+            <a class="lesson-link" data-lesson="boolean">
+                Boolean
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         DOM & BOM
+    ================================================== -->
+
+    <div class="sidebar-section">
+
+        <button class="section-toggle">
+            <span>DOM & BOM</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="lesson-list">
+
+            <a class="lesson-link" data-lesson="window">
+                Window Object
+            </a>
+
+            <a class="lesson-link" data-lesson="history">
+                History Object
+            </a>
+
+            <a class="lesson-link" data-lesson="navigator">
+                Navigator Object
+            </a>
+
+            <a class="lesson-link" data-lesson="screen">
+                Screen Object
+            </a>
+
+            <a class="lesson-link" data-lesson="document">
+                Document Object
+            </a>
+
+            <a class="lesson-link" data-lesson="get-element">
+                getElementById
+            </a>
+
+            <a class="lesson-link" data-lesson="get-class">
+                getElementsByClassName
+            </a>
+
+            <a class="lesson-link" data-lesson="get-name">
+                getElementsByName
+            </a>
+
+            <a class="lesson-link" data-lesson="get-tag">
+                getElementsByTagName
+            </a>
+
+            <a class="lesson-link" data-lesson="inner-html">
+                innerHTML
+            </a>
+
+            <a class="lesson-link" data-lesson="outer-html">
+                outerHTML
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         OOPS
+    ================================================== -->
+
+    <div class="sidebar-section">
+
+        <button class="section-toggle">
+            <span>OOPs</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="lesson-list">
+
+            <a class="lesson-link" data-lesson="class">
+                Class
+            </a>
+
+            <a class="lesson-link" data-lesson="oop-objects">
+                Objects
+            </a>
+
+            <a class="lesson-link" data-lesson="constructor">
+                Constructor
+            </a>
+
+            <a class="lesson-link" data-lesson="static">
+                Static Method
+            </a>
+
+            <a class="lesson-link" data-lesson="encapsulation">
+                Encapsulation
+            </a>
+
+            <a class="lesson-link" data-lesson="inheritance">
+                Inheritance
+            </a>
+
+            <a class="lesson-link" data-lesson="polymorphism">
+                Polymorphism
+            </a>
+
+            <a class="lesson-link" data-lesson="abstraction">
+                Abstraction
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         ASYNC JAVASCRIPT
+    ================================================== -->
+
+    <div class="sidebar-section">
+
+        <button class="section-toggle">
+            <span>Asynchronous JavaScript</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="lesson-list">
+
+            <a class="lesson-link" data-lesson="callbacks">
+                Callbacks
+            </a>
+
+            <a class="lesson-link" data-lesson="promises">
+                Promises
+            </a>
+
+            <a class="lesson-link" data-lesson="async-await">
+                Async / Await
+            </a>
+
+            <a class="lesson-link" data-lesson="fetch">
+                Fetch API
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         ERROR HANDLING
+    ================================================== -->
+
+    <div class="sidebar-section">
+
+        <button class="section-toggle">
+            <span>Error Handling</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="lesson-list">
+
+            <a class="lesson-link" data-lesson="try-catch">
+                Try and Catch
+            </a>
+
+            <a class="lesson-link" data-lesson="throw">
+                Throw Statement
+            </a>
+
+            <a class="lesson-link" data-lesson="errors">
+                JavaScript Errors
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         MODULES
+    ================================================== -->
+
+    <div class="sidebar-section">
+
+        <button class="section-toggle">
+            <span>JavaScript Modules</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="lesson-list">
+
+            <a class="lesson-link" data-lesson="modules">
+                Introduction to Modules
+            </a>
+
+            <a class="lesson-link" data-lesson="export">
+                Export
+            </a>
+
+            <a class="lesson-link" data-lesson="import">
+                Import
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         JAVASCRIPT FAQ
+    ================================================== -->
+
+    <div class="sidebar-section">
+
+        <button class="section-toggle">
+            <span>JavaScript FAQs</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="lesson-list">
+
+            <a class="lesson-link" data-lesson="questions">
+                Questions
+            </a>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="main">
+
+
+    <!-- BREADCRUMB -->
+
+    <div class="breadcrumb">
+
+        <span>▣</span>
+
+        <span>Tutorials</span>
+
+        <span>›</span>
+
+        <span>JavaScript Tutorial</span>
+
+        <span>›</span>
+
+        <span id="breadcrumbLesson">
+            Introduction
+        </span>
+
+    </div>
+
+
+    <div class="content">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="tutorial-hero">
+
+            <div class="hero-inner">
+
+                <h1>
+                    JavaScript Tutorial
+                </h1>
+
+                <p>
+                    JavaScript is a versatile programming language
+                    used to create interactive and dynamic websites.
+                    Learn JavaScript step-by-step with practical examples.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             GET STARTED
+        ================================================== -->
+
+        <section class="get-started" id="getStarted">
+
+            <h2>
+                Get Started
+            </h2>
+
+            <p>
+                Welcome to the JavaScript Tutorial series!
+                To begin learning:
+            </p>
+
+            <ol>
+                <li>Select a lesson from the sidebar on the left.</li>
+                <li>Work through the lessons in order.</li>
+                <li>Practice every example yourself.</li>
+            </ol>
+
+        </section>
+
+
+        <!-- =================================================
+             LESSON CONTAINER
+        ================================================== -->
+
+        <div id="lessonContainer">
+
+
+            <!-- =================================================
+                 INTRODUCTION
+            ================================================== -->
+
+            <article
+                class="lesson-content active"
+                data-content="introduction">
+
+                <h1 class="lesson-title">
+                    Introduction to JavaScript
+                </h1>
+
+                <p class="lesson-intro">
+                    JavaScript is a programming language mainly used
+                    to make websites interactive and dynamic.
+                </p>
+
+                <h2>
+                    What is JavaScript?
+                </h2>
+
+                <p>
+                    HTML provides the structure of a webpage,
+                    CSS controls its appearance, and JavaScript
+                    adds behaviour and interaction.
+                </p>
+
+                <div class="code-box">
+
+                    <div class="code-title">
+                        JavaScript Example
+                    </div>
+
+<pre><code>console.log("Hello, Brijesh!");</code></pre>
+
+                </div>
+
+                <h2>
+                    What can JavaScript do?
+                </h2>
+
+                <ul>
+                    <li>Change HTML content.</li>
+                    <li>Change CSS styles.</li>
+                    <li>Respond to user actions.</li>
+                    <li>Validate forms.</li>
+                    <li>Create animations.</li>
+                    <li>Work with APIs and server data.</li>
+                    <li>Build complete web applications.</li>
+                </ul>
+
+                <h2>
+                    JavaScript with HTML
+                </h2>
+
+                <div class="code-box">
+
+                    <div class="code-title">
+                        index.html
+                    </div>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+
+&lt;body&gt;
+
+&lt;h1 id="title"&gt;Hello&lt;/h1&gt;
+
+&lt;button onclick="changeText()"&gt;
+    Click Me
+&lt;/button&gt;
+
+&lt;script&gt;
+
+function changeText(){
+
+    document.getElementById("title")
+        .textContent = "Welcome to JavaScript!";
+
+}
+
+&lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+                </div>
+
+                <h2>
+                    Why learn JavaScript?
+                </h2>
+
+                <p>
+                    JavaScript is one of the most important technologies
+                    for modern web development. It can be used in the
+                    browser as well as on servers through environments
+                    such as Node.js.
+                </p>
+
+                <div class="note">
+                    <strong>Remember:</strong>
+                    HTML = Structure,
+                    CSS = Design,
+                    JavaScript = Behaviour & Interaction.
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 EXECUTION
+            ================================================== -->
+
+            <article class="lesson-content"
+                     data-content="execution">
+
+                <h1 class="lesson-title">
+                    JavaScript Execution
+                </h1>
+
+                <p class="lesson-intro">
+                    JavaScript code is executed by a JavaScript engine.
+                    Modern browsers include their own JavaScript engine.
+                </p>
+
+                <h2>
+                    Browser Execution
+                </h2>
+
+                <div class="code-box">
+
+<pre><code>&lt;script&gt;
+
+console.log("JavaScript is running");
+
+&lt;/script&gt;</code></pre>
+
+                </div>
+
+                <p>
+                    The browser reads the script and passes the
+                    JavaScript code to its JavaScript engine.
+                </p>
+
+                <h2>
+                    External JavaScript
+                </h2>
+
+                <div class="code-box">
+
+<pre><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 NODE INSTALLATION
+            ================================================== -->
+
+            <article class="lesson-content"
+                     data-content="node-installation">
+
+                <h1 class="lesson-title">
+                    Node.js Installation
+                </h1>
+
+                <p class="lesson-intro">
+                    Node.js allows JavaScript to run outside the browser.
+                </p>
+
+                <h2>
+                    Check Node.js
+                </h2>
+
+                <div class="code-box">
+
+<pre><code>node --version</code></pre>
+
+                </div>
+
+                <p>
+                    If Node.js is installed correctly, the command
+                    will display its installed version.
+                </p>
+
+                <div class="note">
+                    Node.js is useful when you want to build
+                    JavaScript applications on the server.
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 VARIABLES
+            ================================================== -->
+
+            <article class="lesson-content"
+                     data-content="variables">
+
+                <h1 class="lesson-title">
+                    Variables in JavaScript
+                </h1>
+
+                <p class="lesson-intro">
+                    Variables are containers used to store data.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>let name = "Brijesh";
+
+let age = 20;
+
+console.log(name);
+console.log(age);</code></pre>
+
+                </div>
+
+                <h2>
+                    Creating Variables
+                </h2>
+
+                <p>
+                    JavaScript commonly uses
+                    <strong>let</strong>,
+                    <strong>const</strong> and
+                    older code may use <strong>var</strong>.
+                </p>
+
+            </article>
+
+
+            <!-- VARIABLE NAMING -->
+
+            <article class="lesson-content"
+                     data-content="variable-naming">
+
+                <h1 class="lesson-title">
+                    Variable Naming Rules
+                </h1>
+
+                <p class="lesson-intro">
+                    Variable names should follow JavaScript naming rules.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>let userName = "Brijesh";
+
+let user_age = 20;
+
+let $price = 100;</code></pre>
+
+                </div>
+
+                <ul>
+                    <li>Names are case-sensitive.</li>
+                    <li>Spaces are not allowed.</li>
+                    <li>A name should not start with a number.</li>
+                    <li>Use meaningful names.</li>
+                </ul>
+
+            </article>
+
+
+            <!-- VAR LET CONST -->
+
+            <article class="lesson-content"
+                     data-content="var-let-const">
+
+                <h1 class="lesson-title">
+                    var vs let vs const
+                </h1>
+
+                <p class="lesson-intro">
+                    JavaScript provides different ways to declare variables.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>var oldWay = 10;
+
+let score = 50;
+
+const country = "India";</code></pre>
+
+                </div>
+
+                <p>
+                    For modern JavaScript, prefer
+                    <strong>let</strong> and <strong>const</strong>
+                    depending on whether the value needs reassignment.
+                </p>
+
+            </article>
+
+
+            <!-- DATA TYPES -->
+
+            <article class="lesson-content"
+                     data-content="data-types">
+
+                <h1 class="lesson-title">
+                    Data Types: Primitives and Objects
+                </h1>
+
+                <p class="lesson-intro">
+                    JavaScript values have different data types.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>let name = "Brijesh";     // String
+
+let age = 20;             // Number
+
+let active = true;        // Boolean
+
+let value = null;         // Null
+
+let user;                 // Undefined
+
+let person = {
+    name: "Brijesh"
+};</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- TYPE CONVERSION -->
+
+            <article class="lesson-content"
+                     data-content="type-conversion">
+
+                <h1 class="lesson-title">
+                    Type Conversion & Coercion
+                </h1>
+
+                <p class="lesson-intro">
+                    JavaScript can convert values from one data type
+                    to another.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>let number = "25";
+
+let result = Number(number);
+
+console.log(result);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- OPERATORS -->
+
+            <article class="lesson-content"
+                     data-content="operators">
+
+                <h1 class="lesson-title">
+                    Operators and Expressions
+                </h1>
+
+                <p class="lesson-intro">
+                    Operators perform operations on values.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>let a = 10;
+let b = 5;
+
+console.log(a + b);
+console.log(a - b);
+console.log(a * b);
+console.log(a / b);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- CONDITIONAL -->
+
+            <article class="lesson-content"
+                     data-content="conditional">
+
+                <h1 class="lesson-title">
+                    Conditional Statements
+                </h1>
+
+                <p class="lesson-intro">
+                    Conditional statements allow code to make decisions.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>let age = 20;
+
+if(age >= 18){
+
+    console.log("Adult");
+
+}</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- IF ELSE -->
+
+            <article class="lesson-content"
+                     data-content="if-else">
+
+                <h1 class="lesson-title">
+                    If Else Ladder
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>let marks = 75;
+
+if(marks >= 90){
+
+    console.log("Excellent");
+
+}else if(marks >= 60){
+
+    console.log("Good");
+
+}else{
+
+    console.log("Keep Practicing");
+
+}</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- TERNARY -->
+
+            <article class="lesson-content"
+                     data-content="ternary">
+
+                <h1 class="lesson-title">
+                    Ternary Operator
+                </h1>
+
+                <p class="lesson-intro">
+                    The ternary operator provides a compact way
+                    to choose between two values.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>let age = 20;
+
+let result =
+age >= 18 ? "Adult" : "Minor";
+
+console.log(result);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- SWITCH -->
+
+            <article class="lesson-content"
+                     data-content="switch">
+
+                <h1 class="lesson-title">
+                    Switch Case
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>let day = 2;
+
+switch(day){
+
+    case 1:
+        console.log("Monday");
+        break;
+
+    case 2:
+        console.log("Tuesday");
+        break;
+
+    default:
+        console.log("Unknown");
+
+}</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- LOOPS -->
+
+            <article class="lesson-content"
+                     data-content="loops">
+
+                <h1 class="lesson-title">
+                    Loops in JavaScript
+                </h1>
+
+                <p class="lesson-intro">
+                    Loops repeat code while a condition is satisfied.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>for(let i = 1; i <= 5; i++){
+
+    console.log(i);
+
+}</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- WHILE -->
+
+            <article class="lesson-content"
+                     data-content="while-loop">
+
+                <h1 class="lesson-title">
+                    While Loop
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>let i = 1;
+
+while(i <= 5){
+
+    console.log(i);
+
+    i++;
+
+}</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- FUNCTIONS -->
+
+            <article class="lesson-content"
+                     data-content="functions">
+
+                <h1 class="lesson-title">
+                    Functions
+                </h1>
+
+                <p class="lesson-intro">
+                    Functions are reusable blocks of code.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>function greet(name){
+
+    return "Hello " + name;
+
+}
+
+console.log(
+    greet("Brijesh")
+);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- STRINGS -->
+
+            <article class="lesson-content"
+                     data-content="strings">
+
+                <h1 class="lesson-title">
+                    Strings and String Methods
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>let text = "JavaScript";
+
+console.log(text.length);
+
+console.log(text.toUpperCase());
+
+console.log(text.toLowerCase());
+
+console.log(text.includes("Script"));</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- TEMPLATE -->
+
+            <article class="lesson-content"
+                     data-content="template">
+
+                <h1 class="lesson-title">
+                    Template Literals
+                </h1>
+
+                <p class="lesson-intro">
+                    Template literals make it easy to combine
+                    variables with strings.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>let name = "Brijesh";
+
+let message = `Hello ${name}`;
+
+console.log(message);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARRAYS -->
+
+            <article class="lesson-content"
+                     data-content="arrays">
+
+                <h1 class="lesson-title">
+                    Arrays and Array Methods
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>let fruits = [
+    "Apple",
+    "Mango",
+    "Banana"
+];
+
+fruits.push("Orange");
+
+console.log(fruits);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARRAY LOOPS -->
+
+            <article class="lesson-content"
+                     data-content="array-loops">
+
+                <h1 class="lesson-title">
+                    Loops with Arrays
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>let fruits = [
+    "Apple",
+    "Mango",
+    "Banana"
+];
+
+for(let fruit of fruits){
+
+    console.log(fruit);
+
+}</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- MAP FILTER REDUCE -->
+
+            <article class="lesson-content"
+                     data-content="map-filter-reduce">
+
+                <h1 class="lesson-title">
+                    Map, Filter and Reduce
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>let numbers = [1,2,3,4,5];
+
+let doubled =
+numbers.map(n => n * 2);
+
+let even =
+numbers.filter(n => n % 2 === 0);
+
+let total =
+numbers.reduce((a,b) => a + b, 0);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- OBJECTS -->
+
+            <article class="lesson-content"
+                     data-content="objects">
+
+                <h1 class="lesson-title">
+                    Objects in JavaScript
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>const user = {
+
+    name: "Brijesh",
+    age: 20,
+    skill: "JavaScript"
+
+};
+
+console.log(user.name);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- DESTRUCTURING -->
+
+            <article class="lesson-content"
+                     data-content="destructuring">
+
+                <h1 class="lesson-title">
+                    Destructuring Arrays & Objects
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>const user = {
+    name: "Brijesh",
+    age: 20
+};
+
+const {name, age} = user;
+
+console.log(name);
+console.log(age);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- JSON -->
+
+            <article class="lesson-content"
+                     data-content="json">
+
+                <h1 class="lesson-title">
+                    Working with JSON
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>const user = {
+    name: "Brijesh",
+    age: 20
+};
+
+const json =
+JSON.stringify(user);
+
+console.log(json);
+
+const object =
+JSON.parse(json);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- DATE -->
+
+            <article class="lesson-content"
+                     data-content="date">
+
+                <h1 class="lesson-title">
+                    JavaScript Date
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>const today = new Date();
+
+console.log(today);
+
+console.log(today.getFullYear());</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- MATH -->
+
+            <article class="lesson-content"
+                     data-content="math">
+
+                <h1 class="lesson-title">
+                    JavaScript Math
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>console.log(Math.round(4.6));
+
+console.log(Math.floor(4.9));
+
+console.log(Math.ceil(4.1));
+
+console.log(Math.max(10,20,30));</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- NUMBER -->
+
+            <article class="lesson-content"
+                     data-content="number">
+
+                <h1 class="lesson-title">
+                    JavaScript Number
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>let value = 25;
+
+console.log(
+    Number.isInteger(value)
+);
+
+console.log(
+    value.toString()
+);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- BOOLEAN -->
+
+            <article class="lesson-content"
+                     data-content="boolean">
+
+                <h1 class="lesson-title">
+                    Boolean
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>let isLoggedIn = true;
+
+console.log(isLoggedIn);
+
+let result = Boolean(1);
+
+console.log(result);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- WINDOW -->
+
+            <article class="lesson-content"
+                     data-content="window">
+
+                <h1 class="lesson-title">
+                    Window Object
+                </h1>
+
+                <p class="lesson-intro">
+                    The window object represents the browser window.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>console.log(window.innerWidth);
+
+console.log(window.innerHeight);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- HISTORY -->
+
+            <article class="lesson-content"
+                     data-content="history">
+
+                <h1 class="lesson-title">
+                    History Object
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>console.log(history.length);
+
+// history.back();</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- NAVIGATOR -->
+
+            <article class="lesson-content"
+                     data-content="navigator">
+
+                <h1 class="lesson-title">
+                    Navigator Object
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>console.log(
+    navigator.userAgent
+);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- SCREEN -->
+
+            <article class="lesson-content"
+                     data-content="screen">
+
+                <h1 class="lesson-title">
+                    Screen Object
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>console.log(screen.width);
+
+console.log(screen.height);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- DOCUMENT -->
+
+            <article class="lesson-content"
+                     data-content="document">
+
+                <h1 class="lesson-title">
+                    Document Object
+                </h1>
+
+                <p class="lesson-intro">
+                    The document object represents the webpage loaded
+                    inside the browser.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>console.log(document.title);
+
+console.log(document.body);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- GET ELEMENT -->
+
+            <article class="lesson-content"
+                     data-content="get-element">
+
+                <h1 class="lesson-title">
+                    getElementById
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>const title =
+document.getElementById("title");
+
+title.textContent =
+"Hello JavaScript";</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- GET CLASS -->
+
+            <article class="lesson-content"
+                     data-content="get-class">
+
+                <h1 class="lesson-title">
+                    getElementsByClassName
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>const items =
+document.getElementsByClassName("item");
+
+console.log(items);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- GET NAME -->
+
+            <article class="lesson-content"
+                     data-content="get-name">
+
+                <h1 class="lesson-title">
+                    getElementsByName
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>const inputs =
+document.getElementsByName("username");
+
+console.log(inputs);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- GET TAG -->
+
+            <article class="lesson-content"
+                     data-content="get-tag">
+
+                <h1 class="lesson-title">
+                    getElementsByTagName
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>const paragraphs =
+document.getElementsByTagName("p");
+
+console.log(paragraphs);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- INNER HTML -->
+
+            <article class="lesson-content"
+                     data-content="inner-html">
+
+                <h1 class="lesson-title">
+                    innerHTML
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>document.getElementById("box")
+    .innerHTML = "&lt;b&gt;Hello!&lt;/b&gt;";</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- OUTER HTML -->
+
+            <article class="lesson-content"
+                     data-content="outer-html">
+
+                <h1 class="lesson-title">
+                    outerHTML
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>const box =
+document.getElementById("box");
+
+console.log(box.outerHTML);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- CLASS -->
+
+            <article class="lesson-content"
+                     data-content="class">
+
+                <h1 class="lesson-title">
+                    JavaScript Classes
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>class User {
+
+    constructor(name){
+
+        this.name = name;
+
+    }
+
+}
+
+const user =
+new User("Brijesh");
+
+console.log(user.name);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- OOP OBJECTS -->
+
+            <article class="lesson-content"
+                     data-content="oop-objects">
+
+                <h1 class="lesson-title">
+                    Objects in OOP
+                </h1>
+
+                <p class="lesson-intro">
+                    Objects combine data and behaviour into a single structure.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>const user = {
+
+    name: "Brijesh",
+
+    greet(){
+        console.log("Hello");
+    }
+
+};
+
+user.greet();</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- CONSTRUCTOR -->
+
+            <article class="lesson-content"
+                     data-content="constructor">
+
+                <h1 class="lesson-title">
+                    Constructor
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>class Student {
+
+    constructor(name){
+
+        this.name = name;
+
+    }
+
+}
+
+const student =
+new Student("Brijesh");</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- STATIC -->
+
+            <article class="lesson-content"
+                     data-content="static">
+
+                <h1 class="lesson-title">
+                    Static Method
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>class MathHelper {
+
+    static add(a,b){
+
+        return a + b;
+
+    }
+
+}
+
+console.log(
+    MathHelper.add(10,20)
+);</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- ENCAPSULATION -->
+
+            <article class="lesson-content"
+                     data-content="encapsulation">
+
+                <h1 class="lesson-title">
+                    Encapsulation
+                </h1>
+
+                <p class="lesson-intro">
+                    Encapsulation keeps data and methods together
+                    while controlling how data is accessed.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>class User {
+
+    #password;
+
+    constructor(password){
+
+        this.#password = password;
+
+    }
+
+}</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- INHERITANCE -->
+
+            <article class="lesson-content"
+                     data-content="inheritance">
+
+                <h1 class="lesson-title">
+                    Inheritance
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>class Animal {
+
+    speak(){
+        console.log("Animal sound");
+    }
+
+}
+
+class Dog extends Animal {
+
+}
+
+const dog = new Dog();
+
+dog.speak();</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- POLYMORPHISM -->
+
+            <article class="lesson-content"
+                     data-content="polymorphism">
+
+                <h1 class="lesson-title">
+                    Polymorphism
+                </h1>
+
+                <p class="lesson-intro">
+                    Polymorphism allows different objects to provide
+                    their own implementation of similar behaviour.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>class Animal {
+
+    speak(){
+        console.log("Sound");
+    }
+
+}
+
+class Dog extends Animal {
+
+    speak(){
+        console.log("Bark");
+    }
+
+}</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- ABSTRACTION -->
+
+            <article class="lesson-content"
+                     data-content="abstraction">
+
+                <h1 class="lesson-title">
+                    Abstraction
+                </h1>
+
+                <p class="lesson-intro">
+                    Abstraction focuses on what an object does
+                    while hiding unnecessary implementation details.
+                </p>
+
+                <div class="note">
+                    Abstraction is an important concept in
+                    object-oriented programming.
+                </div>
+
+            </article>
+
+
+            <!-- CALLBACKS -->
+
+            <article class="lesson-content"
+                     data-content="callbacks">
+
+                <h1 class="lesson-title">
+                    Callbacks
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>function greet(name, callback){
+
+    console.log("Hello " + name);
+
+    callback();
+
+}
+
+greet("Brijesh", function(){
+
+    console.log("Welcome!");
+
+});</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROMISES -->
+
+            <article class="lesson-content"
+                     data-content="promises">
+
+                <h1 class="lesson-title">
+                    Promises
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>const promise =
+new Promise((resolve, reject) => {
+
+    resolve("Task completed");
+
+});
+
+promise.then(result => {
+
+    console.log(result);
+
+});</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- ASYNC AWAIT -->
+
+            <article class="lesson-content"
+                     data-content="async-await">
+
+                <h1 class="lesson-title">
+                    Async / Await
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>async function getData(){
+
+    const result =
+        await Promise.resolve("Done");
+
+    console.log(result);
+
+}
+
+getData();</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- FETCH -->
+
+            <article class="lesson-content"
+                     data-content="fetch">
+
+                <h1 class="lesson-title">
+                    Fetch API
+                </h1>
+
+                <p class="lesson-intro">
+                    Fetch is commonly used to request data from APIs.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>fetch("https://example.com/data")
+.then(response => response.json())
+.then(data => {
+
+    console.log(data);
+
+});</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- TRY CATCH -->
+
+            <article class="lesson-content"
+                     data-content="try-catch">
+
+                <h1 class="lesson-title">
+                    Try and Catch
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>try {
+
+    let result =
+        unknownFunction();
+
+}catch(error){
+
+    console.log(error.message);
+
+}</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- THROW -->
+
+            <article class="lesson-content"
+                     data-content="throw">
+
+                <h1 class="lesson-title">
+                    Throw Statement
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>function checkAge(age){
+
+    if(age < 18){
+
+        throw new Error(
+            "Age must be 18 or above"
+        );
+
+    }
+
+}</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- ERRORS -->
+
+            <article class="lesson-content"
+                     data-content="errors">
+
+                <h1 class="lesson-title">
+                    JavaScript Errors
+                </h1>
+
+                <p class="lesson-intro">
+                    Errors can occur because of invalid syntax,
+                    incorrect logic or unexpected runtime conditions.
+                </p>
+
+                <div class="note">
+                    Use browser Developer Tools and console messages
+                    to understand and fix JavaScript errors.
+                </div>
+
+            </article>
+
+
+            <!-- MODULES -->
+
+            <article class="lesson-content"
+                     data-content="modules">
+
+                <h1 class="lesson-title">
+                    Introduction to Modules
+                </h1>
+
+                <p class="lesson-intro">
+                    Modules allow JavaScript code to be separated
+                    into reusable files.
+                </p>
+
+                <div class="code-box">
+
+<pre><code>// math.js
+
+export function add(a,b){
+
+    return a + b;
+
+}</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- EXPORT -->
+
+            <article class="lesson-content"
+                     data-content="export">
+
+                <h1 class="lesson-title">
+                    Export
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>export const name =
+"Brijesh";
+
+export function greet(){
+
+    console.log("Hello");
+
+}</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- IMPORT -->
+
+            <article class="lesson-content"
+                     data-content="import">
+
+                <h1 class="lesson-title">
+                    Import
+                </h1>
+
+                <div class="code-box">
+
+<pre><code>import {
+    name,
+    greet
+} from "./user.js";
+
+console.log(name);
+
+greet();</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- QUESTIONS -->
+
+            <article class="lesson-content"
+                     data-content="questions">
+
+                <h1 class="lesson-title">
+                    JavaScript Questions
+                </h1>
+
+                <p class="lesson-intro">
+                    Test your JavaScript knowledge with these questions.
+                </p>
+
+                <h2>
+                    Question 1
+                </h2>
+
+                <p>
+                    What is JavaScript used for?
+                </p>
+
+                <h2>
+                    Question 2
+                </h2>
+
+                <p>
+                    What is the difference between let and const?
+                </p>
+
+                <h2>
+                    Question 3
+                </h2>
+
+                <p>
+                    What is a function?
+                </p>
+
+                <h2>
+                    Question 4
+                </h2>
+
+                <p>
+                    What is the DOM?
+                </p>
+
+                <h2>
+                    Question 5
+                </h2>
+
+                <p>
+                    What is the purpose of async/await?
+                </p>
+
+                <div class="note">
+                    Try solving the questions yourself before
+                    checking your notes.
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- =================================================
+             PREVIOUS / NEXT
+        ================================================== -->
+
+        <div class="lesson-navigation">
+
+            <button
+                class="nav-btn"
+                id="previousBtn">
+                ← Previous
+            </button>
+
+            <button
+                class="nav-btn"
+                id="nextBtn">
+                Next →
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
+</div>
+
+
+<!-- MOBILE SIDEBAR BUTTON -->
+
+<button
+    class="mobile-sidebar-btn"
+    id="mobileSidebarBtn">
+    ☰
+</button>
+
+
+<script>
+
+/* =====================================================
+   SECTION TOGGLE
+===================================================== */
+
+const sectionButtons =
+document.querySelectorAll(".section-toggle");
+
+sectionButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const section =
+            button.parentElement;
+
+        section.classList.toggle("closed");
+
+    });
+
+});
+
+
+/* =====================================================
+   LESSONS
+===================================================== */
+
+const lessonLinks =
+Array.from(
+    document.querySelectorAll(".lesson-link")
+);
+
+const lessonContents =
+Array.from(
+    document.querySelectorAll(".lesson-content")
+);
+
+const previousBtn =
+document.getElementById("previousBtn");
+
+const nextBtn =
+document.getElementById("nextBtn");
+
+const breadcrumbLesson =
+document.getElementById("breadcrumbLesson");
+
+const getStarted =
+document.getElementById("getStarted");
+
+
+/* =====================================================
+   OPEN LESSON
+===================================================== */
+
+function openLesson(index){
+
+    if(
+        index < 0 ||
+        index >= lessonLinks.length
+    ){
+        return;
+    }
+
+
+    lessonLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+    });
+
+
+    lessonLinks[index]
+        .classList.add("active");
+
+
+    lessonContents.forEach(content => {
+
+        content.classList.remove("active");
+
+    });
+
+
+    const lessonId =
+        lessonLinks[index].dataset.lesson;
+
+
+    const selectedContent =
+        document.querySelector(
+            `[data-content="${lessonId}"]`
+        );
+
+
+    if(selectedContent){
+
+        selectedContent.classList.add("active");
+
+    }
+
+
+    breadcrumbLesson.textContent =
+        lessonLinks[index]
+        .textContent
+        .trim();
+
+
+    if(index === 0){
+
+        getStarted.style.display =
+            "block";
+
+    }else{
+
+        getStarted.style.display =
+            "none";
+
+    }
+
+
+    previousBtn.disabled =
+        index === 0;
+
+
+    nextBtn.disabled =
+        index === lessonLinks.length - 1;
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   LESSON CLICK
+===================================================== */
+
+lessonLinks.forEach((link,index) => {
+
+    link.addEventListener("click", () => {
+
+        openLesson(index);
+
+        closeMobileSidebar();
+
+    });
+
+});
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+nextBtn.addEventListener("click", () => {
+
+    const currentIndex =
+        lessonLinks.findIndex(
+            link =>
+            link.classList.contains("active")
+        );
+
+
+    if(
+        currentIndex <
+        lessonLinks.length - 1
+    ){
+
+        openLesson(
+            currentIndex + 1
+        );
+
+    }
+
+});
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+previousBtn.addEventListener("click", () => {
+
+    const currentIndex =
+        lessonLinks.findIndex(
+            link =>
+            link.classList.contains("active")
+        );
+
+
+    if(currentIndex > 0){
+
+        openLesson(
+            currentIndex - 1
+        );
+
+    }
+
+});
+
+
+/* =====================================================
+   MOBILE SIDEBAR
+===================================================== */
+
+const sidebar =
+document.getElementById("sidebar");
+
+const sidebarOverlay =
+document.getElementById("sidebarOverlay");
+
+const mobileSidebarBtn =
+document.getElementById("mobileSidebarBtn");
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+
+function openMobileSidebar(){
+
+    sidebar.classList.add("open");
+
+    sidebarOverlay.classList.add("show");
+
+}
+
+
+function closeMobileSidebar(){
+
+    sidebar.classList.remove("open");
+
+    sidebarOverlay.classList.remove("show");
+
+}
+
+
+mobileSidebarBtn.addEventListener(
+    "click",
+    openMobileSidebar
+);
+
+
+menuBtn.addEventListener(
+    "click",
+    openMobileSidebar
+);
+
+
+sidebarOverlay.addEventListener(
+    "click",
+    closeMobileSidebar
+);
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+const searchInput =
+document.getElementById("searchInput");
+
+searchInput.addEventListener(
+    "input",
+    () => {
+
+        const value =
+            searchInput.value
+            .toLowerCase()
+            .trim();
+
+
+        lessonLinks.forEach(link => {
+
+            const text =
+                link.textContent
+                .toLowerCase();
+
+
+            if(!value){
+
+                link.style.display =
+                    "block";
+
+            }else{
+
+                link.style.display =
+                    text.includes(value)
+                    ? "block"
+                    : "none";
+
+            }
+
+        });
+
+    }
+);
+
+
+/* =====================================================
+   INITIAL LESSON
+===================================================== */
+
+openLesson(0);
+
+</script>
+
+</body>
+</html>

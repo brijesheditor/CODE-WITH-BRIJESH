@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Courses - CODE With Brijesh</title>
+
+  <meta
+    name="description"
+    content="Learn programming and development with practical courses from CODE With Brijesh."
+  >
+
+      <link rel="stylesheet" href="style.css">
+  <style>
+    /* =========================================
+       COURSES PAGE
+    ========================================= */
+
+    .courses-page {
+      min-height: 100vh;
+      background: var(--bg, #ffffff);
+      padding-bottom: 80px;
+    }
+
+    body.dark .courses-page {
+      background: #0b0f19;
+    }
+
+    /* HEADER SPACE */
+
+    .courses-hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 55px 20px 35px;
+      text-align: center;
+    }
+
+    .courses-hero h1 {
+      margin: 0;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      color: var(--text, #111827);
+      letter-spacing: -1.5px;
+    }
+
+    body.dark .courses-hero h1 {
+      color: #fff;
+    }
+
+    .courses-hero h1 span {
+      color: #7c3aed;
+    }
+
+    .courses-hero p {
+      max-width: 680px;
+      margin: 15px auto 0;
+      color: #64748b;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    body.dark .courses-hero p {
+      color: #94a3b8;
+    }
+
+    /* COURSE AREA */
+
+    .courses-container {
+      width: min(1200px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    .courses-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin: 20px 0 24px;
+    }
+
+    .courses-heading h2 {
+      margin: 0;
+      font-size: 27px;
+      color: var(--text, #111827);
+    }
+
+    body.dark .courses-heading h2 {
+      color: #fff;
+    }
+
+    .courses-heading span {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    /* GRID */
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    /* CARD */
+
+    .course-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.07);
+      transition: transform .25s ease, box-shadow .25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body.dark .course-card {
+      background: #111827;
+      border-color: #1f2937;
+      box-shadow: 0 10px 35px rgba(0,0,0,.25);
+    }
+
+    .course-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, .14);
+    }
+
+    /* THUMBNAIL */
+
+    .course-thumb {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #111827;
+    }
+
+    .course-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .35s ease;
+    }
+
+    .course-card:hover .course-thumb img {
+      transform: scale(1.04);
+    }
+
+    /* PLACEHOLDER IF IMAGE NOT AVAILABLE */
+
+    .course-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 20% 20%, #7c3aed 0%, transparent 35%),
+        radial-gradient(circle at 80% 80%, #2563eb 0%, transparent 35%),
+        #111827;
+      color: #fff;
+      font-size: 34px;
+      font-weight: 800;
+    }
+
+    /* BADGES */
+
+    .course-featured {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 3;
+      background: #f59e0b;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 7px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .course-discount {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 3;
+      background: #ef4444;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 7px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    /* CONTENT */
+
+    .course-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .course-content h3 {
+      margin: 0 0 10px;
+      color: #111827;
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    body.dark .course-content h3 {
+      color: #fff;
+    }
+
+    .course-description {
+      margin: 0 0 17px;
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.65;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    body.dark .course-description {
+      color: #94a3b8;
+    }
+
+    /* META */
+
+    .course-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 13px;
+      margin-bottom: 18px;
+    }
+
+    .course-meta span {
+      font-size: 12px;
+      color: #475569;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.dark .course-meta span {
+      color: #cbd5e1;
+    }
+
+    /* PRICE */
+
+    .course-bottom {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    body.dark .course-bottom {
+      border-color: #1f2937;
+    }
+
+    .course-price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .course-price {
+      font-size: 23px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    body.dark .course-price {
+      color: #fff;
+    }
+
+    .course-old-price {
+      margin-left: 6px;
+      font-size: 13px;
+      color: #94a3b8;
+      text-decoration: line-through;
+    }
+
+    .course-language {
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    body.dark .course-language {
+      color: #94a3b8;
+    }
+
+    /* BUTTON */
+
+    .course-btn {
+      width: 100%;
+      border: 0;
+      border-radius: 9px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: #111827;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .course-btn:hover {
+      background: #7c3aed;
+      color: #fff;
+    }
+
+    body.dark .course-btn {
+      background: #7c3aed;
+    }
+
+    body.dark .course-btn:hover {
+      background: #8b5cf6;
+    }
+
+    /* EMPTY */
+
+    .course-note {
+      margin: 35px 0 0;
+      padding: 18px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #64748b;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    body.dark .course-note {
+      background: #111827;
+      border-color: #1f2937;
+      color: #94a3b8;
+    }
+
+    /* =========================================
+       TABLET
+    ========================================= */
+
+    @media (max-width: 1000px) {
+
+      .courses-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .courses-hero {
+        padding-top: 45px;
+      }
+    }
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 650px) {
+
+      .courses-page {
+        padding-bottom: 50px;
+      }
+
+      .courses-hero {
+        padding: 32px 16px 25px;
+      }
+
+      .courses-hero h1 {
+        font-size: 32px;
+      }
+
+      .courses-hero p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .courses-container {
+        width: calc(100% - 24px);
+      }
+
+      .courses-heading {
+        margin: 12px 0 18px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .courses-heading h2 {
+        font-size: 23px;
+      }
+
+      .courses-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .course-content {
+        padding: 17px;
+      }
+
+      .course-content h3 {
+        font-size: 18px;
+      }
+
+      .course-description {
+        font-size: 13px;
+      }
+
+      .course-price {
+        font-size: 21px;
+      }
+
+      .course-btn {
+        padding: 11px;
+      }
+    }
+
+    /* SMALL PHONE */
+
+    @media (max-width: 380px) {
+
+      .courses-hero h1 {
+        font-size: 28px;
+      }
+
+      .course-content {
+        padding: 15px;
+      }
+
+      .course-meta {
+        gap: 7px 9px;
+      }
+
+      .course-meta span {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================
+       HEADER
+  ========================================= -->
+
+  <header class="header">
+
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        CODE <span>With Brijesh</span>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="tutorials.html">Tutorials</a>
+        <a href="courses.html" class="active">Courses</a>
+        <a href="notes.html">Notes</a>
+      </nav>
+
+      <div class="nav-right">
+
+        <div class="search-box">
+          <input
+            type="search"
+            id="courseSearch"
+            placeholder="Search courses..."
+            aria-label="Search courses"
+          >
+          <button type="button" onclick="searchCourses()">⌕</button>
+        </div>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================
+       MOBILE SIDE MENU
+  ========================================= -->
+
+  <aside class="side-menu" id="sideMenu">
+
+    <button class="close-menu" id="closeMenu">
+      ×
+    </button>
+
+    <div class="side-menu-logo">
+      CODE <span>With Brijesh</span>
+    </div>
+
+    <a href="index.html">Home</a>
+    <a href="tutorials.html">Tutorials</a>
+    <a href="courses.html">Courses</a>
+    <a href="notes.html">Notes</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+
+    <div class="side-divider"></div>
+
+    <button id="darkModeBtn" class="dark-mode-btn">
+      🌙 Dark Mode
+    </button>
+
+  </aside>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+
+  <!-- =========================================
+       MAIN
+  ========================================= -->
+
+  <main class="courses-page">
+
+    <!-- HERO -->
+
+    <section class="courses-hero">
+
+      <h1>
+        Learn With
+        <span>CODE With Brijesh</span>
+      </h1>
+
+      <p>
+        Practical programming courses designed to help you
+        learn skills, build projects and become job-ready.
+      </p>
+
+    </section>
+
+
+    <!-- COURSES -->
+
+    <section class="courses-container">
+
+      <div class="courses-heading">
+
+        <h2>Premium Courses</h2>
+
+        <span id="courseCount">
+          6 Courses
+        </span>
+
+      </div>
+
+
+      <div class="courses-grid" id="coursesGrid">
+
+
+        <!-- =====================================
+             COURSE 1
+        ====================================== -->
+
+        <article
+          class="course-card"
+          data-title="HTML CSS Web Development"
+        >
+
+          <div class="course-thumb">
+
+            <div class="course-placeholder">
+              HTML + CSS
+            </div>
+
+            <span class="course-featured">
+              Featured
+            </span>
+
+            <span class="course-discount">
+              70% OFF
+            </span>
+
+          </div>
+
+          <div class="course-content">
+
+            <h3>
+              HTML & CSS Complete Course
+            </h3>
+
+            <p class="course-description">
+              Learn HTML and CSS from basics and build
+              modern responsive websites through practical projects.
+            </p>
+
+            <div class="course-meta">
+
+              <span>👨‍🏫 CODE With Brijesh</span>
+
+              <span>🔍 Beginner</span>
+
+              <span>⏱️ 12h 30m</span>
+
+              <span>📚 60 lessons</span>
+
+            </div>
+
+            <div class="course-bottom">
+
+              <div class="course-price-row">
+
+                <div>
+                  <span class="course-price">₹499</span>
+                  <span class="course-old-price">₹1,699</span>
+                </div>
+
+                <span class="course-language">
+                  Hindi
+                </span>
+
+              </div>
+
+              <a
+                href="course-html-css.html"
+                class="course-btn"
+              >
+                View Course →
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================================
+             COURSE 2
+        ====================================== -->
+
+        <article
+          class="course-card"
+          data-title="JavaScript Complete Course"
+        >
+
+          <div class="course-thumb">
+
+            <div class="course-placeholder">
+              JS
+            </div>
+
+            <span class="course-featured">
+              Featured
+            </span>
+
+            <span class="course-discount">
+              65% OFF
+            </span>
+
+          </div>
+
+          <div class="course-content">
+
+            <h3>
+              JavaScript Complete Course
+            </h3>
+
+            <p class="course-description">
+              Master JavaScript fundamentals, DOM,
+              events, APIs and real-world projects.
+            </p>
+
+            <div class="course-meta">
+
+              <span>👨‍🏫 CODE With Brijesh</span>
+
+              <span>🔍 Beginner</span>
+
+              <span>⏱️ 15h 20m</span>
+
+              <span>📚 75 lessons</span>
+
+            </div>
+
+            <div class="course-bottom">
+
+              <div class="course-price-row">
+
+                <div>
+                  <span class="course-price">₹599</span>
+                  <span class="course-old-price">₹1,699</span>
+                </div>
+
+                <span class="course-language">
+                  Hindi
+                </span>
+
+              </div>
+
+              <a href="course-data-analytics.html" class="course-btn">
+    View Course →
+</a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================================
+             COURSE 3
+        ====================================== -->
+
+        <article
+          class="course-card"
+          data-title="Python Complete Course"
+        >
+
+          <div class="course-thumb">
+
+            <div class="course-placeholder">
+              PYTHON
+            </div>
+
+            <span class="course-featured">
+              Featured
+            </span>
+
+            <span class="course-discount">
+              75% OFF
+            </span>
+
+          </div>
+
+          <div class="course-content">
+
+            <h3>
+              Python Complete Course
+            </h3>
+
+            <p class="course-description">
+              Start Python from zero and learn programming,
+              functions, OOP, files and practical projects.
+            </p>
+
+            <div class="course-meta">
+
+              <span>👨‍🏫 CODE With Brijesh</span>
+
+              <span>🔍 Beginner</span>
+
+              <span>⏱️ 17h 30m</span>
+
+              <span>📚 90 lessons</span>
+
+            </div>
+
+            <div class="course-bottom">
+
+              <div class="course-price-row">
+
+                <div>
+                  <span class="course-price">₹699</span>
+                  <span class="course-old-price">₹2,499</span>
+                </div>
+
+                <span class="course-language">
+                  Hindi
+                </span>
+
+              </div>
+
+              <a
+                href="course-python.html"
+                class="course-btn"
+              >
+                View Course →
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================================
+             COURSE 4
+        ====================================== -->
+
+        <article
+          class="course-card"
+          data-title="C Programming Course"
+        >
+
+          <div class="course-thumb">
+
+            <div class="course-placeholder">
+              C
+            </div>
+
+            <span class="course-discount">
+              80% OFF
+            </span>
+
+          </div>
+
+          <div class="course-content">
+
+            <h3>
+              C Programming For Beginners
+            </h3>
+
+            <p class="course-description">
+              Learn C programming from scratch with
+              variables, loops, functions, arrays and projects.
+            </p>
+
+            <div class="course-meta">
+
+              <span>👨‍🏫 CODE With Brijesh</span>
+
+              <span>🔍 Beginner</span>
+
+              <span>⏱️ 9h 30m</span>
+
+              <span>📚 55 lessons</span>
+
+            </div>
+
+            <div class="course-bottom">
+
+              <div class="course-price-row">
+
+                <div>
+                  <span class="course-price">₹299</span>
+                  <span class="course-old-price">₹1,499</span>
+                </div>
+
+                <span class="course-language">
+                  Hindi
+                </span>
+
+              </div>
+
+              <a
+                href="course-c.html"
+                class="course-btn"
+              >
+                View Course →
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================================
+             COURSE 5
+        ====================================== -->
+
+        <article
+          class="course-card"
+          data-title="C++ Programming Course"
+        >
+
+          <div class="course-thumb">
+
+            <div class="course-placeholder">
+              C++
+            </div>
+
+            <span class="course-discount">
+              70% OFF
+            </span>
+
+          </div>
+
+          <div class="course-content">
+
+            <h3>
+              C++ Programming Course
+            </h3>
+
+            <p class="course-description">
+              Learn C++ programming, OOP, STL and
+              problem-solving concepts from the beginning.
+            </p>
+
+            <div class="course-meta">
+
+              <span>👨‍🏫 CODE With Brijesh</span>
+
+              <span>🔍 Beginner</span>
+
+              <span>⏱️ 14h 20m</span>
+
+              <span>📚 70 lessons</span>
+
+            </div>
+
+            <div class="course-bottom">
+
+              <div class="course-price-row">
+
+                <div>
+                  <span class="course-price">₹499</span>
+                  <span class="course-old-price">₹1,699</span>
+                </div>
+
+                <span class="course-language">
+                  Hindi
+                </span>
+
+              </div>
+
+              <a
+                href="course-cpp.html"
+                class="course-btn"
+              >
+                View Course →
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================================
+             COURSE 6
+        ====================================== -->
+
+        <article
+          class="course-card"
+          data-title="Full Stack Web Development"
+        >
+
+          <div class="course-thumb">
+
+            <div class="course-placeholder">
+              FULL STACK
+            </div>
+
+            <span class="course-featured">
+              Featured
+            </span>
+
+            <span class="course-discount">
+              60% OFF
+            </span>
+
+          </div>
+
+          <div class="course-content">
+
+            <h3>
+              Full Stack Web Development
+            </h3>
+
+            <p class="course-description">
+              Learn frontend, backend, databases,
+              APIs and deployment by building real projects.
+            </p>
+
+            <div class="course-meta">
+
+              <span>👨‍🏫 CODE With Brijesh</span>
+
+              <span>🔍 Beginner</span>
+
+              <span>⏱️ 30h 40m</span>
+
+              <span>📚 140 lessons</span>
+
+            </div>
+
+            <div class="course-bottom">
+
+              <div class="course-price-row">
+
+                <div>
+                  <span class="course-price">₹999</span>
+                  <span class="course-old-price">₹2,999</span>
+                </div>
+
+                <span class="course-language">
+                  Hindi
+                </span>
+
+              </div>
+
+              <a
+                href="course-full-stack.html"
+                class="course-btn"
+              >
+                View Course →
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+
+      <div
+        class="course-note"
+        id="noCourses"
+        style="display:none;"
+      >
+        No course found. Try another search.
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================= -->
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <div class="footer-column">
+
+        <h3>CODE With Brijesh</h3>
+
+        <p>
+          Learn coding through practical tutorials,
+          courses and projects.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Main</h4>
+
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="projects.html">Projects</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Learn</h4>
+
+        <a href="courses.html">Courses</a>
+        <a href="tutorials.html">Tutorials</a>
+        <a href="notes.html">Notes</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Resources</h4>
+
+        <a href="#">HTML</a>
+        <a href="#">CSS</a>
+        <a href="#">JavaScript</a>
+        <a href="#">Python</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 CODE With Brijesh. All Rights Reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================================
+       SCRIPT
+  ========================================= -->
+
+  <script>
+
+    /* =========================================
+       MENU
+    ========================================= */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const closeMenu =
+      document.getElementById("closeMenu");
+
+    const sideMenu =
+      document.getElementById("sideMenu");
+
+    const menuOverlay =
+      document.getElementById("menuOverlay");
+
+
+    if (menuToggle) {
+
+      menuToggle.addEventListener(
+        "click",
+        () => {
+
+          sideMenu.classList.add("open");
+          menuOverlay.classList.add("show");
+
+        }
+      );
+
+    }
+
+
+    if (closeMenu) {
+
+      closeMenu.addEventListener(
+        "click",
+        closeSideMenu
+      );
+
+    }
+
+
+    if (menuOverlay) {
+
+      menuOverlay.addEventListener(
+        "click",
+        closeSideMenu
+      );
+
+    }
+
+
+    function closeSideMenu() {
+
+      sideMenu.classList.remove("open");
+      menuOverlay.classList.remove("show");
+
+    }
+
+
+    /* =========================================
+       DARK MODE
+    ========================================= */
+
+    const darkModeBtn =
+      document.getElementById("darkModeBtn");
+
+
+    if (
+      localStorage.getItem("theme") === "dark"
+    ) {
+
+      document.body.classList.add("dark");
+
+      if (darkModeBtn) {
+        darkModeBtn.innerHTML =
+          "☀️ Light Mode";
+      }
+
+    }
+
+
+    if (darkModeBtn) {
+
+      darkModeBtn.addEventListener(
+        "click",
+        () => {
+
+          document.body.classList.toggle("dark");
+
+          const isDark =
+            document.body.classList.contains("dark");
+
+          localStorage.setItem(
+            "theme",
+            isDark ? "dark" : "light"
+          );
+
+          darkModeBtn.innerHTML =
+            isDark
+              ? "☀️ Light Mode"
+              : "🌙 Dark Mode";
+
+        }
+      );
+
+    }
+
+
+    /* =========================================
+       COURSE SEARCH
+    ========================================= */
+
+    const searchInput =
+      document.getElementById("courseSearch");
+
+    const cards =
+      document.querySelectorAll(".course-card");
+
+    const noCourses =
+      document.getElementById("noCourses");
+
+    const courseCount =
+      document.getElementById("courseCount");
+
+
+    function searchCourses() {
+
+      const value =
+        searchInput.value
+          .toLowerCase()
+          .trim();
+
+      let visible = 0;
+
+
+      cards.forEach(card => {
+
+        const title =
+          card.dataset.title.toLowerCase();
+
+        const text =
+          card.innerText.toLowerCase();
+
+        const matched =
+          title.includes(value) ||
+          text.includes(value);
+
+        card.style.display =
+          matched ? "flex" : "none";
+
+        if (matched) {
+          visible++;
+        }
+
+      });
+
+
+      if (visible === 0) {
+
+        noCourses.style.display =
+          "block";
+
+      } else {
+
+        noCourses.style.display =
+          "none";
+
+      }
+
+
+      courseCount.textContent =
+        visible + " Course" +
+        (visible === 1 ? "" : "s");
+
+    }
+
+
+    if (searchInput) {
+
+      searchInput.addEventListener(
+        "input",
+        searchCourses
+      );
+
+    }
+
+  </script>
+
+</body>
+</html>

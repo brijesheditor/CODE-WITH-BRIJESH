@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="CODE With Brijesh CSS Tutorial - Learn CSS from beginner to advanced with practical examples.">
+
+<title>CSS Tutorial - CODE With Brijesh</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fff;
+    color:#202124;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.top-header{
+    height:64px;
+    border-bottom:1px solid #e5e7eb;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 22px;
+    background:#fff;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    text-decoration:none;
+    color:#222;
+    font-size:20px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#16a34a;
+}
+
+.top-nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.top-nav a{
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+}
+
+.top-right{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.search-box{
+    width:210px;
+    height:36px;
+    border:1px solid #e5e7eb;
+    border-radius:6px;
+    display:flex;
+    align-items:center;
+    padding:0 10px;
+}
+
+.search-box input{
+    width:100%;
+    border:none;
+    outline:none;
+    font-size:13px;
+}
+
+.menu-btn{
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-size:23px;
+}
+
+/* =====================================================
+   PAGE LAYOUT
+===================================================== */
+
+.page{
+    display:flex;
+    min-height:calc(100vh - 64px);
+}
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar{
+    width:260px;
+    flex-shrink:0;
+    background:#fafafa;
+    border-right:1px solid #e5e7eb;
+    height:calc(100vh - 64px);
+    overflow-y:auto;
+    position:sticky;
+    top:64px;
+}
+
+.sidebar-title{
+    font-size:18px;
+    font-weight:700;
+    padding:25px 20px 20px;
+    color:#222;
+    position:sticky;
+    top:0;
+    background:#fafafa;
+    z-index:2;
+}
+
+.sidebar-section{
+    border-bottom:0;
+}
+
+.section-toggle{
+    width:100%;
+    border:none;
+    background:transparent;
+    padding:12px 16px 9px 12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:14px;
+    font-weight:600;
+    color:#222;
+    cursor:pointer;
+    text-align:left;
+}
+
+.arrow{
+    font-size:17px;
+    transition:.2s;
+}
+
+.sidebar-section.closed .arrow{
+    transform:rotate(-90deg);
+}
+
+.lesson-list{
+    display:block;
+    padding-bottom:8px;
+}
+
+.sidebar-section.closed .lesson-list{
+    display:none;
+}
+
+.lesson-link{
+    display:block;
+    padding:7px 18px 7px 22px;
+    text-decoration:none;
+    color:#555;
+    font-size:13px;
+    line-height:1.4;
+    cursor:pointer;
+}
+
+.lesson-link:hover{
+    background:#f0f0f0;
+    color:#111;
+}
+
+.lesson-link.active{
+    background:#e8f5e9;
+    color:#15803d;
+    font-weight:600;
+    border-left:3px solid #16a34a;
+}
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main{
+    flex:1;
+    min-width:0;
+}
+
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
+.breadcrumb{
+    height:52px;
+    border-bottom:1px solid #eee;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:0 25px;
+    color:#777;
+    font-size:13px;
+}
+
+.breadcrumb span{
+    color:#aaa;
+}
+
+#breadcrumbLesson{
+    color:#555;
+}
+
+/* =====================================================
+   CONTENT WRAPPER
+===================================================== */
+
+.content{
+    max-width:1000px;
+    margin:auto;
+    padding:28px 35px 80px;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.tutorial-hero{
+    min-height:260px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px;
+    margin-bottom:32px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.9) 0,
+            rgba(255,255,255,.2) 45%,
+            transparent 70%
+        ),
+        #e6f4fb;
+    position:relative;
+    overflow:hidden;
+}
+
+.tutorial-hero:before{
+    content:"CSS";
+    position:absolute;
+    font-size:180px;
+    font-weight:900;
+    color:rgba(30,120,180,.08);
+    letter-spacing:-10px;
+}
+
+.hero-inner{
+    position:relative;
+    z-index:1;
+}
+
+.hero-inner h1{
+    font-size:38px;
+    margin-bottom:18px;
+    color:#111;
+}
+
+.hero-inner p{
+    max-width:650px;
+    margin:auto;
+    font-size:17px;
+    line-height:1.7;
+    color:#687078;
+}
+
+/* =====================================================
+   GET STARTED
+===================================================== */
+
+.get-started{
+    border:1px solid #eee;
+    border-radius:10px;
+    padding:28px;
+    margin-bottom:35px;
+    box-shadow:0 3px 18px rgba(0,0,0,.04);
+}
+
+.get-started h2{
+    font-size:21px;
+    margin-bottom:14px;
+}
+
+.get-started p{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:12px;
+}
+
+.get-started ol{
+    padding-left:23px;
+    color:#666;
+    line-height:2;
+}
+
+/* =====================================================
+   LESSON
+===================================================== */
+
+.lesson-content{
+    display:none;
+}
+
+.lesson-content.active{
+    display:block;
+}
+
+.lesson-title{
+    font-size:34px;
+    margin-bottom:15px;
+    color:#111;
+}
+
+.lesson-intro{
+    color:#666;
+    font-size:16px;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.lesson-content h2{
+    font-size:25px;
+    margin:32px 0 14px;
+    color:#222;
+}
+
+.lesson-content h3{
+    font-size:20px;
+    margin:25px 0 12px;
+}
+
+.lesson-content p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.lesson-content ul,
+.lesson-content ol{
+    margin:12px 0 20px 25px;
+    color:#555;
+    line-height:1.9;
+}
+
+/* =====================================================
+   CODE
+===================================================== */
+
+.code-box{
+    background:#111827;
+    border-radius:8px;
+    margin:18px 0 25px;
+    overflow:hidden;
+}
+
+.code-title{
+    background:#1f2937;
+    color:#cbd5e1;
+    padding:9px 14px;
+    font-size:12px;
+}
+
+pre{
+    margin:0;
+    padding:18px;
+    overflow-x:auto;
+    color:#e5e7eb;
+    font-size:14px;
+    line-height:1.7;
+}
+
+code{
+    font-family:Consolas, Monaco, monospace;
+}
+
+.note{
+    background:#f0fdf4;
+    border-left:4px solid #22c55e;
+    padding:15px 18px;
+    margin:20px 0;
+    color:#365314;
+    line-height:1.7;
+    border-radius:4px;
+}
+
+.warning{
+    background:#fff7ed;
+    border-left:4px solid #f97316;
+    padding:15px 18px;
+    margin:20px 0;
+    color:#7c2d12;
+    line-height:1.7;
+}
+
+/* =====================================================
+   PREVIOUS NEXT
+===================================================== */
+
+.lesson-navigation{
+    margin-top:55px;
+    padding-top:25px;
+    border-top:1px solid #eee;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.nav-btn{
+    min-width:130px;
+    border:1px solid #ddd;
+    background:#fff;
+    padding:12px 18px;
+    border-radius:7px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.nav-btn:hover:not(:disabled){
+    background:#f5f5f5;
+}
+
+.nav-btn:disabled{
+    opacity:.35;
+    cursor:not-allowed;
+}
+
+/* =====================================================
+   MOBILE SIDEBAR BUTTON
+===================================================== */
+
+.mobile-sidebar-btn{
+    display:none;
+    position:fixed;
+    left:15px;
+    bottom:20px;
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:50%;
+    background:#16a34a;
+    color:#fff;
+    font-size:22px;
+    z-index:2000;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
+
+.sidebar-overlay{
+    display:none;
+}
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark{
+    background:#0f1115;
+    color:#eee;
+}
+
+body.dark .top-header{
+    background:#111318;
+    border-color:#292d35;
+}
+
+body.dark .logo,
+body.dark .top-nav a,
+body.dark .menu-btn{
+    color:#eee;
+}
+
+body.dark .search-box{
+    background:#191c22;
+    border-color:#30343d;
+}
+
+body.dark .search-box input{
+    background:transparent;
+    color:#eee;
+}
+
+body.dark .sidebar{
+    background:#12151a;
+    border-color:#292d35;
+}
+
+body.dark .sidebar-title,
+body.dark .section-toggle{
+    color:#eee;
+    background:#12151a;
+}
+
+body.dark .lesson-link{
+    color:#aeb4bf;
+}
+
+body.dark .lesson-link:hover{
+    background:#1d2128;
+}
+
+body.dark .lesson-link.active{
+    background:#12351f;
+    color:#4ade80;
+}
+
+body.dark .breadcrumb{
+    border-color:#292d35;
+    color:#999;
+}
+
+body.dark #breadcrumbLesson{
+    color:#ccc;
+}
+
+body.dark .tutorial-hero{
+    background:#17252d;
+}
+
+body.dark .hero-inner h1{
+    color:#fff;
+}
+
+body.dark .hero-inner p{
+    color:#aab3bd;
+}
+
+body.dark .get-started{
+    border-color:#292d35;
+    background:#15181d;
+}
+
+body.dark .get-started h2,
+body.dark .lesson-title,
+body.dark .lesson-content h2,
+body.dark .lesson-content h3{
+    color:#fff;
+}
+
+body.dark .get-started p,
+body.dark .get-started ol,
+body.dark .lesson-content p,
+body.dark .lesson-content ul,
+body.dark .lesson-content ol{
+    color:#b8bec8;
+}
+
+body.dark .lesson-navigation{
+    border-color:#292d35;
+}
+
+body.dark .nav-btn{
+    background:#171a20;
+    color:#eee;
+    border-color:#333842;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:850px){
+
+    .top-nav{
+        display:none;
+    }
+
+    .search-box{
+        width:150px;
+    }
+
+    .sidebar{
+        position:fixed;
+        left:-280px;
+        top:64px;
+        width:270px;
+        height:calc(100vh - 64px);
+        z-index:1500;
+        transition:left .25s ease;
+        box-shadow:5px 0 20px rgba(0,0,0,.12);
+    }
+
+    .sidebar.open{
+        left:0;
+    }
+
+    .sidebar-overlay{
+        position:fixed;
+        inset:64px 0 0;
+        background:rgba(0,0,0,.4);
+        z-index:1400;
+    }
+
+    .sidebar-overlay.show{
+        display:block;
+    }
+
+    .mobile-sidebar-btn{
+        display:block;
+    }
+
+    .content{
+        padding:22px 18px 80px;
+    }
+
+    .tutorial-hero{
+        min-height:230px;
+        padding:25px 18px;
+    }
+
+    .hero-inner h1{
+        font-size:31px;
+    }
+
+    .hero-inner p{
+        font-size:15px;
+    }
+}
+
+@media(max-width:550px){
+
+    .top-header{
+        padding:0 14px;
+    }
+
+    .logo{
+        font-size:16px;
+    }
+
+    .search-box{
+        width:105px;
+    }
+
+    .top-right{
+        gap:8px;
+    }
+
+    .breadcrumb{
+        padding:0 15px;
+        font-size:11px;
+    }
+
+    .lesson-title{
+        font-size:28px;
+    }
+
+    .get-started{
+        padding:20px;
+    }
+
+    .lesson-navigation{
+        flex-direction:column;
+    }
+
+    .nav-btn{
+        width:100%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="top-header">
+
+    <a href="index.html" class="logo">
+        &lt;/&gt; <span>CODE</span> With Brijesh
+    </a>
+
+    <nav class="top-nav">
+        <a href="index.html">Start Learning</a>
+        <a href="tutorials.html">Tutorials</a>
+    </nav>
+
+    <div class="top-right">
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search..."
+            >
+        </div>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     PAGE
+===================================================== -->
+
+<div class="page">
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-title">
+        CSS Tutorial
+    </div>
+
+
+    <!-- INTRODUCTION -->
+
+    <div class="sidebar-section">
+
+        <button class="section-toggle">
+            <span>Introduction to CSS</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="lesson-list">
+
+            <a class="lesson-link active" data-lesson="introduction">
+                Introduction to CSS
+            </a>
+
+            <a class="lesson-link" data-lesson="how-css-works">
+                How CSS Works?
+            </a>
+
+            <a class="lesson-link" data-lesson="css-syntax">
+                Syntax of CSS
+            </a>
+
+            <a class="lesson-link" data-lesson="ways-css">
+                Ways to Add CSS
+            </a>
+
+            <a class="lesson-link" data-lesson="first-css">
+                Your First CSS Website
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- CSS BASICS -->
+
+    <div class="sidebar-section">
+
+        <button class="section-toggle">
+            <span>CSS Basics</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="lesson-list">
+
+            <a class="lesson-link" data-lesson="comments">Comments</a>
+            <a class="lesson-link" data-lesson="selectors">Selectors</a>
+            <a class="lesson-link" data-lesson="specificity">Specificity</a>
+            <a class="lesson-link" data-lesson="colors">Colors</a>
+            <a class="lesson-link" data-lesson="backgrounds">Backgrounds</a>
+            <a class="lesson-link" data-lesson="borders">Borders</a>
+            <a class="lesson-link" data-lesson="padding">Padding</a>
+            <a class="lesson-link" data-lesson="margin">Margin</a>
+            <a class="lesson-link" data-lesson="box-model">Box Model</a>
+            <a class="lesson-link" data-lesson="text-styling">Text Styling</a>
+            <a class="lesson-link" data-lesson="links">Links</a>
+            <a class="lesson-link" data-lesson="hover">Hover</a>
+            <a class="lesson-link" data-lesson="cursors">Cursors</a>
+
+        </div>
+
+    </div>
+
+
+    <!-- INTERMEDIATE -->
+
+    <div class="sidebar-section">
+
+        <button class="section-toggle">
+            <span>Intermediate Styling</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="lesson-list">
+
+            <a class="lesson-link" data-lesson="list-styles">List Styles</a>
+            <a class="lesson-link" data-lesson="images">Images</a>
+            <a class="lesson-link" data-lesson="video">Video Embedding</a>
+            <a class="lesson-link" data-lesson="buttons">Buttons</a>
+            <a class="lesson-link" data-lesson="overflow">Overflow</a>
+            <a class="lesson-link" data-lesson="float">Float</a>
+            <a class="lesson-link" data-lesson="positioning">Positioning</a>
+            <a class="lesson-link" data-lesson="z-index">Z-Index</a>
+            <a class="lesson-link" data-lesson="units">Units</a>
+            <a class="lesson-link" data-lesson="variables">Variables</a>
+            <a class="lesson-link" data-lesson="math-functions">Maths Functions</a>
+            <a class="lesson-link" data-lesson="forms">Forms</a>
+            <a class="lesson-link" data-lesson="navigation">Navigation Bar</a>
+
+        </div>
+
+    </div>
+
+
+    <!-- LAYOUT -->
+
+    <div class="sidebar-section">
+
+        <button class="section-toggle">
+            <span>Layout & Designing</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="lesson-list">
+
+            <a class="lesson-link" data-lesson="display">Display</a>
+            <a class="lesson-link" data-lesson="flexbox">FlexBox</a>
+            <a class="lesson-link" data-lesson="grid">Grid</a>
+            <a class="lesson-link" data-lesson="media-queries">Media Queries</a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ADVANCED -->
+
+    <div class="sidebar-section">
+
+        <button class="section-toggle">
+            <span>Advanced CSS</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="lesson-list">
+
+            <a class="lesson-link" data-lesson="combinators">Combinators</a>
+            <a class="lesson-link" data-lesson="pseudo">Pseudo-classes</a>
+            <a class="lesson-link" data-lesson="shadows">Shadows</a>
+            <a class="lesson-link" data-lesson="border-images">Border Images</a>
+            <a class="lesson-link" data-lesson="gradients">Gradients</a>
+            <a class="lesson-link" data-lesson="transform">2D Transform</a>
+            <a class="lesson-link" data-lesson="transitions">Transitions</a>
+            <a class="lesson-link" data-lesson="animations">Animations</a>
+            <a class="lesson-link" data-lesson="masking">Masking</a>
+            <a class="lesson-link" data-lesson="tooltip">ToolTip Text</a>
+            <a class="lesson-link" data-lesson="pagination">Pagination</a>
+            <a class="lesson-link" data-lesson="inherit">Inherit</a>
+            <a class="lesson-link" data-lesson="important">!important Property</a>
+            <a class="lesson-link" data-lesson="advanced-media">Advanced Media Queries</a>
+
+        </div>
+
+    </div>
+
+
+    <!-- FAQ -->
+
+    <div class="sidebar-section">
+
+        <button class="section-toggle">
+            <span>CSS FAQs</span>
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="lesson-list">
+
+            <a class="lesson-link" data-lesson="questions">
+                Questions
+            </a>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+    <div class="breadcrumb">
+
+        <span>▣</span>
+
+        <span>Tutorials</span>
+
+        <span>›</span>
+
+        <span>CSS Tutorial</span>
+
+        <span>›</span>
+
+        <span id="breadcrumbLesson">
+            Introduction to CSS
+        </span>
+
+    </div>
+
+
+    <div class="content">
+
+
+        <!-- HERO -->
+
+        <section class="tutorial-hero">
+
+            <div class="hero-inner">
+
+                <h1>CSS Tutorial</h1>
+
+                <p>
+                    Learn Cascading Style Sheets from the basics
+                    to advanced layouts, responsive design,
+                    animations and modern styling techniques.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- GET STARTED -->
+
+        <section class="get-started" id="getStarted">
+
+            <h2>Get Started</h2>
+
+            <p>
+                Welcome to the CSS Tutorial series.
+                CSS is used to style HTML pages and create
+                beautiful, responsive websites.
+            </p>
+
+            <ol>
+                <li>Select a lesson from the sidebar.</li>
+                <li>Follow the lessons in order.</li>
+                <li>Try the examples yourself.</li>
+            </ol>
+
+        </section>
+
+
+        <!-- =================================================
+             LESSON CONTENT
+        ================================================= -->
+
+        <div id="lessonContainer">
+
+
+            <!-- INTRODUCTION -->
+
+            <article class="lesson-content active" data-content="introduction">
+
+                <h1 class="lesson-title">
+                    Introduction to CSS
+                </h1>
+
+                <p class="lesson-intro">
+                    CSS stands for Cascading Style Sheets.
+                    It is the language used to control the appearance
+                    and layout of HTML elements.
+                </p>
+
+                <h2>What is CSS?</h2>
+
+                <p>
+                    HTML creates the structure of a webpage,
+                    while CSS controls how that structure looks.
+                    With CSS you can change colors, fonts, spacing,
+                    borders, layouts and much more.
+                </p>
+
+                <div class="code-box">
+
+                    <div class="code-title">
+                        Example
+                    </div>
+
+<pre><code>h1 {
+    color: green;
+    font-size: 36px;
+}</code></pre>
+
+                </div>
+
+                <h2>Why do we use CSS?</h2>
+
+                <ul>
+                    <li>To change colors and fonts.</li>
+                    <li>To create attractive layouts.</li>
+                    <li>To control spacing and sizing.</li>
+                    <li>To make websites responsive.</li>
+                    <li>To add animations and visual effects.</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Remember:</strong>
+                    HTML gives a webpage structure and CSS gives
+                    that structure its visual design.
+                </div>
+
+            </article>
+
+
+            <!-- HOW CSS WORKS -->
+
+            <article class="lesson-content" data-content="how-css-works">
+
+                <h1 class="lesson-title">How CSS Works?</h1>
+
+                <p class="lesson-intro">
+                    CSS works by selecting HTML elements and applying
+                    style rules to them.
+                </p>
+
+                <h2>Basic Process</h2>
+
+                <ol>
+                    <li>The browser reads the HTML.</li>
+                    <li>It finds the CSS rules.</li>
+                    <li>Selectors identify elements.</li>
+                    <li>The browser applies matching properties.</li>
+                    <li>The final styled page is displayed.</li>
+                </ol>
+
+                <div class="code-box">
+                    <div class="code-title">HTML + CSS</div>
+
+<pre><code>&lt;h1&gt;Hello Brijesh&lt;/h1&gt;
+
+h1 {
+    color: blue;
+}</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- SYNTAX -->
+
+            <article class="lesson-content" data-content="css-syntax">
+
+                <h1 class="lesson-title">Syntax of CSS</h1>
+
+                <p class="lesson-intro">
+                    A CSS rule normally contains a selector,
+                    declarations, properties and values.
+                </p>
+
+                <div class="code-box">
+                    <div class="code-title">CSS Syntax</div>
+
+<pre><code>selector {
+    property: value;
+}</code></pre>
+
+                </div>
+
+                <h2>Example</h2>
+
+                <div class="code-box">
+
+<pre><code>p {
+    color: red;
+    font-size: 18px;
+}</code></pre>
+
+                </div>
+
+                <p>
+                    Here <strong>p</strong> is the selector,
+                    <strong>color</strong> and
+                    <strong>font-size</strong> are properties,
+                    and their values are red and 18px.
+                </p>
+
+            </article>
+
+
+            <!-- WAYS TO ADD CSS -->
+
+            <article class="lesson-content" data-content="ways-css">
+
+                <h1 class="lesson-title">Ways to Add CSS</h1>
+
+                <p class="lesson-intro">
+                    CSS can be added to an HTML document in different ways.
+                </p>
+
+                <h2>1. Inline CSS</h2>
+
+                <div class="code-box">
+
+<pre><code>&lt;p style="color:red;"&gt;
+    Hello
+&lt;/p&gt;</code></pre>
+
+                </div>
+
+                <h2>2. Internal CSS</h2>
+
+                <div class="code-box">
+
+<pre><code>&lt;style&gt;
+
+p {
+    color: blue;
+}
+
+&lt;/style&gt;</code></pre>
+
+                </div>
+
+                <h2>3. External CSS</h2>
+
+                <div class="code-box">
+
+<pre><code>&lt;link rel="stylesheet"
+href="style.css"&gt;</code></pre>
+
+                </div>
+
+                <div class="note">
+                    External CSS is generally preferred for larger websites
+                    because the styles can be reused across multiple pages.
+                </div>
+
+            </article>
+
+
+            <!-- FIRST WEBSITE -->
+
+            <article class="lesson-content" data-content="first-css">
+
+                <h1 class="lesson-title">
+                    Your First CSS Website
+                </h1>
+
+                <p class="lesson-intro">
+                    Let's create a simple webpage using HTML and CSS.
+                </p>
+
+                <h2>index.html</h2>
+
+                <div class="code-box">
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+
+&lt;title&gt;My Website&lt;/title&gt;
+
+&lt;link rel="stylesheet"
+href="style.css"&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;h1&gt;My First Website&lt;/h1&gt;
+
+&lt;p&gt;Welcome to my website.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                </div>
+
+                <h2>style.css</h2>
+
+                <div class="code-box">
+
+<pre><code>body {
+    background: #f4f4f4;
+    font-family: Arial;
+}
+
+h1 {
+    color: green;
+}
+
+p {
+    color: #555;
+}</code></pre>
+
+                </div>
+
+            </article>
+
+
+            <!-- GENERIC LESSONS -->
+
+            <article class="lesson-content" data-content="comments">
+                <h1 class="lesson-title">CSS Comments</h1>
+                <p class="lesson-intro">Comments help you document your CSS without affecting the webpage.</p>
+                <div class="code-box"><pre><code>/* This is a CSS comment */
+
+h1 {
+    color: green;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="selectors">
+                <h1 class="lesson-title">CSS Selectors</h1>
+                <p class="lesson-intro">Selectors tell CSS which HTML elements should receive a style.</p>
+                <div class="code-box"><pre><code>p {
+    color: blue;
+}
+
+.title {
+    font-size: 30px;
+}
+
+#main {
+    padding: 20px;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="specificity">
+                <h1 class="lesson-title">CSS Specificity</h1>
+                <p class="lesson-intro">Specificity determines which CSS rule wins when multiple rules target the same element.</p>
+                <div class="code-box"><pre><code>p {
+    color: blue;
+}
+
+.text {
+    color: green;
+}
+
+#message {
+    color: red;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="colors">
+                <h1 class="lesson-title">CSS Colors</h1>
+                <p class="lesson-intro">CSS supports named colors, hexadecimal values, RGB, RGBA, HSL and more.</p>
+                <div class="code-box"><pre><code>h1 {
+    color: red;
+}
+
+.box {
+    background: #16a34a;
+}
+
+p {
+    color: rgb(30, 64, 175);
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="backgrounds">
+                <h1 class="lesson-title">CSS Backgrounds</h1>
+                <p class="lesson-intro">Background properties control the background color, image, position and size of an element.</p>
+                <div class="code-box"><pre><code>body {
+    background-color: #f5f5f5;
+}
+
+.hero {
+    background-image: url("image.jpg");
+    background-size: cover;
+    background-position: center;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="borders">
+                <h1 class="lesson-title">CSS Borders</h1>
+                <p class="lesson-intro">Borders can be used to visually separate or highlight elements.</p>
+                <div class="code-box"><pre><code>.box {
+    border: 2px solid green;
+    border-radius: 10px;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="padding">
+                <h1 class="lesson-title">CSS Padding</h1>
+                <p class="lesson-intro">Padding creates space between an element's content and its border.</p>
+                <div class="code-box"><pre><code>.card {
+    padding: 20px;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="margin">
+                <h1 class="lesson-title">CSS Margin</h1>
+                <p class="lesson-intro">Margin creates space outside an element.</p>
+                <div class="code-box"><pre><code>.card {
+    margin: 30px;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="box-model">
+                <h1 class="lesson-title">CSS Box Model</h1>
+                <p class="lesson-intro">Every HTML element can be understood as a box containing content, padding, border and margin.</p>
+                <div class="code-box"><pre><code>.box {
+    width: 200px;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 20px;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="text-styling">
+                <h1 class="lesson-title">Text Styling</h1>
+                <p class="lesson-intro">CSS provides many properties for controlling text appearance.</p>
+                <div class="code-box"><pre><code>p {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="links">
+                <h1 class="lesson-title">CSS Links</h1>
+                <p class="lesson-intro">Links can be styled using normal, visited, hover and active states.</p>
+                <div class="code-box"><pre><code>a {
+    color: green;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="hover">
+                <h1 class="lesson-title">CSS Hover</h1>
+                <p class="lesson-intro">The hover pseudo-class applies styles when the pointer moves over an element.</p>
+                <div class="code-box"><pre><code>button:hover {
+    transform: translateY(-2px);
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="cursors">
+                <h1 class="lesson-title">CSS Cursors</h1>
+                <p class="lesson-intro">The cursor property controls the pointer style.</p>
+                <div class="code-box"><pre><code>button {
+    cursor: pointer;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="list-styles">
+                <h1 class="lesson-title">List Styles</h1>
+                <p class="lesson-intro">CSS can change the marker style of ordered and unordered lists.</p>
+                <div class="code-box"><pre><code>ul {
+    list-style-type: square;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="images">
+                <h1 class="lesson-title">CSS Images</h1>
+                <p class="lesson-intro">CSS can control image size, borders, object fitting and more.</p>
+                <div class="code-box"><pre><code>img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="video">
+                <h1 class="lesson-title">Video Embedding</h1>
+                <p class="lesson-intro">HTML provides video elements while CSS controls how the video is displayed.</p>
+                <div class="code-box"><pre><code>video {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 10px;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="buttons">
+                <h1 class="lesson-title">CSS Buttons</h1>
+                <p class="lesson-intro">Buttons can be styled with colors, spacing, borders and hover effects.</p>
+                <div class="code-box"><pre><code>.btn {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #16a34a;
+    color: white;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="overflow">
+                <h1 class="lesson-title">CSS Overflow</h1>
+                <p class="lesson-intro">Overflow controls what happens when content is larger than its container.</p>
+                <div class="code-box"><pre><code>.box {
+    width: 200px;
+    height: 100px;
+    overflow: auto;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="float">
+                <h1 class="lesson-title">CSS Float</h1>
+                <p class="lesson-intro">The float property can move an element to the left or right of its container.</p>
+                <div class="code-box"><pre><code>.image {
+    float: left;
+    margin-right: 20px;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="positioning">
+                <h1 class="lesson-title">CSS Positioning</h1>
+                <p class="lesson-intro">Positioning lets you control where elements are placed.</p>
+                <div class="code-box"><pre><code>.box {
+    position: relative;
+    top: 20px;
+    left: 10px;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="z-index">
+                <h1 class="lesson-title">CSS Z-Index</h1>
+                <p class="lesson-intro">Z-index controls the stacking order of positioned elements.</p>
+                <div class="code-box"><pre><code>.front {
+    position: relative;
+    z-index: 10;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="units">
+                <h1 class="lesson-title">CSS Units</h1>
+                <p class="lesson-intro">CSS supports units such as px, %, em, rem, vh and vw.</p>
+                <div class="code-box"><pre><code>.box {
+    width: 80%;
+    padding: 2rem;
+    height: 50vh;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="variables">
+                <h1 class="lesson-title">CSS Variables</h1>
+                <p class="lesson-intro">CSS custom properties allow you to reuse values throughout a stylesheet.</p>
+                <div class="code-box"><pre><code>:root {
+    --primary: #16a34a;
+}
+
+button {
+    background: var(--primary);
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="math-functions">
+                <h1 class="lesson-title">Maths Functions</h1>
+                <p class="lesson-intro">CSS functions such as calc(), min() and max() help create flexible layouts.</p>
+                <div class="code-box"><pre><code>.container {
+    width: calc(100% - 40px);
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="forms">
+                <h1 class="lesson-title">CSS Forms</h1>
+                <p class="lesson-intro">CSS can improve the appearance and usability of form controls.</p>
+                <div class="code-box"><pre><code>input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="navigation">
+                <h1 class="lesson-title">CSS Navigation Bar</h1>
+                <p class="lesson-intro">Navigation bars combine links and layout techniques to help users move through a website.</p>
+                <div class="code-box"><pre><code>.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="display">
+                <h1 class="lesson-title">CSS Display</h1>
+                <p class="lesson-intro">The display property controls how an element participates in layout.</p>
+                <div class="code-box"><pre><code>.box {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="flexbox">
+                <h1 class="lesson-title">CSS FlexBox</h1>
+                <p class="lesson-intro">Flexbox is a powerful layout system for arranging elements in rows or columns.</p>
+                <div class="code-box"><pre><code>.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="grid">
+                <h1 class="lesson-title">CSS Grid</h1>
+                <p class="lesson-intro">CSS Grid is designed for two-dimensional layouts using rows and columns.</p>
+                <div class="code-box"><pre><code>.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="media-queries">
+                <h1 class="lesson-title">CSS Media Queries</h1>
+                <p class="lesson-intro">Media queries allow a website to adapt to different screen sizes.</p>
+                <div class="code-box"><pre><code>@media (max-width: 600px) {
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="combinators">
+                <h1 class="lesson-title">CSS Combinators</h1>
+                <p class="lesson-intro">Combinators describe relationships between selectors.</p>
+                <div class="code-box"><pre><code>.card p {
+    color: green;
+}
+
+.card > p {
+    font-weight: bold;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="pseudo">
+                <h1 class="lesson-title">Pseudo-classes</h1>
+                <p class="lesson-intro">Pseudo-classes style elements based on a particular state.</p>
+                <div class="code-box"><pre><code>button:hover {
+    background: green;
+}
+
+input:focus {
+    outline: 2px solid blue;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="shadows">
+                <h1 class="lesson-title">CSS Shadows</h1>
+                <p class="lesson-intro">Box and text shadows add depth to elements.</p>
+                <div class="code-box"><pre><code>.card {
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="border-images">
+                <h1 class="lesson-title">Border Images</h1>
+                <p class="lesson-intro">Border images allow an image to be used as a border.</p>
+                <div class="code-box"><pre><code>.box {
+    border: 10px solid transparent;
+    border-image: url("border.png") 30 round;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="gradients">
+                <h1 class="lesson-title">CSS Gradients</h1>
+                <p class="lesson-intro">Gradients create smooth transitions between colors.</p>
+                <div class="code-box"><pre><code>.hero {
+    background: linear-gradient(
+        135deg,
+        #16a34a,
+        #2563eb
+    );
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="transform">
+                <h1 class="lesson-title">2D Transform</h1>
+                <p class="lesson-intro">Transforms can move, rotate, scale or skew an element.</p>
+                <div class="code-box"><pre><code>.box:hover {
+    transform: scale(1.05);
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="transitions">
+                <h1 class="lesson-title">CSS Transitions</h1>
+                <p class="lesson-intro">Transitions make property changes happen smoothly.</p>
+                <div class="code-box"><pre><code>.button {
+    transition: .3s ease;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="animations">
+                <h1 class="lesson-title">CSS Animations</h1>
+                <p class="lesson-intro">Animations can change CSS properties over time.</p>
+                <div class="code-box"><pre><code>@keyframes move {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100px);
+    }
+
+}
+
+.box {
+    animation: move 2s infinite alternate;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="masking">
+                <h1 class="lesson-title">CSS Masking</h1>
+                <p class="lesson-intro">Masking can control which parts of an element remain visible.</p>
+                <div class="code-box"><pre><code>.shape {
+    mask-image: linear-gradient(
+        black,
+        transparent
+    );
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="tooltip">
+                <h1 class="lesson-title">ToolTip Text</h1>
+                <p class="lesson-intro">Tooltips provide extra information when a user points to an element.</p>
+                <div class="code-box"><pre><code>.tooltip {
+    position: relative;
+}
+
+.tooltip:hover::after {
+    content: "Hello!";
+    position: absolute;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="pagination">
+                <h1 class="lesson-title">Pagination</h1>
+                <p class="lesson-intro">Pagination divides large amounts of content into separate pages.</p>
+                <div class="code-box"><pre><code>.pagination {
+    display: flex;
+    gap: 8px;
+}
+
+.pagination a {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="inherit">
+                <h1 class="lesson-title">CSS Inherit</h1>
+                <p class="lesson-intro">The inherit value tells an element to use the corresponding value from its parent.</p>
+                <div class="code-box"><pre><code>.child {
+    color: inherit;
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="important">
+                <h1 class="lesson-title">!important Property</h1>
+                <p class="lesson-intro">The !important flag increases the priority of a CSS declaration and should be used carefully.</p>
+                <div class="code-box"><pre><code>.text {
+    color: red !important;
+}</code></pre></div>
+
+                <div class="warning">
+                    Avoid using !important everywhere. Good CSS structure
+                    usually reduces the need for it.
+                </div>
+            </article>
+
+
+            <article class="lesson-content" data-content="advanced-media">
+                <h1 class="lesson-title">Advanced Media Queries</h1>
+                <p class="lesson-intro">Advanced media queries can respond to screen size, orientation and user preferences.</p>
+                <div class="code-box"><pre><code>@media (min-width: 768px) and
+       (orientation: landscape) {
+
+    .layout {
+        display: grid;
+    }
+
+}</code></pre></div>
+            </article>
+
+
+            <article class="lesson-content" data-content="questions">
+
+                <h1 class="lesson-title">CSS Questions</h1>
+
+                <p class="lesson-intro">
+                    Test your understanding with these beginner-friendly
+                    CSS questions.
+                </p>
+
+                <h2>Question 1</h2>
+
+                <p>
+                    What does CSS stand for?
+                </p>
+
+                <h2>Question 2</h2>
+
+                <p>
+                    Which property changes the text color?
+                </p>
+
+                <h2>Question 3</h2>
+
+                <p>
+                    What is the difference between margin and padding?
+                </p>
+
+                <h2>Question 4</h2>
+
+                <p>
+                    Which CSS layout systems are commonly used
+                    for modern responsive websites?
+                </p>
+
+                <div class="note">
+                    Try answering these questions yourself before
+                    checking your notes.
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================= -->
+
+        <div class="lesson-navigation">
+
+            <button
+                class="nav-btn"
+                id="previousBtn">
+                ← Previous
+            </button>
+
+            <button
+                class="nav-btn"
+                id="nextBtn">
+                Next →
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
+</div>
+
+
+<!-- MOBILE SIDEBAR BUTTON -->
+
+<button
+    class="mobile-sidebar-btn"
+    id="mobileSidebarBtn">
+    ☰
+</button>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =====================================================
+   SECTION TOGGLE
+===================================================== */
+
+const sectionButtons =
+document.querySelectorAll(".section-toggle");
+
+sectionButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const section =
+        button.parentElement;
+
+        section.classList.toggle("closed");
+
+    });
+
+});
+
+
+/* =====================================================
+   LESSON ELEMENTS
+===================================================== */
+
+const lessonLinks =
+Array.from(
+    document.querySelectorAll(".lesson-link")
+);
+
+const lessonContents =
+Array.from(
+    document.querySelectorAll(".lesson-content")
+);
+
+const previousBtn =
+document.getElementById("previousBtn");
+
+const nextBtn =
+document.getElementById("nextBtn");
+
+const breadcrumbLesson =
+document.getElementById("breadcrumbLesson");
+
+const getStarted =
+document.getElementById("getStarted");
+
+
+/* =====================================================
+   OPEN LESSON
+===================================================== */
+
+function openLesson(index){
+
+    if(index < 0 || index >= lessonLinks.length){
+        return;
+    }
+
+    /* remove active */
+
+    lessonLinks.forEach(link => {
+        link.classList.remove("active");
+    });
+
+    /* activate selected */
+
+    lessonLinks[index]
+        .classList.add("active");
+
+
+    /* hide all content */
+
+    lessonContents.forEach(content => {
+        content.classList.remove("active");
+    });
+
+
+    /* selected lesson */
+
+    const lessonId =
+        lessonLinks[index]
+        .dataset.lesson;
+
+
+    const selectedContent =
+        document.querySelector(
+            `[data-content="${lessonId}"]`
+        );
+
+
+    if(selectedContent){
+
+        selectedContent.classList.add("active");
+
+    }
+
+
+    /* breadcrumb */
+
+    breadcrumbLesson.textContent =
+        lessonLinks[index].textContent.trim();
+
+
+    /* get started only on first lesson */
+
+    if(index === 0){
+
+        getStarted.style.display = "block";
+
+    }else{
+
+        getStarted.style.display = "none";
+
+    }
+
+
+    /* buttons */
+
+    previousBtn.disabled =
+        index === 0;
+
+    nextBtn.disabled =
+        index === lessonLinks.length - 1;
+
+
+    /* scroll */
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   LESSON CLICK
+===================================================== */
+
+lessonLinks.forEach((link,index) => {
+
+    link.addEventListener("click", () => {
+
+        openLesson(index);
+
+        closeMobileSidebar();
+
+    });
+
+});
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+nextBtn.addEventListener("click", () => {
+
+    const currentIndex =
+        lessonLinks.findIndex(
+            link => link.classList.contains("active")
+        );
+
+    if(currentIndex < lessonLinks.length - 1){
+
+        openLesson(currentIndex + 1);
+
+    }
+
+});
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+previousBtn.addEventListener("click", () => {
+
+    const currentIndex =
+        lessonLinks.findIndex(
+            link => link.classList.contains("active")
+        );
+
+    if(currentIndex > 0){
+
+        openLesson(currentIndex - 1);
+
+    }
+
+});
+
+
+/* =====================================================
+   MOBILE SIDEBAR
+===================================================== */
+
+const sidebar =
+document.getElementById("sidebar");
+
+const sidebarOverlay =
+document.getElementById("sidebarOverlay");
+
+const mobileSidebarBtn =
+document.getElementById("mobileSidebarBtn");
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+
+function openMobileSidebar(){
+
+    sidebar.classList.add("open");
+
+    sidebarOverlay.classList.add("show");
+
+}
+
+
+function closeMobileSidebar(){
+
+    sidebar.classList.remove("open");
+
+    sidebarOverlay.classList.remove("show");
+
+}
+
+
+mobileSidebarBtn.addEventListener(
+    "click",
+    openMobileSidebar
+);
+
+
+menuBtn.addEventListener(
+    "click",
+    openMobileSidebar
+);
+
+
+sidebarOverlay.addEventListener(
+    "click",
+    closeMobileSidebar
+);
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+const searchInput =
+document.getElementById("searchInput");
+
+searchInput.addEventListener("input", () => {
+
+    const value =
+        searchInput.value
+        .toLowerCase()
+        .trim();
+
+
+    lessonLinks.forEach(link => {
+
+        const text =
+            link.textContent
+            .toLowerCase();
+
+        if(!value){
+
+            link.style.display = "block";
+
+        }else{
+
+            link.style.display =
+                text.includes(value)
+                ? "block"
+                : "none";
+
+        }
+
+    });
+
+});
+
+
+/* =====================================================
+   INITIAL STATE
+===================================================== */
+
+openLesson(0);
+
+</script>
+
+</body>
+</html>

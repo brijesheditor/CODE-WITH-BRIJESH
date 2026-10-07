@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="CODE With Brijesh - Download programming handbooks, notes and cheatsheets."
+    >
+
+    <title>Notes - CODE With Brijesh</title>
+
+    <!-- Main Website CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Notes Page CSS -->
+    <style>
+      
+
+/* =========================================================
+   CODE WITH BRIJESH — NOTES PAGE
+   RESPONSIVE LAYOUT
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.notes-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+}
+
+body.dark .notes-page {
+    background: #0f1418;
+}
+
+
+/* =========================================================
+   PROMO
+========================================================= */
+
+.notes-promo {
+    width: min(900px, calc(100% - 30px));
+    height: 105px;
+
+    margin: 18px auto 8px;
+
+    border-radius: 7px;
+
+    background: linear-gradient(
+        90deg,
+        #fff5c9,
+        #fffdf0,
+        #fff5c9
+    );
+
+    border: 1px solid #eee5bd;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.notes-promo-content h3 {
+    margin: 0 0 6px;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    color: #111;
+}
+
+.notes-promo-content p {
+    margin: 0;
+
+    font-size: 12px;
+    color: #666;
+}
+
+body.dark .notes-promo {
+    background: linear-gradient(
+        90deg,
+        #25230f,
+        #302d18,
+        #25230f
+    );
+
+    border-color: #3d3a20;
+}
+
+body.dark .notes-promo-content h3 {
+    color: #fff;
+}
+
+body.dark .notes-promo-content p {
+    color: #aaa;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.notes-container {
+    width: min(1100px, calc(100% - 30px));
+
+    margin: 0 auto;
+
+    padding: 5px 0 65px;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.notes-section {
+    width: 100%;
+    margin-top: 24px;
+}
+
+.notes-section-title {
+    margin: 18px 0 17px;
+
+    text-align: center;
+
+    font-size: 21px;
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    color: #111;
+}
+
+body.dark .notes-section-title {
+    color: #fff;
+}
+
+
+/* =========================================================
+   GRID
+   DESKTOP = 4 CARDS
+========================================================= */
+
+.notes-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.note-card {
+    width: 100%;
+    min-width: 0;
+
+    min-height: 175px;
+
+    padding: 13px 10px 10px;
+
+    background: #fff;
+
+    border: 1px solid #e7e7e7;
+
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.note-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.12);
+}
+
+body.dark .note-card {
+    background: #171d22;
+    border-color: #293139;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, .25);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.note-icon {
+    width: 65px;
+    height: 65px;
+
+    min-width: 65px;
+    min-height: 65px;
+
+    flex-shrink: 0;
+
+    margin: 2px auto 9px;
+
+    border-radius: 50%;
+
+    background: #f2f5f7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    font-size: 25px;
+    font-weight: 800;
+
+    color: #333;
+}
+
+.note-icon img {
+    width: 100%;
+    height: 100%;
+
+    padding: 7px;
+
+    object-fit: contain;
+}
+
+.note-icon.square {
+    border-radius: 12px;
+}
+
+body.dark .note-icon {
+    background: #222a30;
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.note-card h3 {
+    width: 100%;
+
+    margin: 0 0 5px;
+
+    font-size: 13px;
+
+    line-height: 1.25;
+
+    color: #222;
+}
+
+.note-card p {
+    width: 100%;
+
+    margin: 0 0 9px;
+
+    font-size: 9px;
+
+    line-height: 1.35;
+
+    color: #777;
+}
+
+body.dark .note-card h3 {
+    color: #fff;
+}
+
+body.dark .note-card p {
+    color: #aab2b8;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.note-buttons {
+    width: 100%;
+
+    display: flex;
+
+    gap: 5px;
+
+    margin-top: auto;
+}
+
+.note-btn {
+    flex: 1;
+
+    min-width: 0;
+
+    min-height: 28px;
+
+    padding: 4px 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f7f7f7;
+
+    border: 1px solid #e3e3e3;
+
+    border-radius: 3px;
+
+    color: #333;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    transition: .2s ease;
+}
+
+.note-btn:hover {
+    background: #111;
+    border-color: #111;
+    color: #fff;
+}
+
+body.dark .note-btn {
+    background: #222a30;
+    border-color: #343e46;
+    color: #ddd;
+}
+
+body.dark .note-btn:hover {
+    background: #fff;
+    color: #111;
+}
+
+
+/* =========================================================
+   TABLET
+   901px → 601px
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .notes-container {
+        width: calc(100% - 24px);
+    }
+
+    .notes-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 11px;
+    }
+
+    .note-card {
+        min-height: 165px;
+    }
+
+    .note-icon {
+        width: 58px;
+        height: 58px;
+
+        min-width: 58px;
+        min-height: 58px;
+
+        font-size: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   600px AND BELOW
+
+   IMPORTANT:
+   MOBILE = 2 CARDS PER ROW
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* -----------------------------------------
+       PROMO
+    ----------------------------------------- */
+
+    .notes-promo {
+        width: calc(100% - 20px);
+
+        height: 72px;
+
+        margin: 10px auto 6px;
+
+        border-radius: 5px;
+    }
+
+    .notes-promo-content h3 {
+        font-size: 14px;
+
+        margin-bottom: 3px;
+    }
+
+    .notes-promo-content p {
+        font-size: 8px;
+    }
+
+
+    /* -----------------------------------------
+       CONTAINER
+    ----------------------------------------- */
+
+    .notes-container {
+        width: calc(100% - 20px);
+
+        margin: 0 auto;
+
+        padding: 2px 0 40px;
+    }
+
+
+    /* -----------------------------------------
+       SECTION
+    ----------------------------------------- */
+
+    .notes-section {
+        margin-top: 20px;
+    }
+
+    .notes-section-title {
+        font-size: 17px;
+
+        margin: 15px 0 13px;
+    }
+
+
+    /* -----------------------------------------
+       GRID
+       2 CARDS PER ROW
+    ----------------------------------------- */
+
+    .notes-grid {
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 10px !important;
+
+        width: 100%;
+    }
+
+
+    /* -----------------------------------------
+       CARD
+    ----------------------------------------- */
+
+    .note-card {
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        min-height: 165px !important;
+
+        height: auto !important;
+
+        padding: 11px 8px 8px !important;
+
+        border-radius: 7px !important;
+
+        box-shadow:
+            0 2px 8px rgba(0, 0, 0, .07);
+    }
+
+    .note-card:hover {
+        transform: none;
+    }
+
+
+    /* -----------------------------------------
+       ICON
+    ----------------------------------------- */
+
+    .note-icon {
+        width: 50px !important;
+        height: 50px !important;
+
+        min-width: 50px !important;
+        min-height: 50px !important;
+
+        margin: 1px auto 7px !important;
+
+        font-size: 18px !important;
+    }
+
+    .note-icon img {
+        padding: 5px !important;
+    }
+
+
+    /* -----------------------------------------
+       TITLE
+    ----------------------------------------- */
+
+    .note-card h3 {
+        width: 100% !important;
+
+        margin: 0 0 4px !important;
+
+        font-size: 11px !important;
+
+        line-height: 1.25 !important;
+
+        display: -webkit-box !important;
+
+        -webkit-box-orient: vertical !important;
+
+        -webkit-line-clamp: 2 !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* -----------------------------------------
+       DESCRIPTION
+    ----------------------------------------- */
+
+    .note-card p {
+        width: 100% !important;
+
+        margin: 0 0 8px !important;
+
+        font-size: 8px !important;
+
+        line-height: 1.3 !important;
+
+        white-space: nowrap !important;
+
+        overflow: hidden !important;
+
+        text-overflow: ellipsis !important;
+    }
+
+
+    /* -----------------------------------------
+       BUTTONS
+    ----------------------------------------- */
+
+    .note-buttons {
+        width: 100% !important;
+
+        gap: 4px !important;
+
+        margin-top: auto !important;
+    }
+
+    .note-btn {
+        min-height: 27px !important;
+
+        padding: 4px 4px !important;
+
+        font-size: 7px !important;
+
+        border-radius: 4px !important;
+    }
+
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+
+    .footer {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        overflow: hidden !important;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   380px AND BELOW
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .notes-container {
+        width: calc(100% - 16px);
+    }
+
+    .notes-grid {
+        gap: 8px !important;
+    }
+
+    .note-card {
+        min-height: 158px !important;
+
+        padding: 10px 6px 7px !important;
+    }
+
+    .note-icon {
+        width: 46px !important;
+        height: 46px !important;
+
+        min-width: 46px !important;
+        min-height: 46px !important;
+
+        font-size: 17px !important;
+    }
+
+    .note-card h3 {
+        font-size: 10px !important;
+    }
+
+    .note-card p {
+        font-size: 7px !important;
+    }
+
+    .note-btn {
+        min-height: 25px !important;
+
+        font-size: 6.5px !important;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+   340px AND BELOW
+========================================================= */
+
+@media (max-width: 340px) {
+
+    .notes-container {
+        width: calc(100% - 12px);
+    }
+
+    .notes-grid {
+        gap: 6px !important;
+    }
+
+    .note-card {
+        min-height: 150px !important;
+
+        padding: 8px 5px 6px !important;
+    }
+
+    .note-icon {
+        width: 42px !important;
+        height: 42px !important;
+
+        min-width: 42px !important;
+        min-height: 42px !important;
+    }
+
+    .note-card h3 {
+        font-size: 9px !important;
+    }
+
+    .note-card p {
+        font-size: 6.5px !important;
+    }
+
+    .note-btn {
+        min-height: 23px !important;
+
+        padding: 3px 2px !important;
+
+        font-size: 6px !important;
+    }
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark .notes-page {
+    background: #0f1418;
+}
+
+body.dark .notes-section-title {
+    color: #fff;
+}
+
+body.dark .note-card {
+    background: #171d22;
+    border-color: #293139;
+}
+
+body.dark .note-icon {
+    background: #222a30;
+}
+
+body.dark .note-card h3 {
+    color: #fff;
+}
+
+body.dark .note-card p {
+    color: #aab2b8;
+}
+
+body.dark .note-btn {
+    background: #222a30;
+    border-color: #343e46;
+    color: #ddd;
+}
+
+body.dark .note-btn:hover {
+    background: #fff;
+    color: #111;
+}
+
+</style>
+    
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================= -->
+
+    <header class="header">
+
+        <div class="header-inner">
+
+            <a href="index.html" class="brand">
+                <span>&lt;/&gt;</span>
+                CODE With Brijesh
+            </a>
+
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+
+                <a href="tutorials.html">
+                    Tutorials
+                </a>
+
+                <a href="notes.html" class="active">
+                    Notes
+                </a>
+            </nav>
+
+            <div class="header-right">
+
+                <div class="search">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search..."
+                    >
+
+                    <button id="searchBtn">
+                        🔍
+                    </button>
+
+                </div>
+
+                <button
+                    class="menu-button"
+                    id="menuButton"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         SIDE MENU
+    ========================================= -->
+
+    <aside
+        class="side-menu"
+        id="sideMenu"
+    >
+
+        <div class="side-menu-top">
+
+            <strong>
+                CODE With Brijesh
+            </strong>
+
+            <button id="closeMenu">
+                ×
+            </button>
+
+        </div>
+
+        <div class="side-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="tutorials.html">
+                Tutorials
+            </a>
+
+            <a href="courses.html">
+                Courses
+            </a>
+
+            <a href="notes.html">
+                Notes
+            </a>
+
+            <a href="projects.html">
+                Projects
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+        <div class="side-theme">
+
+            <span>
+                Dark Mode
+            </span>
+
+            <label class="toggle">
+
+                <input
+                    type="checkbox"
+                    id="darkMode"
+                >
+
+                <span class="toggle-slider"></span>
+
+            </label>
+
+        </div>
+
+    </aside>
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+    ></div>
+
+
+    <!-- =========================================
+         NOTES PAGE
+    ========================================= -->
+
+    <main class="notes-page">
+
+
+        <!-- PROMO -->
+        <div class="notes-promo">
+
+            <div class="notes-promo-content">
+
+                <h3>
+                    CODE With Brijesh
+                </h3>
+
+                <p>
+                    Free Coding Notes, Handbooks & Cheatsheets
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="notes-container">
+
+
+            <!-- =====================================
+                 HANDBOOKS
+            ====================================== -->
+
+            <section class="notes-section">
+
+                <h2 class="notes-section-title">
+                    Download Handbooks
+                </h2>
+
+
+                <div class="notes-grid">
+
+
+                    <!-- Python -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/python/3776AB"
+                                alt="Python"
+                            >
+                        </div>
+
+                        <h3>
+                            Python Handbook
+                        </h3>
+
+                        <p>
+                            Download Python handbook
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/python-handbook.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- C -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/c/3949AB"
+                                alt="C"
+                            >
+                        </div>
+
+                        <h3>
+                            C Handbook
+                        </h3>
+
+                        <p>
+                            Download C handbook
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/c-handbook.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- HTML -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/html5/E34F26"
+                                alt="HTML"
+                            >
+                        </div>
+
+                        <h3>
+                            HTML Handbook
+                        </h3>
+
+                        <p>
+                            Download HTML handbook
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/html-handbook.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- MySQL -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/mysql/4479A1"
+                                alt="MySQL"
+                            >
+                        </div>
+
+                        <h3>
+                            MySQL Handbook
+                        </h3>
+
+                        <p>
+                            Download MySQL handbook
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/mysql-handbook.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- MongoDB -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/mongodb/47A248"
+                                alt="MongoDB"
+                            >
+                        </div>
+
+                        <h3>
+                            MongoDB Handbook
+                        </h3>
+
+                        <p>
+                            Download MongoDB handbook
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/mongodb-handbook.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Git -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/git/F05032"
+                                alt="Git"
+                            >
+                        </div>
+
+                        <h3>
+                            Git Handbook
+                        </h3>
+
+                        <p>
+                            Download Git handbook
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/git-handbook.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Linux -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/linux/FCC624"
+                                alt="Linux"
+                            >
+                        </div>
+
+                        <h3>
+                            Linux Handbook
+                        </h3>
+
+                        <p>
+                            Download Linux handbook
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/linux-handbook.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 NOTES
+            ====================================== -->
+
+            <section class="notes-section">
+
+                <h2 class="notes-section-title">
+                    Download Notes
+                </h2>
+
+
+                <div class="notes-grid">
+
+
+                    <!-- Python -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/python/3776AB"
+                                alt="Python"
+                            >
+                        </div>
+
+                        <h3>Python Notes</h3>
+
+                        <p>
+                            Download Python notes
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/python-notes.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                PDF Notes
+                            </a>
+
+                            <a
+                                href="notes/python-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Cheatsheet
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- C -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/c/3949AB"
+                                alt="C"
+                            >
+                        </div>
+
+                        <h3>C Notes</h3>
+
+                        <p>
+                            Download C notes
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/c-notes.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                PDF Notes
+                            </a>
+
+                            <a
+                                href="notes/c-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Cheatsheet
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Android -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/android/3DDC84"
+                                alt="Android"
+                            >
+                        </div>
+
+                        <h3>Android Notes</h3>
+
+                        <p>
+                            Download Android notes
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/android-notes.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                PDF Notes
+                            </a>
+
+                            <a
+                                href="notes/android-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Cheatsheet
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Java -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/openjdk/000000"
+                                alt="Java"
+                            >
+                        </div>
+
+                        <h3>Java Notes</h3>
+
+                        <p>
+                            Download Java notes
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/java-notes.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                PDF Notes
+                            </a>
+
+                            <a
+                                href="notes/java-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Cheatsheet
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- HTML -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/html5/E34F26"
+                                alt="HTML"
+                            >
+                        </div>
+
+                        <h3>HTML Notes</h3>
+
+                        <p>
+                            Download HTML notes
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/html-notes.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                PDF Notes
+                            </a>
+
+                            <a
+                                href="notes/html-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Cheatsheet
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CSS -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/css/1572B6"
+                                alt="CSS"
+                            >
+                        </div>
+
+                        <h3>CSS Notes</h3>
+
+                        <p>
+                            Download CSS notes
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/css-notes.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                PDF Notes
+                            </a>
+
+                            <a
+                                href="notes/css-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Cheatsheet
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- DSA -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <span>DSA</span>
+                        </div>
+
+                        <h3>DSA Notes</h3>
+
+                        <p>
+                            Download DSA notes
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/dsa-notes.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                PDF Notes
+                            </a>
+
+                            <a
+                                href="notes/dsa-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Cheatsheet
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- JavaScript -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/javascript/F7DF1E"
+                                alt="JavaScript"
+                            >
+                        </div>
+
+                        <h3>JavaScript Notes</h3>
+
+                        <p>
+                            Download JavaScript notes
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/javascript-notes.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                PDF Notes
+                            </a>
+
+                            <a
+                                href="notes/javascript-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Cheatsheet
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 CHEATSHEETS
+            ====================================== -->
+
+            <section class="notes-section">
+
+                <h2 class="notes-section-title">
+                    Download Cheatsheets
+                </h2>
+
+
+                <div class="notes-grid">
+
+
+                    <!-- Python -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/python/3776AB"
+                                alt="Python"
+                            >
+                        </div>
+
+                        <h3>Python Cheatsheet</h3>
+
+                        <p>
+                            Developer quick reference
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/python-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- C -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/c/3949AB"
+                                alt="C"
+                            >
+                        </div>
+
+                        <h3>C Language Cheatsheet</h3>
+
+                        <p>
+                            Developer quick reference
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/c-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- C++ -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/cplusplus/00599C"
+                                alt="C++"
+                            >
+                        </div>
+
+                        <h3>C++ Cheatsheet</h3>
+
+                        <p>
+                            Developer quick reference
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/cpp-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Java -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/openjdk/000000"
+                                alt="Java"
+                            >
+                        </div>
+
+                        <h3>Java Cheatsheet</h3>
+
+                        <p>
+                            Developer quick reference
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/java-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- HTML -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/html5/E34F26"
+                                alt="HTML"
+                            >
+                        </div>
+
+                        <h3>HTML Cheatsheet</h3>
+
+                        <p>
+                            Developer quick reference
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/html-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CSS -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/css/1572B6"
+                                alt="CSS"
+                            >
+                        </div>
+
+                        <h3>CSS Cheatsheet</h3>
+
+                        <p>
+                            Developer quick reference
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/css-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Flask -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/flask/000000"
+                                alt="Flask"
+                            >
+                        </div>
+
+                        <h3>Flask Cheatsheet</h3>
+
+                        <p>
+                            Developer quick reference
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/flask-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- JavaScript -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/javascript/F7DF1E"
+                                alt="JavaScript"
+                            >
+                        </div>
+
+                        <h3>JavaScript Cheatsheet</h3>
+
+                        <p>
+                            Developer quick reference
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/javascript-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PHP -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/php/777BB4"
+                                alt="PHP"
+                            >
+                        </div>
+
+                        <h3>PHP Cheatsheet</h3>
+
+                        <p>
+                            Developer quick reference
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/php-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Git -->
+
+                    <article class="note-card">
+
+                        <div class="note-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/git/F05032"
+                                alt="Git"
+                            >
+                        </div>
+
+                        <h3>Git Cheatsheet</h3>
+
+                        <p>
+                            Developer quick reference
+                        </p>
+
+                        <div class="note-buttons">
+
+                            <a
+                                href="notes/git-cheatsheet.pdf"
+                                class="note-btn"
+                                download
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    </article>
+                    
+                    <!-- MySQL -->
+
+<article class="note-card">
+
+    <div class="note-icon">
+        <img
+            src="https://cdn.simpleicons.org/mysql/4479A1"
+            alt="MySQL"
+        >
+    </div>
+
+    <h3>MySQL Cheatsheet</h3>
+
+    <p>
+        Developer quick reference
+    </p>
+
+    <div class="note-buttons">
+
+        <a
+            href="notes/mysql-cheatsheet.pdf"
+            class="note-btn"
+            download
+        >
+            Download
+        </a>
+
+    </div>
+
+</article>
+
+
+<!-- Django -->
+
+<article class="note-card">
+
+    <div class="note-icon">
+        <img
+            src="https://cdn.simpleicons.org/django/092E20"
+            alt="Django"
+        >
+    </div>
+
+    <h3>Django Cheatsheet</h3>
+
+    <p>
+        Developer quick reference
+    </p>
+
+    <div class="note-buttons">
+
+        <a
+            href="notes/django-cheatsheet.pdf"
+            class="note-btn"
+            download
+        >
+            Download
+        </a>
+
+    </div>
+
+</article>
+
+
+<!-- MongoDB -->
+
+<article class="note-card">
+
+    <div class="note-icon">
+        <img
+            src="https://cdn.simpleicons.org/mongodb/47A248"
+            alt="MongoDB"
+        >
+    </div>
+
+    <h3>MongoDB Cheatsheet</h3>
+
+    <p>
+        Developer quick reference
+    </p>
+
+    <div class="note-buttons">
+
+        <a
+            href="notes/mongodb-cheatsheet.pdf"
+            class="note-btn"
+            download
+        >
+            Download
+        </a>
+
+    </div>
+
+</article>
+
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer class="footer">
+
+        <div class="footer-grid">
+
+            <div class="footer-about">
+
+                <a
+                    href="index.html"
+                    class="footer-logo"
+                >
+                    &lt;/&gt; CODE With Brijesh
+                </a>
+
+                <p>
+                    Learn coding through tutorials,
+                    notes, practical projects and
+                    developer resources.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Main</h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="projects.html">
+                    Projects
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Learn</h3>
+
+                <a href="courses.html">
+                    Courses
+                </a>
+
+                <a href="tutorials.html">
+                    Tutorials
+                </a>
+
+                <a href="notes.html">
+                    Notes
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Resources</h3>
+
+                <a href="#">
+                    HTML
+                </a>
+
+                <a href="#">
+                    CSS
+                </a>
+
+                <a href="#">
+                    JavaScript
+                </a>
+
+                <a href="#">
+                    Python
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Social</h3>
+
+                <a href="#">
+                    YouTube
+                </a>
+
+                <a href="#">
+                    GitHub
+                </a>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 CODE With Brijesh.
+                All rights reserved.
+            </span>
+
+            <span>
+                Made with ❤️ and ☕ in India
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Existing website JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Learn HTML and CSS from beginner to project level with CODE With Brijesh."
+    >
+
+    <title>HTML & CSS Course - CODE With Brijesh</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+/* =========================================================
+   HTML + CSS COURSE PAGE
+========================================================= */
+
+.course-learning-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+    color: #111;
+}
+
+body.dark .course-learning-page {
+    background: #0f1418;
+    color: #fff;
+}
+
+
+/* =========================================================
+   COURSE HERO
+========================================================= */
+
+.course-hero {
+    width: min(1100px, calc(100% - 30px));
+
+    margin: 30px auto 25px;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef4ff,
+            #ffffff
+        );
+
+    border: 1px solid #e1e7f0;
+}
+
+body.dark .course-hero {
+    background:
+        linear-gradient(
+            135deg,
+            #18212a,
+            #11161b
+        );
+
+    border-color: #293139;
+}
+
+.course-hero-top {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.course-hero-icon {
+    width: 85px;
+    height: 85px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #f1f5f9;
+
+    font-size: 45px;
+}
+
+body.dark .course-hero-icon {
+    background: #242c33;
+}
+
+.course-hero h1 {
+    margin: 0 0 8px;
+
+    font-size: 32px;
+
+    line-height: 1.2;
+}
+
+.course-hero p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+body.dark .course-hero p {
+    color: #aab2b8;
+}
+
+
+/* =========================================================
+   COURSE META
+========================================================= */
+
+.course-info {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.course-info span {
+    padding: 7px 11px;
+
+    border-radius: 6px;
+
+    background: #fff;
+
+    border: 1px solid #ddd;
+
+    font-size: 11px;
+
+    color: #555;
+}
+
+body.dark .course-info span {
+    background: #171d22;
+    border-color: #343e46;
+    color: #ddd;
+}
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.course-layout {
+    width: min(1100px, calc(100% - 30px));
+
+    margin: 0 auto 70px;
+
+    display: grid;
+
+    grid-template-columns:
+        280px minmax(0, 1fr);
+
+    gap: 25px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.course-sidebar {
+    position: sticky;
+
+    top: 20px;
+
+    max-height: calc(100vh - 40px);
+
+    overflow-y: auto;
+
+    padding: 16px;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+}
+
+body.dark .course-sidebar {
+    background: #171d22;
+    border-color: #293139;
+}
+
+.course-sidebar h3 {
+    margin: 0 0 12px;
+
+    font-size: 16px;
+}
+
+.course-progress {
+    width: 100%;
+
+    height: 6px;
+
+    margin-bottom: 15px;
+
+    border-radius: 20px;
+
+    background: #e5e7eb;
+
+    overflow: hidden;
+}
+
+.course-progress-bar {
+    width: 0%;
+
+    height: 100%;
+
+    background: #2563eb;
+
+    transition: width .3s ease;
+}
+
+.course-lessons {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.course-lesson {
+    width: 100%;
+
+    padding: 9px 10px;
+
+    border-radius: 6px;
+
+    border: none;
+
+    background: transparent;
+
+    text-align: left;
+
+    color: #444;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.course-lesson:hover {
+    background: #e9eef5;
+}
+
+.course-lesson.active {
+    background: #111827;
+    color: #fff;
+}
+
+body.dark .course-lesson {
+    color: #cbd5e1;
+}
+
+body.dark .course-lesson:hover {
+    background: #242c33;
+}
+
+body.dark .course-lesson.active {
+    background: #fff;
+    color: #111;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.course-content-area {
+    min-width: 0;
+}
+
+.course-content-box {
+    padding: 30px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5e7eb;
+
+    background: #fff;
+}
+
+body.dark .course-content-box {
+    background: #171d22;
+    border-color: #293139;
+}
+
+.course-content-box h2 {
+    margin: 0 0 15px;
+
+    font-size: 27px;
+
+    line-height: 1.3;
+}
+
+.course-content-box h3 {
+    margin: 28px 0 10px;
+
+    font-size: 19px;
+}
+
+.course-content-box p {
+    margin: 0 0 15px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #555;
+}
+
+body.dark .course-content-box p {
+    color: #b7c0c7;
+}
+
+
+/* =========================================================
+   LIST
+========================================================= */
+
+.course-content-box ul {
+    margin: 10px 0 20px;
+
+    padding-left: 22px;
+}
+
+.course-content-box li {
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #555;
+}
+
+body.dark .course-content-box li {
+    color: #b7c0c7;
+}
+
+
+/* =========================================================
+   CODE BOX
+========================================================= */
+
+.code-box {
+    margin: 18px 0;
+
+    padding: 18px;
+
+    border-radius: 8px;
+
+    background: #111827;
+
+    color: #e5e7eb;
+
+    overflow-x: auto;
+
+    font-family:
+        Consolas,
+        Monaco,
+        monospace;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+.code-box code {
+    white-space: pre;
+}
+
+
+/* =========================================================
+   TIP BOX
+========================================================= */
+
+.tip-box {
+    margin: 20px 0;
+
+    padding: 15px;
+
+    border-left: 4px solid #2563eb;
+
+    border-radius: 5px;
+
+    background: #eff6ff;
+
+    color: #334155;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+body.dark .tip-box {
+    background: #172436;
+    color: #cbd5e1;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.lesson-navigation {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.lesson-nav-btn {
+    flex: 1;
+
+    min-height: 42px;
+
+    padding: 9px 15px;
+
+    border-radius: 7px;
+
+    border: 1px solid #ddd;
+
+    background: #fff;
+
+    color: #222;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.lesson-nav-btn:hover {
+    background: #111827;
+    color: #fff;
+}
+
+.lesson-nav-btn:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+}
+
+body.dark .lesson-nav-btn {
+    background: #20272d;
+    border-color: #343e46;
+    color: #fff;
+}
+
+
+/* =========================================================
+   MOBILE LESSON MENU
+========================================================= */
+
+.mobile-course-menu {
+    display: none;
+
+    width: 100%;
+
+    margin-bottom: 15px;
+
+    padding: 11px;
+
+    border-radius: 7px;
+
+    background: #111827;
+
+    color: #fff;
+
+    border: none;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .course-layout {
+        grid-template-columns: 220px minmax(0, 1fr);
+
+        gap: 15px;
+    }
+
+    .course-hero h1 {
+        font-size: 28px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .course-hero {
+        width: calc(100% - 20px);
+
+        margin: 20px auto;
+
+        padding: 22px 16px;
+    }
+
+    .course-hero-top {
+        align-items: flex-start;
+
+        gap: 13px;
+    }
+
+    .course-hero-icon {
+        width: 58px;
+        height: 58px;
+
+        border-radius: 10px;
+
+        font-size: 30px;
+    }
+
+    .course-hero h1 {
+        font-size: 22px;
+    }
+
+    .course-hero p {
+        font-size: 12px;
+    }
+
+    .course-info {
+        gap: 6px;
+    }
+
+    .course-info span {
+        font-size: 9px;
+
+        padding: 5px 7px;
+    }
+
+
+    /* LAYOUT */
+
+    .course-layout {
+        width: calc(100% - 20px);
+
+        display: block;
+
+        margin-bottom: 45px;
+    }
+
+
+    /* SIDEBAR */
+
+    .course-sidebar {
+        position: static;
+
+        max-height: none;
+
+        margin-bottom: 12px;
+
+        padding: 12px;
+    }
+
+    .course-sidebar h3 {
+        font-size: 14px;
+    }
+
+    .course-lessons {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 5px;
+    }
+
+    .course-lesson {
+        padding: 8px 7px;
+
+        font-size: 10px;
+    }
+
+
+    /* CONTENT */
+
+    .course-content-box {
+        padding: 18px 14px;
+
+        border-radius: 9px;
+    }
+
+    .course-content-box h2 {
+        font-size: 21px;
+    }
+
+    .course-content-box h3 {
+        font-size: 17px;
+    }
+
+    .course-content-box p,
+    .course-content-box li {
+        font-size: 12px;
+
+        line-height: 1.7;
+    }
+
+
+    /* CODE */
+
+    .code-box {
+        padding: 13px;
+
+        font-size: 11px;
+
+        border-radius: 6px;
+    }
+
+
+    /* NAV */
+
+    .lesson-navigation {
+        gap: 7px;
+    }
+
+    .lesson-nav-btn {
+        min-height: 38px;
+
+        font-size: 10px;
+
+        padding: 7px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .course-hero h1 {
+        font-size: 20px;
+    }
+
+    .course-lessons {
+        grid-template-columns:
+            1fr;
+    }
+
+    .course-content-box {
+        padding: 15px 11px;
+    }
+
+    .course-content-box h2 {
+        font-size: 19px;
+    }
+
+}
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <a href="index.html" class="brand">
+            <span>&lt;/&gt;</span>
+            CODE With Brijesh
+        </a>
+
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="tutorials.html">
+                Tutorials
+            </a>
+
+            <a href="courses.html" class="active">
+                Courses
+            </a>
+
+            <a href="notes.html">
+                Notes
+            </a>
+
+        </nav>
+
+
+        <div class="header-right">
+
+            <div class="search">
+
+                <input
+                    type="text"
+                    placeholder="Search..."
+                >
+
+                <button>
+                    🔍
+                </button>
+
+            </div>
+
+
+            <button
+                class="menu-button"
+                id="menuButton"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     SIDE MENU
+===================================================== -->
+
+<aside
+    class="side-menu"
+    id="sideMenu"
+>
+
+    <div class="side-menu-top">
+
+        <strong>
+            CODE With Brijesh
+        </strong>
+
+        <button id="closeMenu">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="side-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="tutorials.html">
+            Tutorials
+        </a>
+
+        <a href="courses.html">
+            Courses
+        </a>
+
+        <a href="notes.html">
+            Notes
+        </a>
+
+        <a href="projects.html">
+            Projects
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+
+    <div class="side-theme">
+
+        <span>
+            Dark Mode
+        </span>
+
+        <label class="toggle">
+
+            <input
+                type="checkbox"
+                id="darkMode"
+            >
+
+            <span class="toggle-slider"></span>
+
+        </label>
+
+    </div>
+
+</aside>
+
+
+<div
+    class="menu-overlay"
+    id="menuOverlay"
+></div>
+
+
+<!-- =====================================================
+     COURSE PAGE
+===================================================== -->
+
+<main class="course-learning-page">
+
+
+    <!-- COURSE HERO -->
+
+    <section class="course-hero">
+
+        <div class="course-hero-top">
+
+            <div class="course-hero-icon">
+                🌐
+            </div>
+
+            <div>
+
+                <h1>
+                    HTML & CSS Course
+                </h1>
+
+                <p>
+                    Learn HTML and CSS from the basics
+                    and build beautiful responsive websites.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="course-info">
+
+            <span>
+                📚 Beginner Friendly
+            </span>
+
+            <span>
+                🎯 Practical Learning
+            </span>
+
+            <span>
+                🛠 Projects
+            </span>
+
+            <span>
+                📱 Responsive Design
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         COURSE LAYOUT
+    ================================================= -->
+
+    <div class="course-layout">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="course-sidebar">
+
+            <h3>
+                HTML & CSS Lessons
+            </h3>
+
+
+            <div class="course-progress">
+
+                <div
+                    class="course-progress-bar"
+                    id="progressBar"
+                ></div>
+
+            </div>
+
+
+            <div
+                class="course-lessons"
+                id="courseLessons"
+            >
+
+                <button
+                    class="course-lesson active"
+                    data-lesson="0"
+                >
+                    1. Introduction
+                </button>
+
+                <button
+                    class="course-lesson"
+                    data-lesson="1"
+                >
+                    2. HTML Basics
+                </button>
+
+                <button
+                    class="course-lesson"
+                    data-lesson="2"
+                >
+                    3. HTML Elements
+                </button>
+
+                <button
+                    class="course-lesson"
+                    data-lesson="3"
+                >
+                    4. HTML Attributes
+                </button>
+
+                <button
+                    class="course-lesson"
+                    data-lesson="4"
+                >
+                    5. Links & Images
+                </button>
+
+                <button
+                    class="course-lesson"
+                    data-lesson="5"
+                >
+                    6. Lists
+                </button>
+
+                <button
+                    class="course-lesson"
+                    data-lesson="6"
+                >
+                    7. Tables
+                </button>
+
+                <button
+                    class="course-lesson"
+                    data-lesson="7"
+                >
+                    8. Forms
+                </button>
+
+                <button
+                    class="course-lesson"
+                    data-lesson="8"
+                >
+                    9. CSS Introduction
+                </button>
+
+                <button
+                    class="course-lesson"
+                    data-lesson="9"
+                >
+                    10. CSS Selectors
+                </button>
+
+                <button
+                    class="course-lesson"
+                    data-lesson="10"
+                >
+                    11. Colors & Fonts
+                </button>
+
+                <button
+                    class="course-lesson"
+                    data-lesson="11"
+                >
+                    12. Box Model
+                </button>
+
+                <button
+                    class="course-lesson"
+                    data-lesson="12"
+                >
+                    13. Flexbox
+                </button>
+
+                <button
+                    class="course-lesson"
+                    data-lesson="13"
+                >
+                    14. CSS Grid
+                </button>
+
+                <button
+                    class="course-lesson"
+                    data-lesson="14"
+                >
+                    15. Responsive Design
+                </button>
+
+                <button
+                    class="course-lesson"
+                    data-lesson="15"
+                >
+                    16. Final Project
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CONTENT -->
+
+        <section class="course-content-area">
+
+            <article
+                class="course-content-box"
+                id="lessonContent"
+            >
+
+            </article>
+
+
+            <div class="lesson-navigation">
+
+                <button
+                    class="lesson-nav-btn"
+                    id="previousLesson"
+                >
+                    ← Previous
+                </button>
+
+                <button
+                    class="lesson-nav-btn"
+                    id="nextLesson"
+                >
+                    Next →
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div class="footer-about">
+
+            <a
+                href="index.html"
+                class="footer-logo"
+            >
+                &lt;/&gt; CODE With Brijesh
+            </a>
+
+            <p>
+                Learn coding through tutorials,
+                courses, notes, projects and
+                developer resources.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Main</h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="projects.html">
+                Projects
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Learn</h3>
+
+            <a href="courses.html">
+                Courses
+            </a>
+
+            <a href="tutorials.html">
+                Tutorials
+            </a>
+
+            <a href="notes.html">
+                Notes
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Resources</h3>
+
+            <a href="#">
+                HTML
+            </a>
+
+            <a href="#">
+                CSS
+            </a>
+
+            <a href="#">
+                JavaScript
+            </a>
+
+            <a href="#">
+                Python
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Social</h3>
+
+            <a href="#">
+                YouTube
+            </a>
+
+            <a href="#">
+                GitHub
+            </a>
+
+            <a href="#">
+                Instagram
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 CODE With Brijesh.
+            All rights reserved.
+        </span>
+
+        <span>
+            Made with ❤️ and ☕ in India
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     COURSE JAVASCRIPT
+===================================================== -->
+
+<script>
+
+const lessons = [
+
+/* =====================================================
+   1
+===================================================== */
+
+{
+    title: "Introduction to HTML & CSS",
+
+    content: `
+
+        <h2>Introduction to HTML & CSS</h2>
+
+        <p>
+            Welcome to the HTML & CSS course of
+            CODE With Brijesh. In this course you
+            will learn how websites are structured,
+            styled and made responsive.
+        </p>
+
+        <h3>What is HTML?</h3>
+
+        <p>
+            HTML stands for HyperText Markup Language.
+            It is used to create the structure of
+            web pages.
+        </p>
+
+        <h3>What is CSS?</h3>
+
+        <p>
+            CSS stands for Cascading Style Sheets.
+            CSS is used to style and design HTML
+            elements.
+        </p>
+
+        <div class="tip-box">
+            Tip: First learn HTML properly, then
+            use CSS to make your pages beautiful.
+        </div>
+
+        <h3>What will you build?</h3>
+
+        <ul>
+            <li>Personal website</li>
+            <li>Portfolio website</li>
+            <li>Landing page</li>
+            <li>Responsive website</li>
+            <li>Final HTML + CSS project</li>
+        </ul>
+
+    `
+},
+
+
+/* =====================================================
+   2
+===================================================== */
+
+{
+    title: "HTML Basics",
+
+    content: `
+
+        <h2>HTML Basics</h2>
+
+        <p>
+            HTML documents use tags to describe
+            different parts of a web page.
+        </p>
+
+        <h3>Basic HTML structure</h3>
+
+        <div class="code-box"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></div>
+
+        <p>
+            The browser reads this structure and
+            displays the page to the user.
+        </p>
+
+    `
+},
+
+
+/* =====================================================
+   3
+===================================================== */
+
+{
+    title: "HTML Elements",
+
+    content: `
+
+        <h2>HTML Elements</h2>
+
+        <p>
+            An HTML element generally consists of
+            an opening tag, content and a closing tag.
+        </p>
+
+        <div class="code-box"><code>&lt;p&gt;
+    This is a paragraph.
+&lt;/p&gt;</code></div>
+
+        <h3>Common elements</h3>
+
+        <ul>
+            <li>h1 to h6 — Headings</li>
+            <li>p — Paragraph</li>
+            <li>a — Link</li>
+            <li>img — Image</li>
+            <li>div — Container</li>
+            <li>button — Button</li>
+        </ul>
+
+    `
+},
+
+
+/* =====================================================
+   4
+===================================================== */
+
+{
+    title: "HTML Attributes",
+
+    content: `
+
+        <h2>HTML Attributes</h2>
+
+        <p>
+            Attributes provide additional information
+            about HTML elements.
+        </p>
+
+        <div class="code-box"><code>&lt;a
+    href="https://example.com"
+&gt;
+    Visit Website
+&lt;/a&gt;</code></div>
+
+        <p>
+            Here, <strong>href</strong> is an attribute
+            of the anchor element.
+        </p>
+
+        <h3>Common attributes</h3>
+
+        <ul>
+            <li>id</li>
+            <li>class</li>
+            <li>href</li>
+            <li>src</li>
+            <li>alt</li>
+            <li>title</li>
+        </ul>
+
+    `
+},
+
+
+/* =====================================================
+   5
+===================================================== */
+
+{
+    title: "Links & Images",
+
+    content: `
+
+        <h2>Links & Images</h2>
+
+        <h3>Creating a link</h3>
+
+        <div class="code-box"><code>&lt;a href="about.html"&gt;
+    About Us
+&lt;/a&gt;</code></div>
+
+        <h3>Adding an image</h3>
+
+        <div class="code-box"><code>&lt;img
+    src="image.jpg"
+    alt="My Image"
+&gt;</code></div>
+
+        <p>
+            Always provide useful alternative text
+            through the alt attribute.
+        </p>
+
+    `
+},
+
+
+/* =====================================================
+   6
+===================================================== */
+
+{
+    title: "HTML Lists",
+
+    content: `
+
+        <h2>HTML Lists</h2>
+
+        <p>
+            HTML provides ordered and unordered lists
+            for displaying collections of items.
+        </p>
+
+        <h3>Unordered list</h3>
+
+        <div class="code-box"><code>&lt;ul&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;</code></div>
+
+        <h3>Ordered list</h3>
+
+        <div class="code-box"><code>&lt;ol&gt;
+    &lt;li&gt;Learn HTML&lt;/li&gt;
+    &lt;li&gt;Learn CSS&lt;/li&gt;
+    &lt;li&gt;Build Project&lt;/li&gt;
+&lt;/ol&gt;</code></div>
+
+    `
+},
+
+
+/* =====================================================
+   7
+===================================================== */
+
+{
+    title: "HTML Tables",
+
+    content: `
+
+        <h2>HTML Tables</h2>
+
+        <p>
+            Tables are useful for displaying structured
+            data in rows and columns.
+        </p>
+
+        <div class="code-box"><code>&lt;table&gt;
+
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Course&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Brijesh&lt;/td&gt;
+        &lt;td&gt;HTML&lt;/td&gt;
+    &lt;/tr&gt;
+
+&lt;/table&gt;</code></div>
+
+    `
+},
+
+
+/* =====================================================
+   8
+===================================================== */
+
+{
+    title: "HTML Forms",
+
+    content: `
+
+        <h2>HTML Forms</h2>
+
+        <p>
+            Forms are used to collect information
+            from users.
+        </p>
+
+        <div class="code-box"><code>&lt;form&gt;
+
+    &lt;input
+        type="text"
+        placeholder="Your Name"
+    &gt;
+
+    &lt;input
+        type="email"
+        placeholder="Your Email"
+    &gt;
+
+    &lt;button type="submit"&gt;
+        Submit
+    &lt;/button&gt;
+
+&lt;/form&gt;</code></div>
+
+        <h3>Common input types</h3>
+
+        <ul>
+            <li>text</li>
+            <li>email</li>
+            <li>password</li>
+            <li>number</li>
+            <li>date</li>
+            <li>file</li>
+            <li>checkbox</li>
+            <li>radio</li>
+        </ul>
+
+    `
+},
+
+
+/* =====================================================
+   9
+===================================================== */
+
+{
+    title: "CSS Introduction",
+
+    content: `
+
+        <h2>CSS Introduction</h2>
+
+        <p>
+            CSS is used to control the appearance
+            and layout of HTML elements.
+        </p>
+
+        <h3>Inline CSS</h3>
+
+        <div class="code-box"><code>&lt;p style="color: blue;"&gt;
+    Hello
+&lt;/p&gt;</code></div>
+
+        <h3>External CSS</h3>
+
+        <div class="code-box"><code>&lt;link
+    rel="stylesheet"
+    href="style.css"
+&gt;</code></div>
+
+        <p>
+            External CSS is generally preferred for
+            larger websites.
+        </p>
+
+    `
+},
+
+
+/* =====================================================
+   10
+===================================================== */
+
+{
+    title: "CSS Selectors",
+
+    content: `
+
+        <h2>CSS Selectors</h2>
+
+        <p>
+            Selectors tell CSS which HTML elements
+            should receive a style.
+        </p>
+
+        <h3>Element selector</h3>
+
+        <div class="code-box"><code>p {
+    color: blue;
+}</code></div>
+
+        <h3>Class selector</h3>
+
+        <div class="code-box"><code>.title {
+    font-size: 30px;
+}</code></div>
+
+        <h3>ID selector</h3>
+
+        <div class="code-box"><code>#header {
+    background: black;
+}</code></div>
+
+    `
+},
+
+
+/* =====================================================
+   11
+===================================================== */
+
+{
+    title: "Colors & Fonts",
+
+    content: `
+
+        <h2>CSS Colors & Fonts</h2>
+
+        <p>
+            CSS provides many properties for controlling
+            text and colors.
+        </p>
+
+        <div class="code-box"><code>body {
+    background: #f5f5f5;
+}
+
+h1 {
+    color: #2563eb;
+    font-size: 32px;
+    font-family: Arial, sans-serif;
+}</code></div>
+
+        <h3>Useful properties</h3>
+
+        <ul>
+            <li>color</li>
+            <li>background</li>
+            <li>font-size</li>
+            <li>font-family</li>
+            <li>font-weight</li>
+            <li>text-align</li>
+        </ul>
+
+    `
+},
+
+
+/* =====================================================
+   12
+===================================================== */
+
+{
+    title: "CSS Box Model",
+
+    content: `
+
+        <h2>CSS Box Model</h2>
+
+        <p>
+            Every HTML element can be understood as
+            a box with content, padding, border and
+            margin.
+        </p>
+
+        <div class="code-box"><code>.card {
+    width: 300px;
+
+    padding: 20px;
+
+    border: 1px solid #ddd;
+
+    margin: 20px;
+}</code></div>
+
+        <ul>
+            <li>Content</li>
+            <li>Padding</li>
+            <li>Border</li>
+            <li>Margin</li>
+        </ul>
+
+    `
+},
+
+
+/* =====================================================
+   13
+===================================================== */
+
+{
+    title: "CSS Flexbox",
+
+    content: `
+
+        <h2>CSS Flexbox</h2>
+
+        <p>
+            Flexbox makes it easier to create flexible
+            layouts and align elements.
+        </p>
+
+        <div class="code-box"><code>.container {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+}</code></div>
+
+        <h3>Important properties</h3>
+
+        <ul>
+            <li>display: flex</li>
+            <li>justify-content</li>
+            <li>align-items</li>
+            <li>flex-direction</li>
+            <li>gap</li>
+            <li>flex-wrap</li>
+        </ul>
+
+    `
+},
+
+
+/* =====================================================
+   14
+===================================================== */
+
+{
+    title: "CSS Grid",
+
+    content: `
+
+        <h2>CSS Grid</h2>
+
+        <p>
+            CSS Grid is useful for creating two-dimensional
+            layouts using rows and columns.
+        </p>
+
+        <div class="code-box"><code>.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}</code></div>
+
+        <p>
+            Grid is especially useful for cards,
+            dashboards and larger page layouts.
+        </p>
+
+    `
+},
+
+
+/* =====================================================
+   15
+===================================================== */
+
+{
+    title: "Responsive Design",
+
+    content: `
+
+        <h2>Responsive Web Design</h2>
+
+        <p>
+            Responsive design allows a website to work
+            properly on phones, tablets and computers.
+        </p>
+
+        <h3>Media Query</h3>
+
+        <div class="code-box"><code>@media (max-width: 600px) {
+
+    .container {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+}</code></div>
+
+        <div class="tip-box">
+            Always test your website on different screen
+            sizes before publishing it.
+        </div>
+
+    `
+},
+
+
+/* =====================================================
+   16
+===================================================== */
+
+{
+    title: "Final HTML + CSS Project",
+
+    content: `
+
+        <h2>Final Project</h2>
+
+        <p>
+            Congratulations! You have reached the final
+            lesson of the HTML & CSS course.
+        </p>
+
+        <h3>Build a Personal Portfolio</h3>
+
+        <p>
+            Create a complete responsive portfolio website
+            containing the following sections:
+        </p>
+
+        <ul>
+            <li>Navigation bar</li>
+            <li>Hero section</li>
+            <li>About section</li>
+            <li>Skills</li>
+            <li>Projects</li>
+            <li>Education</li>
+            <li>Contact form</li>
+            <li>Footer</li>
+        </ul>
+
+        <h3>Final challenge</h3>
+
+        <p>
+            Build the project yourself without copying
+            the complete code. Use the concepts you
+            learned throughout this course.
+        </p>
+
+        <div class="tip-box">
+            Keep practicing. Your next step is JavaScript,
+            where you will learn how to make your websites
+            interactive.
+        </div>
+
+    `
+}
+
+];
+
+
+let currentLesson = 0;
+
+
+const lessonContent =
+    document.getElementById(
+        "lessonContent"
+    );
+
+const lessonButtons =
+    document.querySelectorAll(
+        ".course-lesson"
+    );
+
+const previousButton =
+    document.getElementById(
+        "previousLesson"
+    );
+
+const nextButton =
+    document.getElementById(
+        "nextLesson"
+    );
+
+const progressBar =
+    document.getElementById(
+        "progressBar"
+    );
+
+
+/* =====================================================
+   LOAD LESSON
+===================================================== */
+
+function loadLesson(index) {
+
+    currentLesson = index;
+
+    lessonContent.innerHTML =
+        lessons[index].content;
+
+
+    lessonButtons.forEach(
+        (button, buttonIndex) => {
+
+            button.classList.toggle(
+                "active",
+                buttonIndex === index
+            );
+
+        }
+    );
+
+
+    previousButton.disabled =
+        index === 0;
+
+
+    nextButton.disabled =
+        index === lessons.length - 1;
+
+
+    const progress =
+        ((index + 1) /
+        lessons.length) * 100;
+
+
+    progressBar.style.width =
+        progress + "%";
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =====================================================
+   SIDEBAR CLICK
+===================================================== */
+
+lessonButtons.forEach(
+    button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                const index =
+                    Number(
+                        button.dataset.lesson
+                    );
+
+                loadLesson(index);
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+previousButton.addEventListener(
+    "click",
+    () => {
+
+        if (currentLesson > 0) {
+
+            loadLesson(
+                currentLesson - 1
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+nextButton.addEventListener(
+    "click",
+    () => {
+
+        if (
+            currentLesson <
+            lessons.length - 1
+        ) {
+
+            loadLesson(
+                currentLesson + 1
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   INITIAL LESSON
+===================================================== */
+
+loadLesson(0);
+
+</script>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
