@@ -1,0 +1,455 @@
+/* =========================================
+   CODE WITH BRIJESH
+   Main Website JavaScript
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =========================================
+       ELEMENTS
+    ========================================= */
+
+    const menuButton = document.getElementById("menuButton");
+    const closeMenu = document.getElementById("closeMenu");
+    const sideMenu = document.getElementById("sideMenu");
+    const menuOverlay = document.getElementById("menuOverlay");
+
+    const darkMode = document.getElementById("darkMode");
+
+    const searchInput = document.getElementById("searchInput");
+    const searchBtn = document.getElementById("searchBtn");
+
+
+    /* =========================================
+       MOBILE MENU
+    ========================================= */
+
+    function openMenu() {
+        if (sideMenu) {
+            sideMenu.classList.add("active");
+        }
+
+        if (menuOverlay) {
+            menuOverlay.classList.add("active");
+        }
+
+        document.body.classList.add("menu-open");
+    }
+
+    function closeSideMenu() {
+        if (sideMenu) {
+            sideMenu.classList.remove("active");
+        }
+
+        if (menuOverlay) {
+            menuOverlay.classList.remove("active");
+        }
+
+        document.body.classList.remove("menu-open");
+    }
+
+
+    if (menuButton) {
+        menuButton.addEventListener("click", openMenu);
+    }
+
+    if (closeMenu) {
+        closeMenu.addEventListener("click", closeSideMenu);
+    }
+
+    if (menuOverlay) {
+        menuOverlay.addEventListener("click", closeSideMenu);
+    }
+
+
+    /* =========================================
+       CLOSE MENU WITH ESC KEY
+    ========================================= */
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+            closeSideMenu();
+        }
+
+    });
+
+
+    /* =========================================
+       CLOSE MENU AFTER CLICKING LINK
+    ========================================= */
+
+    const sideLinks = document.querySelectorAll(".side-links a");
+
+    sideLinks.forEach((link) => {
+
+        link.addEventListener("click", () => {
+            closeSideMenu();
+        });
+
+    });
+
+
+    /* =========================================
+       DARK / LIGHT MODE
+    ========================================= */
+
+    const savedTheme = localStorage.getItem("brijesh-theme");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark");
+
+        if (darkMode) {
+            darkMode.checked = true;
+        }
+
+    } else {
+
+        document.body.classList.remove("dark");
+
+        if (darkMode) {
+            darkMode.checked = false;
+        }
+
+    }
+
+
+    if (darkMode) {
+
+        darkMode.addEventListener("change", () => {
+
+            if (darkMode.checked) {
+
+                document.body.classList.add("dark");
+
+                localStorage.setItem(
+                    "brijesh-theme",
+                    "dark"
+                );
+
+            } else {
+
+                document.body.classList.remove("dark");
+
+                localStorage.setItem(
+                    "brijesh-theme",
+                    "light"
+                );
+
+            }
+
+        });
+
+    }
+
+
+    /* =========================================
+       SEARCH
+    ========================================= */
+
+    function performSearch() {
+
+        if (!searchInput) return;
+
+        const query = searchInput.value.trim();
+
+        if (query === "") {
+
+            searchInput.focus();
+
+            return;
+        }
+
+
+        const searchQuery = query.toLowerCase();
+
+
+        /* Tutorials */
+
+        if (
+            searchQuery.includes("html") ||
+            searchQuery.includes("css") ||
+            searchQuery.includes("javascript") ||
+            searchQuery.includes("js") ||
+            searchQuery.includes("python") ||
+            searchQuery.includes("react") ||
+            searchQuery.includes("node") ||
+            searchQuery.includes("web")
+        ) {
+
+            window.location.href =
+                "tutorials.html";
+
+            return;
+        }
+
+
+        /* Courses */
+
+        if (
+            searchQuery.includes("course") ||
+            searchQuery.includes("mern") ||
+            searchQuery.includes("full stack") ||
+            searchQuery.includes("fullstack") ||
+            searchQuery.includes("development")
+        ) {
+
+            window.location.href =
+                "courses.html";
+
+            return;
+        }
+
+
+        /* Projects */
+
+        if (
+            searchQuery.includes("project") ||
+            searchQuery.includes("projects")
+        ) {
+
+            window.location.href =
+                "projects.html";
+
+            return;
+        }
+
+
+        /* Notes */
+
+        if (
+            searchQuery.includes("note") ||
+            searchQuery.includes("notes")
+        ) {
+
+            window.location.href =
+                "notes.html";
+
+            return;
+        }
+
+
+        /* Contact */
+
+        if (
+            searchQuery.includes("contact") ||
+            searchQuery.includes("help")
+        ) {
+
+            window.location.href =
+                "contact.html";
+
+            return;
+        }
+
+
+        /* Default */
+
+        alert(
+            `No result found for "${query}".`
+        );
+
+    }
+
+
+    if (searchBtn) {
+
+        searchBtn.addEventListener(
+            "click",
+            performSearch
+        );
+
+    }
+
+
+    if (searchInput) {
+
+        searchInput.addEventListener(
+            "keydown",
+            (event) => {
+
+                if (event.key === "Enter") {
+
+                    performSearch();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =========================================
+       SMOOTH SCROLL
+    ========================================= */
+
+    const internalLinks =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
+
+
+    internalLinks.forEach((link) => {
+
+        link.addEventListener(
+            "click",
+            (event) => {
+
+                const targetId =
+                    link.getAttribute("href");
+
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+                    return;
+                }
+
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+
+                if (target) {
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+
+            }
+        );
+
+    });
+
+
+    /* =========================================
+       HEADER SCROLL EFFECT
+    ========================================= */
+
+    const header =
+        document.querySelector(".header");
+
+
+    function updateHeader() {
+
+        if (!header) return;
+
+
+        if (window.scrollY > 30) {
+
+            header.classList.add(
+                "scrolled"
+            );
+
+        } else {
+
+            header.classList.remove(
+                "scrolled"
+            );
+
+        }
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateHeader
+    );
+
+
+    updateHeader();
+
+
+    /* =========================================
+       ACTIVE NAVIGATION
+    ========================================= */
+
+    const currentPage =
+        window.location.pathname
+        .split("/")
+        .pop();
+
+
+    const allLinks =
+        document.querySelectorAll(
+            ".main-nav a, .side-links a"
+        );
+
+
+    allLinks.forEach((link) => {
+
+        const linkPage =
+            link.getAttribute("href");
+
+
+        if (
+            linkPage === currentPage ||
+            (
+                currentPage === "" &&
+                linkPage === "index.html"
+            )
+        ) {
+
+            link.classList.add(
+                "active"
+            );
+
+        }
+
+    });
+
+
+    /* =========================================
+       BUTTON CLICK EFFECT
+    ========================================= */
+
+    const buttons =
+        document.querySelectorAll(
+            ".primary-button, .secondary-button, .journey-button"
+        );
+
+
+    buttons.forEach((button) => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                button.classList.add(
+                    "clicked"
+                );
+
+
+                setTimeout(() => {
+
+                    button.classList.remove(
+                        "clicked"
+                    );
+
+                }, 200);
+
+            }
+        );
+
+    });
+
+
+    /* =========================================
+       CONSOLE MESSAGE
+    ========================================= */
+
+    console.log(
+        "🚀 CODE With Brijesh website loaded successfully!"
+    );
+
+});
